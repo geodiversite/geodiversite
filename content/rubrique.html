@@ -1,0 +1,29 @@
+<BOUCLE_contenu_rubrique(RUBRIQUES){id_rubrique}{tout}>
+[(#REM) Fil d'Ariane ]
+<ol id="hierarchie">
+	<BOUCLE_ariane(HIERARCHIE){id_rubrique}{statut=*}{0,n-1}>[
+	(#COMPTEUR_BOUCLE|>{2}|non)<li><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a></li>][
+	(#COMPTEUR_BOUCLE|>{2}|oui)<li class="collapsed"><a href="#URL_RUBRIQUE" title="[(#TITRE|couper{80}|attribut_html)]">...</a></li>]
+	</BOUCLE_ariane>
+	[<li class="on"><strong>(#TITRE|couper{80})</strong></li>]
+</ol>
+
+<div class="contenu-principal">
+	<div class="cartouche">
+		<h1 class="h1"><span>#TITRE</span></h1>
+		[(#LOGO_RUBRIQUE|match{rubon#ID_RUBRIQUE\.}|oui)[(#LOGO_RUBRIQUE|image_reduire{150,150})]]
+	</div>
+	
+
+	[<div class="#EDIT{texte} chapo">(#TEXTE|sinon{<:geol:pas_description:>})</div>]
+
+	[(#REM) Articles de la galerie ]
+	[(#INCLURE{fond=liste/articles-vignette,
+		id_rubrique,
+		ajax,
+		env,
+		largeur=200,
+		hauteur=200,
+		info_auteur=non})]
+</div>
+</BOUCLE_contenu_rubrique>

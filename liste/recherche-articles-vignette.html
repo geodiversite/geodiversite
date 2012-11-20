@@ -1,0 +1,51 @@
+#SET{extensions,#ARRAY|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_images}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_videos}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_audios}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_textes}}}
+
+[(#ENV{type_doc}|oui)
+	#SET{extensions,#ARRAY}
+]
+
+[(#VAL{'type_images'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
+	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_images}}}
+]
+[(#VAL{'type_videos'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
+	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_videos}}}
+]
+[(#VAL{'type_audios'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
+	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_audios}}}
+]
+[(#VAL{'type_textes'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
+	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_textes}}}
+]
+[(#SET{defaut_tri,#ARRAY{
+	points,-1,
+	date,-1,
+	popularite,-1
+}})]
+[(#SET{cols,#ENV{cols,3}})]
+<B_articles>
+<div class="liste articles boites[ cols(#GET{cols})]">
+	#ANCRE_PAGINATION
+	<h2 class="h2"><:geol:contribs:>[ ((#GRAND_TOTAL))]</h2>
+	<div class="liens_options">
+		<strong><:geol:trier:></strong> 
+		[(#TRI{points,<:geol:trier_par_points:>,ajax}), ]
+		[(#TRI{date,<:geol:trier_par_date:>,ajax}), ]
+		[(#TRI{popularite,<:geol:trier_par_pop:>,ajax}) | ]
+		[(#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#GET{cols},self=#SELF})]
+	</div>
+	<ul class="liste-items">
+		<BOUCLE_articles(ARTICLES documents_liens documents){documents.mode=document}{documents.extension IN #GET{extensions}}
+			{id_mot?}
+			{enfants #ENV**{categories}}
+			{id_licence IN #ENV**{id_licence}}
+			{recherche?}
+			{tri #ENV{par,points},#GET{defaut_tri}}
+			{pagination #ENV{pas,#GET{cols}|mult{3}}}>
+		<li class="item[ first(#COMPTEUR_BOUCLE|modulo{#GET{cols}}|=={1}|oui)]">
+			[(#INCLURE{fond=inclure/article-vignette,id_article,env})]
+		</li>
+		</BOUCLE_articles>
+	</ul>
+	[<p class="pagination">(#PAGINATION{page_precedent_suivant,separateur=' ',label_precedent='<',label_suivant='>'})</p>]
+</div>
+</B_articles>

@@ -1,0 +1,66 @@
+<div class="contenu-principal">
+	[<div class="image_pop">
+		(#INCLURE{fond=inclure/sommaire_image_pop})
+	</div>]
+
+	<div class="menu">
+	<BOUCLE_menu1(MENUS){identifiant=home_bloc1}>
+		[<h2 class="h2">(#TITRE|majuscules)</h2>]
+		[(#INCLURE{fond=inclure/menu,env,id_menu})]
+	</BOUCLE_menu1>
+		<h2 class="h2"><:geol:nav_explorer|majuscules:></h2>
+		<ul class="menu-liste menu-items">
+			<li class="menu-entree item"><a href="#URL_RUBRIQUE{#CONFIG{geol/secteur_medias,1}}"><:geol:galerie:></a></li>
+			<li class="menu-entree item"><a href="#URL_PAGE{carte}"><:geol:carte:></a></li>
+		</ul>
+	<//B_menu1>
+	</div>
+
+	<div class="menu">
+	<BOUCLE_menu2(MENUS){identifiant=home_bloc2}>
+		[<h2 class="h2">(#TITRE|majuscules)</h2>]
+		[(#INCLURE{fond=inclure/menu,env,id_menu})]
+	</BOUCLE_menu2>
+		<h2 class="h2"><:geol:contribuer|majuscules:></h2>
+		<ul class="menu-liste menu-items">[(#SESSION{id_auteur}|non)
+			<li class="menu-entree item"><a href="[(#URL_PAGE{inscription})]" rel="nofollow" class='login_modal'><:geol:creer_compte:></a></li>
+			<li class="menu-entree item"><a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a></li>
+			][(#SESSION{id_auteur}|oui)<li class="menu-entree item"><a href="#URL_AUTEUR{#SESSION{id_auteur}}"><:geol:mon_espace:></a></li>
+			<li class="menu-entree item"><a href="[(#URL_PAGE{upload})]" rel="nofollow"><:geol:publier_media:></a></li>
+			]<li class="menu-entree item"><a href="[(#URL_PAGE{auteurs})]"><:geol:contributeurs_les:></a></li>
+		</ul>
+	<//B_menu2>
+	</div>
+	
+	<div class="menu">
+	<BOUCLE_menu3(MENUS){identifiant=home_bloc3}>
+		[<h2 class="h2">(#TITRE|majuscules)</h2>]
+		[(#INCLURE{fond=inclure/menu,env,id_menu})]
+	</BOUCLE_menu3>
+		<h2 class="h2"><:geol:rechercher|majuscules:></h2>
+		<ul class="menu-liste menu-items">
+			<li class="menu-entree item"><a href="#URL_PAGE{recherche}"><:geol:recherche_libre:></a></li>
+			<li class="menu-entree item"><a href="#URL_PAGE{recherche_avancee}"><:geol:recherche_avancee:></a></li>
+		</ul>
+	<//B_menu3>
+	</div>
+
+	<B_articles>
+	<div class="liste articles boites">
+		<h2 class="h2"><:geol:dernieres_contribs|majuscules:></h2>
+		<ul class="liste-items">
+			<BOUCLE_articles(ARTICLES) {!par date} {0,4}{id_rubrique!=-1}>
+			<li class="item">
+				<BOUCLE_doc(DOCUMENTS){id_article}{mode=document}{vu=non}>
+				[<a href="#_articles:URL_ARTICLE" title="#_articles:TITRE">
+					(#LOGO_DOCUMENT|image_passe_partout{175,100}
+						|image_recadre{175,100,center}
+						|inserer_attribut{alt,[(#_articles:TITRE|couper{80}|texte_backend)]})
+				</a>]
+				</BOUCLE_doc>
+			</li>
+			</BOUCLE_articles>
+		</ul>
+	</div>
+	</B_articles>
+</div>
