@@ -10,5 +10,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'forum_voir_avant' => 'Prévisualiser'
 
 );
-
-?>

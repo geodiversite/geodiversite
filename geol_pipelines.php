@@ -168,5 +168,3 @@ function geol_xmlrpc_server_class($flux){
 	include_spip('inc/geol_xmlrpc');
 	return $flux;
 }
-
-?>

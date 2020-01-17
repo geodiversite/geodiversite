@@ -53,5 +53,3 @@ function formulaires_editer_mot_article_traiter_dist($id_article='new', $id_grou
 	return $message;
 	
 }
-
-?>

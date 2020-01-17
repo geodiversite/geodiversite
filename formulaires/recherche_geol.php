@@ -34,5 +34,3 @@ function formulaires_recherche_geol_charger_dist(){
 	
 	return $valeurs;
 }
-
-?>

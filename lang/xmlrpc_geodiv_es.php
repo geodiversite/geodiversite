@@ -7,5 +7,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'erreur_article_media' => 'Este artículo no parece ser un documento media (#@id_article@)'
 
 );
-
-?>

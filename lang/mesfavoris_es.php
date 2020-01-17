@@ -10,5 +10,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'remove_from' => 'Quitar de mis favoritos'
 
 );
-
-?>

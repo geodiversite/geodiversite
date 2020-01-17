@@ -175,5 +175,3 @@ function geol_upgrade_022(){
 function geol_vider_tables($nom_meta_base_version){
 	effacer_meta($nom_meta_base_version);
 }
-
-?>

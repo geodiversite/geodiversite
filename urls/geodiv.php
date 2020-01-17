@@ -108,5 +108,3 @@ function urls_geodiv_dist($i, $entite, $args='', $ancre='') {
 	}
 
 }
-
-?>

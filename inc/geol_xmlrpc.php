@@ -395,4 +395,3 @@ function geodiv_update_media($args){
 		return $media_struct;	
 	}
 }
-?>

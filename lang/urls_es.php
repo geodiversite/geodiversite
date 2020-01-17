@@ -7,5 +7,3 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 'titre_type_geodiv' => 'URLs de Geodiversidad'
 
 );
-
-?>
