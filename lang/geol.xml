@@ -1,9 +1,9 @@
 <traduction
 	module="geol"
-	id="geol--geodiversite-0c94c"
+	id="geol--geodiversite-14d8d"
 	gestionnaire="salvatore"
 	url="https://trad.spip.net"
-	source="https://github.com/geodiversite/geodiversite/trunk/lang"
+	source="https://github.com/geodiversite/geodiversite.git"
 	reference="fr">
 	<langue code="en" url="https://trad.spip.net/tradlang_module/geol?lang_cible=en" total="195" traduits="165" relire="12" modifs="0" nouveaux="18" pourcent="84.62">
 		<traducteur nom="b_b" lien="https://trad.spip.net/auteur/b_b" />
