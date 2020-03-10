@@ -1,0 +1,10 @@
+<traduction
+	module="mesfavoris"
+	id="mesfavoris--geodiversite-14d8d"
+	gestionnaire="salvatore"
+	url="https://trad.spip.net"
+	source="https://github.com/geodiversite/geodiversite.git"
+	reference="fr">
+	<langue code="es" url="https://trad.spip.net/tradlang_module/mesfavoris-geodiversite?lang_cible=es" total="4" traduits="4" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/mesfavoris-geodiversite?lang_cible=fr" total="4" traduits="4" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+</traduction>
