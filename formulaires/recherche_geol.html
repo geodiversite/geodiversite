@@ -5,12 +5,12 @@
 	[(#REM) declarer les hidden qui declencheront le service du formulaire parametre : url d'action ]
 	<input type="hidden" value="recherche" name="page">
 	<fieldset>
-		<[(#VAL{ul}|saisie_balise_structure_formulaire)] class="editer-groupe">
-			<[(#VAL{li}|saisie_balise_structure_formulaire)] class="recherche">
+		<[(#DIV|sinon{ul})] class="editer-groupe">
+			<[(#DIV|sinon{li})] class="recherche">
 				<label for="recherche"><:info_rechercher:></label>
 				<input type="text" class="text" size="10" name="recherche" id="recherche"[ value="(#ENV{recherche})"] />
 				[(#PLUGIN{Fulltext}|oui)<p class="explication"><:fulltext:casse_indifferente:> <:fulltext:accents_pas_pris:>.</p>]
-			</[(#VAL{li}|saisie_balise_structure_formulaire)]>
+			</[(#DIV|sinon{li})]>
 			[(#SAISIE{secteur,
 				categories,
 				explication=<:geol:explication_select_multiple:>,
@@ -40,7 +40,7 @@
 				label=<:geol:licence_media:>,
 				option_intro=<:geol:toutes:>,
 				datas=#ENV**{licences}})]]
-		</[(#VAL{ul}|saisie_balise_structure_formulaire)]>
+		</[(#DIV|sinon{ul})]>
 	</fieldset>
 	<p class="boutons">
 		<input type="submit" class="submit" value="<:info_rechercher:>" title="<:info_rechercher:>" />	
