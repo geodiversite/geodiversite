@@ -57,11 +57,16 @@
 ]
 
 [(#REM) Document audio ou video ? ]
-[(#MEDIA|in_array{#LISTE{audio,video}}|oui)
-[(#SET{largeur,#ENV{largeur}})][(#SET{hauteur,#ENV{hauteur}})]
-[(#MEDIA|=={audio}|oui)[(#SET{hauteur,''})][(#LOGO_DOCUMENT{vignette}|non)
-[(#CHEMIN{images/logo_site.png}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000}|inserer_attribut{class,logo_audio})]
-]][(#MODELE{emb,id_document,largeur=#GET{largeur},hauteur=#GET{hauteur}})]
+[(#MEDIA|in_array{#LISTE{audio,video}}|oui)[
+	(#SET{largeur,#ENV{largeur}})][
+	(#SET{hauteur,#ENV{hauteur}})][
+	(#MEDIA|=={audio}|oui)[
+		(#SET{hauteur,''})][
+		(#LOGO_DOCUMENT{vignette}|non)[
+			(#CHEMIN{images/logo_site.png}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000}|inserer_attribut{class,logo_audio})]
+		]
+	][
+	(#MODELE{emb,id_document,largeur=#GET{largeur},hauteur=#GET{hauteur}})]
 ]
 
 <script type="text/javascript">
