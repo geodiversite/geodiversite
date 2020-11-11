@@ -73,13 +73,8 @@
 </script>
 
 [(#REM) Sinon : document normal ]
-[(#TYPE_DOCUMENT|match{^(Flash Video|MP3|MPEG4|Ogg Video|JPEG|GIF|PNG|Keyhole Markup Language|Google Earth Placemark File)$}|?{'',' '})
-<dl class='spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})][ (#ENV{class})] spip_lien_ok'[ style='float:(#ENV{align}|match{left|right});']>
-<a href="[(#ENV{lien}|sinon{#URL_DOCUMENT})]" type="#MIME_TYPE"[ class="(#ENV{lien_class})"]><img src='[(#LOGO_DOCUMENT|extraire_attribut{src})]' width='[(#LOGO_DOCUMENT|largeur)]' height='[(#LOGO_DOCUMENT|hauteur)]' alt='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]' title='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]' /></a>
-[
-<dt class='spip_doc_titre'[ style='width:(#LOGO_DOCUMENT|largeur|min{350}|max{120})px;']><strong>(#TITRE)</strong></dt>][
-<dd class='spip_doc_descriptif'[ style='width:(#LOGO_DOCUMENT|largeur|min{350}|max{120})px;']>(#DESCRIPTIF|PtoBR)[(#NOTES|PtoBR)]</dd>]
-</dl>
+[(#TYPE_DOCUMENT|match{^(MP3|MPEG4|Ogg Video|JPEG|GIF|PNG|Keyhole Markup Language|Google Earth Placemark File)$}|non)
+[(#MODELE{doc,id_document})]
 ]
 
 </BOUCLE_doc>
