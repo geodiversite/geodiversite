@@ -1,7 +1,7 @@
 <BOUCLE_doc(DOCUMENTS){id_document}>
 
 [(#REM) Document Image ? ]
-[(#TYPE_DOCUMENT|match{^(JPEG|GIF|PNG)$}|oui)
+[(#MEDIA|=={image}|oui)
 	<div class="actions_doc">
 		[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
 		<a href="[(#URL_DOCUMENT|url_absolue)]" type="#MIME_TYPE" title="<:geol:zoom|texte_backend:>" class="zoom"><:geol:zoom:></a>
