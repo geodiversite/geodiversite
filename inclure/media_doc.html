@@ -1,7 +1,7 @@
 <BOUCLE_doc(DOCUMENTS){id_document}>
-
+#SET{embed,''}
 [(#REM) Document Image ? ]
-[(#TYPE_DOCUMENT|match{^(JPEG|GIF|PNG)$}|oui)
+[(#MEDIA|=={image}|oui)#SET{embed,oui}
 	<div class="actions_doc">
 		[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
 		<a href="[(#URL_DOCUMENT|url_absolue)]" type="#MIME_TYPE" title="<:geol:zoom|texte_backend:>" class="zoom"><:geol:zoom:></a>
@@ -31,7 +31,7 @@
 		ajax})]
 ]
 
-[(#TYPE_DOCUMENT|match{^(Keyhole Markup Language|Google Earth Placemark File|MP3|MPEG4|Ogg Video|Flash Video|PDF)$}|oui)
+[(#MEDIA|in_array{#LISTE{audio,video}}|ou{#TYPE_DOCUMENT|match{^(Keyhole Markup Language|Google Earth Placemark File|PDF)$}}|oui)#SET{embed,oui}
 <div class="actions_doc">
 	[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
 	<a href="[(#URL_DOCUMENT)]" title="<:geol:doc_telecharger|texte_backend:>" class="telecharger"><:geol:doc_telecharger:></a>
@@ -56,12 +56,12 @@
 		kml=#ID_DOCUMENT})]
 ]
 
-[(#REM) Document flv ou mp3 ? ]
-[(#TYPE_DOCUMENT|match{^(MP3|Flash Video|MPEG4|Ogg Video)$}|oui)
+[(#REM) Document audio ou video ? ]
+[(#MEDIA|in_array{#LISTE{audio,video}}|oui)
 [(#SET{largeur,#ENV{largeur}})][(#SET{hauteur,#ENV{hauteur}})]
-[(#EXTENSION|=={mp3}|oui)[(#SET{hauteur,''})][
-(#SET{logo,#LOGO_DOCUMENT{vignette}|sinon{#CHEMIN{images/logo_site.png}}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000}|extraire_attribut{src}})]
-][(#MODELE{emb,controls=oui,id_document,largeur=#GET{largeur},hauteur=#GET{hauteur},logo=#GET{logo},autobuffer=oui,infos=non,env})]
+[(#MEDIA|=={audio}|oui)[(#SET{hauteur,''})][
+(#LOGO_DOCUMENT{vignette}|sinon{#CHEMIN{images/logo_site.png}}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000}|inserer_attribut{class,logo_audio})]
+][(#MODELE{emb,id_document,largeur=#GET{largeur},hauteur=#GET{hauteur}})]
 ]
 
 <script type="text/javascript">
@@ -72,14 +72,9 @@
 })(jQuery);
 </script>
 
-[(#REM) Sinon : document normal ]
-[(#TYPE_DOCUMENT|match{^(Flash Video|MP3|MPEG4|Ogg Video|JPEG|GIF|PNG|Keyhole Markup Language|Google Earth Placemark File)$}|?{'',' '})
-<dl class='spip_document_#ID_DOCUMENT spip_documents[ spip_documents_(#ENV{align})][ (#ENV{class})] spip_lien_ok'[ style='float:(#ENV{align}|match{left|right});']>
-<a href="[(#ENV{lien}|sinon{#URL_DOCUMENT})]" type="#MIME_TYPE"[ class="(#ENV{lien_class})"]><img src='[(#LOGO_DOCUMENT|extraire_attribut{src})]' width='[(#LOGO_DOCUMENT|largeur)]' height='[(#LOGO_DOCUMENT|hauteur)]' alt='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]' title='#TYPE_DOCUMENT - [(#TAILLE|taille_en_octets)]' /></a>
-[
-<dt class='spip_doc_titre'[ style='width:(#LOGO_DOCUMENT|largeur|min{350}|max{120})px;']><strong>(#TITRE)</strong></dt>][
-<dd class='spip_doc_descriptif'[ style='width:(#LOGO_DOCUMENT|largeur|min{350}|max{120})px;']>(#DESCRIPTIF|PtoBR)[(#NOTES|PtoBR)]</dd>]
-</dl>
+[(#REM) Sinon document normal ]
+[(#GET{embed}|non)
+[(#MODELE{doc,id_document})]
 ]
 
 </BOUCLE_doc>

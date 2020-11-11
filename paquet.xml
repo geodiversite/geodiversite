@@ -35,7 +35,6 @@
 	<necessite nom="menus" compatibilite="[1.2.1;[" />
 	<necessite nom="gis" compatibilite="[4.45.1;[" />
 	<necessite nom="polyhier" compatibilite="[1.0.0;[" />
-	<necessite nom="mediaspip_player" compatibilite="[1.1.0;[" />
 	<necessite nom="legendes" compatibilite="[1.1.4;[" />
 	<necessite nom="nuage" compatibilite="[4.0.5;[" />
 	<necessite nom="date_inscription" compatibilite="[0.1.0;[" />
