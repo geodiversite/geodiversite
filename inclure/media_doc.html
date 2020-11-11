@@ -1,7 +1,7 @@
 <BOUCLE_doc(DOCUMENTS){id_document}>
-
+#SET{embed,''}
 [(#REM) Document Image ? ]
-[(#MEDIA|=={image}|oui)
+[(#MEDIA|=={image}|oui)#SET{embed,oui}
 	<div class="actions_doc">
 		[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
 		<a href="[(#URL_DOCUMENT|url_absolue)]" type="#MIME_TYPE" title="<:geol:zoom|texte_backend:>" class="zoom"><:geol:zoom:></a>
@@ -31,7 +31,7 @@
 		ajax})]
 ]
 
-[(#TYPE_DOCUMENT|match{^(Keyhole Markup Language|Google Earth Placemark File|MP3|MPEG4|Ogg Video|Flash Video|PDF)$}|oui)
+[(#MEDIA|in_array{#LISTE{audio,video}}|ou{#TYPE_DOCUMENT|match{^(Keyhole Markup Language|Google Earth Placemark File|PDF)$}}|oui)#SET{embed,oui}
 <div class="actions_doc">
 	[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
 	<a href="[(#URL_DOCUMENT)]" title="<:geol:doc_telecharger|texte_backend:>" class="telecharger"><:geol:doc_telecharger:></a>
@@ -72,8 +72,8 @@
 })(jQuery);
 </script>
 
-[(#REM) Sinon : document normal ]
-[(#TYPE_DOCUMENT|match{^(Flash Video|MP3|MPEG4|Ogg Video|JPEG|GIF|PNG|Keyhole Markup Language|Google Earth Placemark File)$}|non)
+[(#REM) Sinon document normal ]
+[(#GET{embed}|non)
 [(#MODELE{doc,id_document})]
 ]
 
