@@ -60,7 +60,7 @@
 [(#MEDIA|in_array{#LISTE{audio,video}}|oui)
 [(#SET{largeur,#ENV{largeur}})][(#SET{hauteur,#ENV{hauteur}})]
 [(#MEDIA|=={audio}|oui)[(#SET{hauteur,''})][
-(#LOGO_DOCUMENT{vignette}|sinon{#CHEMIN{images/logo_site.png}}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000})]
+(#LOGO_DOCUMENT{vignette}|sinon{#CHEMIN{images/logo_site.png}}|image_reduire{#GET{largeur},215}|image_recadre{#GET{largeur},215,center,#000}|inserer_attribut{class,logo_audio})]
 ][(#MODELE{emb,id_document,largeur=#GET{largeur},hauteur=#GET{hauteur}})]
 ]
 
