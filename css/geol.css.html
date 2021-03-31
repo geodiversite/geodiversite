@@ -84,15 +84,14 @@
 /*  pied
 /*  ------------------------------------------ */
 
-#pied a:hover { color: #GET{couleur1};}
-.pied.conteneur { padding: 5px 0; text-align: left; }
-.pied .liste { margin: 10px 0; }
-.pied .h3,
-.pied .menu-liste,
-.pied .menu-liste .menu-entree,
-.pied .menu-liste .menu-entree a { display: inline; border: 0; padding: 0; }
-.pied .menu-liste .menu-entree { margin-left: 0.5em; }
-.pied .h3 { font-size: 1em; }
+#footer a:hover { color: #GET{couleur1};}
+.footer .liste { margin: 10px 0; }
+.footer .h3,
+.footer .menu-liste,
+.footer .menu-liste .menu-entree,
+.footer .menu-liste .menu-entree a { display: inline; border: 0; padding: 0; }
+.footer .menu-liste .menu-entree { margin-left: 0.5em; }
+.footer .h3 { font-size: 1em; }
 
 /* boutons admin */
 body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
@@ -187,10 +186,10 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 .page_carte #conteneur,
 .page_carte #conteneur #contenu,
 .page_carte #conteneur #contenu .carte_gis { width: 100%; margin: 0; height: 100%; position: relative; }
-.page_carte #pied { position: absolute; bottom: 0; background: #fff; z-index: 1000; }
-.page_carte #pied #bouton { position: absolute; top: -20px; right: 10px; }
-.page_carte #pied.cache #bouton { background-position: left top; }
-.page_carte #pied #bouton:hover { cursor: pointer; }
+.page_carte .footer { position: absolute; bottom: 0; background: #fff; z-index: 1000; }
+.page_carte .footer #bouton { position: absolute; top: -20px; right: 10px; }
+.page_carte .footer.cache #bouton { background-position: left top; }
+.page_carte .footer #bouton:hover { cursor: pointer; }
 
 .page_carte .info_filtre { display: block; float: left; padding: 5px 15px 4px 10px;
 	background: #999 url(#CHEMIN{images/bg_info_filtre.png}) right 50% no-repeat; color: #fff; }

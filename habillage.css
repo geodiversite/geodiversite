@@ -47,8 +47,8 @@ body { margin: 0; padding: 0; text-align: center; }
 
 #navigation { margin-top: 1em; overflow: hidden; }
 
-#pied { margin: 1em 0 0 0; font-size: 0.90em; }
-#pied img { vertical-align: middle; }
+.footer { margin: 1em 0 0 0; font-size: 0.90em; }
+.footer img { vertical-align: middle; }
 
 
 /* ------------------------------------------
@@ -241,11 +241,11 @@ ul.choix_mots li label { display: inline; font-weight: normal; }
 
 body { font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; color: #666; background: #fff; }
 #page { width: 100%; margin: 0; padding: 0; border: 0; }
-body div.conteneur { width: 960px; margin: 0 auto; }
+body div.container { width: 960px; margin: 0 auto; }
 #top, #entete, #nav, #top #extra { width: 100%; border: 0; margin: 0; }
 #contenu { float: left; width: 76%; padding-top: 0; }
 #navigation { float: right; width: 21%; }
-#pied { clear: both; width: 100%; padding: 0; background: transparent; border: 0; border-top: 1px solid #ddd; text-align: left; }
+.footer { clear: both; width: 100%; padding: 0; background: transparent; border: 0; border-top: 1px solid #ddd; text-align: left; }
 
 h1,h2,h3,h4,h5,h6,
 .h1,.h2,.h3,.h4,.h5,.h6 { font-family: Arial, Helvetica, sans-serif; }
@@ -318,8 +318,8 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 /*  pied
 /*  ------------------------------------------ */
 
-#pied a { color: #666; }
-#pied .on { font-weight: normal; }
+.footer a { color: #666; }
+.footer .on { font-weight: normal; }
 
 /*  ------------------------------------------
 /*  pages sommaire, articles et rubriques
@@ -337,7 +337,7 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 /*  page carte
 /*  ------------------------------------------ */
 
-.page_carte #pied #bouton { background: transparent url(images/bouton_pied.png) -40px top no-repeat; width: 40px; height: 20px; }
+.page_carte .footer #bouton { background: transparent url(images/bouton_pied.png) -40px top no-repeat; width: 40px; height: 20px; }
 
 /* page auteur + auteurs
 ----------------------------------------------- */
@@ -365,7 +365,7 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	/* les bases */
 	body,
 	#page,
-	#conteneur, body div.conteneur,
+	#conteneur, body div.container,
 	#top,
 	#entete,
 	#entete .accueil,
@@ -373,7 +373,7 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	#extra,
 	#contenu,
 	#navigation,
-	#pied { width: auto !important; margin: auto !important; padding: auto !important; }
+	.footer { width: auto !important; margin: auto !important; padding: auto !important; }
 	#page { margin: 0; }
 	#contenu,
 	#navigation { clear: both; float: none !important; }
