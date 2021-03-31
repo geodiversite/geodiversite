@@ -36,14 +36,14 @@ img { margin: 0; padding: 0; border: 0; }
 /* ------------------------------------------ */
 body { margin: 0; padding: 0; text-align: center; }
 
-#page { position: relative; background: #fff; text-align: left; }
+.page { position: relative; background: #fff; text-align: left; }
 
 #entete .accueil { display: block; }
 #entete .accueil .spip_logos { vertical-align: bottom; line-height: 1em; }
 #entete .accueil #nom_site_spip { vertical-align: bottom; }
 #entete .formulaire_menu_lang { position: absolute; right: 0; top: 0.90em; display: block; width: 30%; } /*Cf.: spip_formulaires.css*/
 
-#conteneur { clear: both; overflow: hidden; }
+#container { clear: both; overflow: hidden; }
 
 #navigation { margin-top: 1em; overflow: hidden; }
 
@@ -240,10 +240,10 @@ ul.choix_mots li label { display: inline; font-weight: normal; }
 /* Typo de base + Disposition a l'ecran des blocs principaux */
 
 body { font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; color: #666; background: #fff; }
-#page { width: 100%; margin: 0; padding: 0; border: 0; }
+.page { width: 100%; margin: 0; padding: 0; border: 0; }
 body div.container { width: 960px; margin: 0 auto; }
 #top, #entete, #nav, #top #extra { width: 100%; border: 0; margin: 0; }
-#contenu { float: left; width: 76%; padding-top: 0; }
+.content { float: left; width: 76%; padding-top: 0; }
 #navigation { float: right; width: 21%; }
 .footer { clear: both; width: 100%; padding: 0; background: transparent; border: 0; border-top: 1px solid #ddd; text-align: left; }
 
@@ -257,7 +257,7 @@ h3.spip { color: #666; text-align: left; margin: 1em 0; }
 .spip_surligne { background: transparent; }
 
 h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #00c0f8; }
-#contenu .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
+.content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
 
 /*  ------------------------------------------
 /*  le menu de navigation + entete + extra
@@ -325,10 +325,10 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 /*  pages sommaire, articles et rubriques
 /*  ------------------------------------------ */
 
-.page_sommaire #contenu .boites .h2 { width: 50%; margin-bottom: 0; color: #fff; font-size: 1.5em;
+.page_sommaire .content .boites .h2 { width: 50%; margin-bottom: 0; color: #fff; font-size: 1.5em;
 	background: #00c0f8 url(images/bg_ariane_blue_on.png) right 50% no-repeat; }
 
-.page_article #contenu { width: 60%; }
+.page_article .content { width: 60%; }
 .page_article #navigation { width: 35%; }
 
 .cartouche .h1 { display: none; }
@@ -350,7 +350,7 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 /* page 404
 ----------------------------------------------- */
 
-.page_404 #conteneur { background: transparent url(images/bg_404.png) right 50% no-repeat; }
+.page_404 #container { background: transparent url(images/bg_404.png) right 50% no-repeat; }
 
 /* boutons admin */
 body .spip-admin-float { right: 5px; margin: 5px auto 0; }
@@ -364,18 +364,18 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 @media (max-width: 959px) {
 	/* les bases */
 	body,
-	#page,
-	#conteneur, body div.container,
+	.page,
+	#container, body div.container,
 	#top,
 	#entete,
 	#entete .accueil,
 	#nav,
 	#extra,
-	#contenu,
+	.content,
 	#navigation,
 	.footer { width: auto !important; margin: auto !important; padding: auto !important; }
-	#page { margin: 0; }
-	#contenu,
+	.page { margin: 0; }
+	.content,
 	#navigation { clear: both; float: none !important; }
 
 	/* la typo */
@@ -419,17 +419,17 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 /* Tablet Portrait width to 960px */
 @media only screen and (min-width: 768px) and (max-width: 959px) {
 	body { min-width: 768px; }
-	#page { padding: 3%; }
-	.page_sommaire #contenu { width: 90%; }
+	.page { padding: 3%; }
+	.page_sommaire .content { width: 90%; }
 	#navigation { width: 360px !important; margin: 0 !important; }
 }
 /* All Mobile Widths */
 @media only screen and (max-width: 767px) {
 	body { min-width: 300px; }
-	#page { padding: 5%; }
+	.page { padding: 5%; }
 	.page_sommaire .image_pop,
-	.page_sommaire #contenu .menu,
-	.page_sommaire #contenu .boites .h2 { width:auto !important; margin: 1em auto !important; float: none !important; }
+	.page_sommaire .content .menu,
+	.page_sommaire .content .boites .h2 { width:auto !important; margin: 1em auto !important; float: none !important; }
 }
 /* Mobile Landscape Width to Tablet Portrait Width */
 @media only screen and (min-width: 480px) and (max-width: 767px) {

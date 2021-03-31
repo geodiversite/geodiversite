@@ -33,7 +33,7 @@
 #hierarchie li { padding-left: 10px; }
 #hierarchie li.spacer { padding-right: 5px; }
 
-#navigation .h2 span,#contenu .h2{color:#GET{couleur1};}
+#navigation .h2 span,.content .h2{color:#GET{couleur1};}
 
 /*  ------------------------------------------
 /*  navigation
@@ -101,14 +101,14 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 /*  ------------------------------------------ */
 
 .page_sommaire #navigation { display: none; }
-.page_sommaire #contenu { float: none; width: 80%; margin: 30px auto 0; }
-.page_sommaire #contenu .menu { float: right; clear: none; width: 43%; padding: 12px 15px; background: #f2f2f2; }
+.page_sommaire .content { float: none; width: 80%; margin: 30px auto 0; }
+.page_sommaire .content .menu { float: right; clear: none; width: 43%; padding: 12px 15px; background: #f2f2f2; }
 
-.page_sommaire #contenu .menu .h2 { margin: 0; padding: 0; color: #666; font-size: 1.5em; }
-.page_sommaire #contenu .menu .menu-liste { margin: 0.4em 0; padding: 0.2em 0.1em; font-size: 1.1em; border: 0; }
-.page_sommaire #contenu .menu .menu-liste .menu-entree { display: inline; margin: 0; padding: 0; }
-.page_sommaire #contenu .menu .menu-liste .menu-entree:before { content: ";\0000a0" }
-.page_sommaire #contenu .menu .menu-liste .menu-entree:first-child:before { content: "" }
+.page_sommaire .content .menu .h2 { margin: 0; padding: 0; color: #666; font-size: 1.5em; }
+.page_sommaire .content .menu .menu-liste { margin: 0.4em 0; padding: 0.2em 0.1em; font-size: 1.1em; border: 0; }
+.page_sommaire .content .menu .menu-liste .menu-entree { display: inline; margin: 0; padding: 0; }
+.page_sommaire .content .menu .menu-liste .menu-entree:before { content: ";\0000a0" }
+.page_sommaire .content .menu .menu-liste .menu-entree:first-child:before { content: "" }
 .page_sommaire .boites .liste-items .item { float: left; clear: none; width: 25%; margin: 0; }
 
 .page_sommaire .image_pop { float: left; clear: none; width: 50%; position: relative; }
@@ -119,11 +119,11 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 .page_sommaire .image_pop .description a { padding: 0; font: bold 12px Arial,helvetica; color:#333; text-decoration: none; opacity: 1; }
 
 
-.page_upload #contenu,
-.page_publier #contenu,
-.page_ticket #contenu,
-.page_tickets #contenu,
-.page_editer_ticket #contenu { width: 60%; }
+.page_upload .content,
+.page_publier .content,
+.page_ticket .content,
+.page_tickets .content,
+.page_editer_ticket .content { width: 60%; }
 .page_upload #navigation,
 .page_publier #navigation,
 .page_ticket #navigation,
@@ -158,10 +158,10 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 
 /* Listes d'articles et extraits introductifs */
 
-.page_mot #contenu .boites.liste,
-.page_rubrique #contenu .boites.liste { clear: both; }
+.page_mot .content .boites.liste,
+.page_rubrique .content .boites.liste { clear: both; }
 
-#contenu .liste-items .item { margin-bottom: 0; }
+.content .liste-items .item { margin-bottom: 0; }
 .liste-items .item .info-publi { margin-left: 0; padding: 0; background: transparent; }
 
 .liste .liens_options { margin: 0; color: #999; }
@@ -181,11 +181,11 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 
 .page_carte html,
 .page_carte body { height: 100%; }
-.page_carte #top #extra { width: auto; position: absolute; z-index: 3000; right: 0; }
-.page_carte #page { overflow: hidden; width: 100%; margin: 0; height: 100%; position: absolute; left: 0; }
-.page_carte #conteneur,
-.page_carte #conteneur #contenu,
-.page_carte #conteneur #contenu .carte_gis { width: 100%; margin: 0; height: 100%; position: relative; }
+.page_carte .page { overflow: hidden; width: 100%; margin: 0; height: 100%; position: absolute; left: 0; }
+.page_carte #container,
+.page_carte #container .content,
+.page_carte #container .content .carte_gis { width: 100%; max-width: none; margin: 0; height: 100%; position: relative; }
+.page_carte .breadcrumb { display: none; }
 .page_carte .footer { position: absolute; bottom: 0; background: #fff; z-index: 1000; }
 .page_carte .footer #bouton { position: absolute; top: -20px; right: 10px; }
 .page_carte .footer.cache #bouton { background-position: left top; }
@@ -284,10 +284,10 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 /* page login + spip_pass + 404
 ----------------------------------------------- */
 
-.page_login #page #conteneur,
-.page_spip_pass #page #conteneur { width: 360px; margin: 0 auto; padding-top: 35px; }
-.page_login #contenu,
-.page_spip_pass #contenu { float: none; width: 100%; }
+.page_login .page #container,
+.page_spip_pass .page #container { width: 360px; margin: 0 auto; padding-top: 35px; }
+.page_login .content,
+.page_spip_pass .content { float: none; width: 100%; }
 
 /* page upload
 ----------------------------------------------- */
@@ -301,8 +301,8 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .page_upload #formulaire_diogene .editer_texte,
 .page_upload #formulaire_diogene .fieldset { margin: 20px 0; padding: 10px; border: 5px solid #f2f2f2; background: #fff; }
 .page_upload .previsu_document { border: 0; }
-.page_upload #contenu .h2,
-.page_upload #contenu div.texte,
+.page_upload .content .h2,
+.page_upload .content div.texte,
 .page_upload .previsu_document h4,
 .page_upload .previsu_document .infos_document,
 .page_upload .previsu_document a.legende_add,
