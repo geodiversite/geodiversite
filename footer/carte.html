@@ -5,15 +5,15 @@
 	$(function(){
 		// ajouter le bouton pour afficher/masquer le pied
 		// puis le faire glisser hors de la fenetre au chargement
-		$('#pied .conteneur').append('<div id="bouton"> </div>');
-		var pied_h = $('#pied').height();
-		$('#pied').animate({"bottom": (0-pied_h)}).toggleClass('cache');
+		$('#footer .container').append('<div id="bouton"> </div>');
+		var pied_h = $('#footer').height();
+		$('#footer').animate({"bottom": (0-pied_h)}).toggleClass('cache');
 		$('#bouton').on('click', function(){
-			$('#pied').toggleClass('cache');
-			if ($('#pied').hasClass('cache')) {
-				$('#pied').animate({"bottom": (0-pied_h)});
+			$('#footer').toggleClass('cache');
+			if ($('#footer').hasClass('cache')) {
+				$('#footer').animate({"bottom": (0-pied_h)});
 			} else {
-				$('#pied').animate({"bottom": 0});
+				$('#footer').animate({"bottom": 0});
 			}
 		});
 	});
