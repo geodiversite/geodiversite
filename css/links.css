@@ -1,0 +1,90 @@
+/*! Hyperlinks - Tiny Typo v2.5.5 2017 - MIT License - tinytypo.tetue.net */
+/* ---------------------------------------------------------------------- */
+/* [fr] Signaletique des hyperliens : http://letrainde13h37.fr/43/signaletique-hyperliens/ */
+a {
+  background: transparent;
+  -webkit-text-decoration-skip: objects;
+  color: inherit;
+}
+a:visited { }
+a:focus {
+  /* http://www.outlinenone.com
+  /* outline: thin dotted;
+  /* Remember to define focus styles! */
+
+}
+a:hover {
+  outline: 0;
+  cursor: pointer;
+}
+a:active {
+  outline: 0;
+}
+a:after,
+a:before,
+a small {
+  font-size: 90%;
+  opacity: .9;
+}
+a[hreflang]:after {
+  content: "\0000a0[" attr(hreflang) "]";
+  font-weight: normal;
+}
+/* external links */
+a.external:after {
+  content: "\0000a0\279A";
+}
+a[hreflang].external:after {
+  content: "\0000a0[" attr(hreflang) "]\0000a0\279A";
+}
+/* mailto */
+a.mailto:after {
+  content: "\0000a0\2709";
+}
+a[hreflang].mailto:after {
+  content: "\0000a0[" attr(hreflang) "]\0000a0\2709";
+}
+/* tel */
+a.tel:after {
+  content: "\0000a0\2706";
+}
+a[hreflang].tel:after {
+  content: "\0000a0[" attr(hreflang) "]\0000a0\2706";
+}
+/* downloads */
+a.download:after {
+  content: "\0000a0\21A7";
+}
+a[hreflang].download:after {
+  content: "\0000a0[" attr(hreflang) "]\0000a0\21A7";
+}
+/* Linked images */
+a img {
+  border: 0;
+}
+a:focus img,
+a:active img {
+  -moz-transform: translateY(1px);
+  -webkit-transform: translateY(1px);
+  -o-transform: translateY(1px);
+  -ms-transform: translate(1px);
+  transform: translateY(1px);
+}
+@media print {
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+  a:after {
+    content: '';
+  }
+  a[rel="external"]:after,
+  a.external:after {
+    content: " (" attr(href) ")";
+  }
+  .ir a:after,
+  a[href^="javascript:"]:after,
+  a[href^="#"]:after {
+    content: '';
+  }
+}

@@ -1,0 +1,27 @@
+/* fixes for SPIP */
+.formulaire_spip ul,
+.comments-items { list-style: none; margin: 0; }
+
+/* fixes for tinytypo */
+.invisible { display: none; }
+.on { font-weight: bold; }
+
+/* https://github.com/tetue/tinytypo/issues/17 */
+a:focus img,
+a:active img { -moz-transform: none; -webkit-transform: none; -o-transform: none; -ms-transform: none; transform: none; }
+
+/* des tableaux vraiment responsive pompés sur semantic ui */
+@media (max-width: 768px) {
+	table.spip { width: 100%; }
+	table.spip tbody,
+	table.spip tr,
+	table.spip tr > th,
+	table.spip tr > td { width: auto !important; display: block !important; }
+	table.spip thead,
+	table.spip tfoot { display: block; }
+	table.spip tr { padding-top: 1em; padding-bottom: 1em; border-bottom: 1px solid; }
+	table.spip tr > th,
+	table.spip tr > td { background: none; border: none !important; padding: 0.25em 0.75em !important; }
+	table.spip th:first-child,
+	table.spip td:first-child { font-weight: bold; }
+}
