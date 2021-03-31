@@ -264,18 +264,6 @@ h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #
 #nav .menu-liste .menu-entree a:hover { color: #f5f5f5; text-decoration: none; }
 #nav .menu-liste.univers { position: absolute; right: 0; top: 45px; background: transparent;}
 
-#extra .menu { float: right; margin: 0; padding: 5px; padding-left: 30px; background: transparent url(images/bg_extra.png) left 50% no-repeat; }
-#extra .menu .h2,
-#extra .menu .menu-liste,
-#extra .menu .menu-liste .menu-entree { display: inline; border: 0; text-transform: uppercase; font-size: 1em; font-weight: normal; color: #fff; font-family: Arial, Helvetica, sans-serif; }
-#extra .menu .menu-liste .menu-entree a { color: inherit; }
-#extra .menu .formulaire_recherche { position: relative; display: inline-block; margin-left: 5px; }
-#extra .menu .formulaire_recherche * { vertical-align: baseline; }
-#extra .menu .formulaire_recherche label { text-transform: uppercase; font-weight: normal; z-index: 1; }
-#extra .menu .formulaire_recherche input.text { padding: 1px; border: 0; background: #fff; color: #333; }
-#extra .menu .formulaire_recherche input.submit { padding: 1px; border: 0; background: #f5f5f5; cursor: pointer; }
-
-
 /*  ------------------------------------------
 /*  hierarchie
 /*  ------------------------------------------ */
@@ -357,7 +345,6 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	.page,
 	#container, body div.container,
 	#nav,
-	#extra,
 	.content,
 	#navigation,
 	.footer { width: auto !important; margin: auto !important; padding: auto !important; }
@@ -376,10 +363,6 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	#nav .menu-liste.univers { position: relative; top: 0; }
 	#nav .menu-liste .menu-entree a,
 	#nav .menu-liste .menu-entree a:hover { color: #00c0f8; }
-	#extra { margin-bottom: 15px !important; }
-	#extra .menu { background: #000; padding-left: 5px; float: none; overflow: hidden; }
-	#extra .menu .h2 { display: none; }
-	#extra .menu .menu-liste .menu-entree a { color: #fff; font-weight: bold; }
 
 	#hierarchie li { display: none; }
 	#hierarchie li.on { display: block; }
