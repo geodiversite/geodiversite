@@ -1,0 +1,9 @@
+<BOUCLE_ariane(RUBRIQUES){id_rubrique}{tout}>
+<ul class="breadcrumb-items">
+	<BOUCLE_hierarchie(HIERARCHIE){id_rubrique}{tout}{0,n-1}>[
+	(#COMPTEUR_BOUCLE|>{3}|non)<li class="item"><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><span class="divider"> &gt; </span></li>][
+	(#COMPTEUR_BOUCLE|>{3}|oui)<li class="item"><a href="#URL_RUBRIQUE" title="[(#TITRE|couper{80}|attribut_html)]">...</a><span class="divider"> &gt; </span></li>]
+	</BOUCLE_hierarchie>
+	[<li class="item active"><span>(#TITRE|couper{80})</span></li>]
+</ul>
+</BOUCLE_ariane>
