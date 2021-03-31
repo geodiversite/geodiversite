@@ -1,0 +1,102 @@
+/*! Images and Gallery - Tiny Typo v2.5.5 2017 - MIT License - tinytypo.tetue.net */
+/* ------------------------------------------------------------------------------ */
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: middle;
+}
+@media print {
+  img {
+    max-width: 100% !important;
+  }
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+/* thumbnail */
+.thumb,
+.thumb.left {
+  margin: 0 10px 10px 0;
+}
+.thumb.right {
+  margin: 0 0 10px 10px;
+}
+/* style effects */
+img.round {
+  border-radius: 5px;
+}
+img.circle {
+  border-radius: 50%;
+}
+img.border {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+}
+img.shadow {
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7), -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
+}
+/* figure */
+figure,
+figcaption {
+  display: block;
+}
+figure {
+  margin: 0;
+  margin-bottom: 0.75em;
+}
+figure.center {
+  margin-bottom: 1.5em;
+  text-align: center;
+}
+figure.left {
+  margin-right: 1.5em;
+}
+figure.right {
+  margin-left: 1.5em;
+}
+figure figcaption {
+  font-size: 80%;
+}
+@media (max-width: 640px) {
+  figure {
+    margin-bottom: 1.5em;
+  }
+  figure.left {
+    float: none;
+    margin-right: 0;
+  }
+  figure.right {
+    float: none;
+    margin-left: 0;
+  }
+}
+/* album */
+.album {
+  margin-bottom: 1.5em;
+}
+.album ul {
+  overflow: hidden;
+  margin: 0;
+  list-style: none;
+}
+.album li {
+  float: left;
+  margin: 0;
+  margin: 0 10px 10px 0;
+}
+.album .thumb {
+  margin: 0;
+}

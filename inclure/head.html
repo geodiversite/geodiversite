@@ -8,22 +8,41 @@
 [(#REM) Fierement fabrique avec SPIP ]
 <meta name="generator" content="SPIP[ (#SPIP_VERSION)]" />
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 [(#REM) Lien vers le flux RSS du site ]
 [<link rel="alternate" type="application/rss+xml" title="<:syndiquer_site:>" href="(#URL_PAGE{backend})" />]
 
-[(#REM) Feuille de style par defaut pour le code genere par SPIP ]
-[<link rel="stylesheet" href="(#CHEMIN{spip_style.css}|direction_css)" type="text/css" media="all" />]
+
+[<link rel="stylesheet" href="(#CSS{css/reset.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/clear.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/font.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/typo.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/links.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/media.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/tinyfix.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/form.css})" type="text/css" />]
 
 [(#REM) Balise permettant aux plugins d'inserer des fichiers CSS ]
 #INSERT_HEAD_CSS
 
-[(#REM) Feuille de style CSS pour l'affichage du site a l'ecran ]
-[<link rel="stylesheet" href="(#CHEMIN{habillage.css}|direction_css)" type="text/css" media="projection, screen, tv" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.form.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.comment.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.list.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.petition.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.pagination.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/spip.portfolio.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/grid.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/button.css})" type="text/css" />]
+[<link rel="stylesheet" href="(#CSS{css/layout.css})" type="text/css" />]
 
-[(#REM) Feuille de style CSS pour l'impression ]
-[<link rel="stylesheet" href="(#CHEMIN{impression.css}|direction_css)" type="text/css" media="print" />]
+
+[(#REM) Feuille de style du theme ]
+[<link rel="stylesheet" href="(#CSS{css/theme.css})" type="text/css" />]
+
+[(#REM) Feuille de style CSS pour l'impression, n'existe pas par defaut ]
+[<link rel="stylesheet" href="(#CSS{css/print.css})" type="text/css" media="print" />]
 
 [(#CHEMIN{inc-theme-head.html}|oui)
 #INCLURE{fond=inc-theme-head,env}
@@ -32,7 +51,7 @@
 [(#REM) Feuille de style personnalisee pour surcharger les precedentes
 	A noter par defaut cette css n'existe pas
 ]
-[<link rel="stylesheet" href="(#CHEMIN{perso.css}|direction_css)" type="text/css" media="all" />]
+[<link rel="stylesheet" href="(#CSS{css/perso.css})" type="text/css" />]
 
 [(#REM) Balise permettant aux plugins d'inserer des appels javascript ou css ;
 	C'est ici que SPIP va inserer l'appel de la librairie jQuery
@@ -40,3 +59,7 @@
 	si l'option est cochee dans Configuration
 ]
 #INSERT_HEAD
+
+[<link rel="icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />
+[<link rel="shortcut icon" type="image/x-icon" href="(#CHEMIN{favicon.ico})" />]]
+

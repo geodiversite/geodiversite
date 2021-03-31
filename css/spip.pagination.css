@@ -1,0 +1,8 @@
+.pagination .sep,
+.pagination .label { display: none }
+.pagination { margin: 1em 0; text-align: center; }
+.pagination .lien_pagination,
+.pagination .on { padding: 2px 5px; margin: 0 2px; text-decoration: none; }
+.pagination .lien_pagination:hover,
+.pagination .lien_pagination:active { color: #111; text-decoration: underline; }
+.pagination .disabled { display: none }
