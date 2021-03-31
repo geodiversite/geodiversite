@@ -40,7 +40,7 @@ body { margin: 0; padding: 0; text-align: center; }
 
 #container { clear: both; overflow: hidden; }
 
-#navigation { margin-top: 1em; overflow: hidden; }
+#extra { margin-top: 1em; overflow: hidden; }
 
 .footer { margin: 1em 0 0 0; font-size: 0.90em; }
 .footer img { vertical-align: middle; }
@@ -84,10 +84,10 @@ body { margin: 0; padding: 0; text-align: center; }
 .menu-liste .menu-entree .menu-entree { padding: 0; border: 0; }
 #nav .menu-liste .menu-entree {	display: inline;padding:0;margin:0 0 0 10px; }
 
-#navigation .menu-liste {border-bottom:0;}
-#navigation .menu-liste .menu-entree {list-style:square; margin-left:15px; padding:0; color:#f63;}
-#navigation .menu-liste .menu-entree .menu-liste {margin-left:0;}
-#navigation .liste .h2 {margin-top:1em;}
+#extra .menu-liste {border-bottom:0;}
+#extra .menu-liste .menu-entree {list-style:square; margin-left:15px; padding:0; color:#f63;}
+#extra .menu-liste .menu-entree .menu-liste {margin-left:0;}
+#extra .liste .h2 {margin-top:1em;}
 
 /* Pagination */
 .pagination { clear: both; text-align: right; font-size: 0.90em; color: #666; }
@@ -238,7 +238,7 @@ body { font-family: Arial, Helvetica, sans-serif; font-size: 0.75em; color: #666
 .page { width: 100%; margin: 0; padding: 0; border: 0; }
 body div.container { width: 960px; margin: 0 auto; }
 .content { float: left; width: 76%; padding-top: 0; }
-#navigation { float: right; width: 21%; }
+#extra { float: right; width: 21%; }
 .footer { clear: both; width: 100%; padding: 0; background: transparent; border: 0; border-top: 1px solid #ddd; text-align: left; }
 
 h1,h2,h3,h4,h5,h6,
@@ -285,12 +285,12 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 /*  navigation
 /*  ------------------------------------------ */
 
-#navigation { margin-top: 3.2em; }
-#navigation .menu { margin-bottom: 20px; padding: 0; background: transparent; border: 0; }
-#navigation .h2 { margin-bottom: 15px; text-align: right; }
-#navigation .h2 span { display: table; float: right; padding: 4px 10px 4px 40px; min-width: 100px;
+#extra { margin-top: 3.2em; }
+#extra .menu { margin-bottom: 20px; padding: 0; background: transparent; border: 0; }
+#extra .h2 { margin-bottom: 15px; text-align: right; }
+#extra .h2 span { display: table; float: right; padding: 4px 10px 4px 40px; min-width: 100px;
 	background: #f2f2f2 url(images/bg_titre_right.png) left 50% no-repeat; }
-#navigation .h3 { font-size: 1em; margin: 5px 0; padding: 0 0 2px; border-bottom: 1px solid #f2f2f2; }
+#extra .h3 { font-size: 1em; margin: 5px 0; padding: 0 0 2px; border-bottom: 1px solid #f2f2f2; }
 
 /*  ------------------------------------------
 /*  pied
@@ -307,7 +307,7 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 	background: #00c0f8 url(images/bg_ariane_blue_on.png) right 50% no-repeat; }
 
 .page_article .content { width: 60%; }
-.page_article #navigation { width: 35%; }
+.page_article #extra { width: 35%; }
 
 .cartouche .h1 { display: none; }
 
@@ -346,11 +346,11 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	#container, body div.container,
 	#nav,
 	.content,
-	#navigation,
+	#extra,
 	.footer { width: auto !important; margin: auto !important; padding: auto !important; }
 	.page { margin: 0; }
 	.content,
-	#navigation { clear: both; float: none !important; }
+	#extra { clear: both; float: none !important; }
 
 	/* la typo */
 	img, table, td, blockquote, code, pre, textarea, input, iframe, object, embed, video { max-width: 100% !important; }
@@ -370,14 +370,14 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	.comments-list li { padding: 0 }
 	.comments-list .comment-meta img.photo { display: none; }
 
-	#navigation,
-	#navigation .menu,
-	#navigation .menu .explication,
-	#navigation .menu .adr,
-	#navigation .menu .geo { text-align: left !important; }
-	#navigation .h2 { margin: 20px 0; padding: 4px 0 4px 10px; text-align: left;
+	#extra,
+	#extra .menu,
+	#extra .menu .explication,
+	#extra .menu .adr,
+	#extra .menu .geo { text-align: left !important; }
+	#extra .h2 { margin: 20px 0; padding: 4px 0 4px 10px; text-align: left;
 		background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
-	#navigation .h2 span { display: inline; float: none; padding: 0; background: transparent; }
+	#extra .h2 span { display: inline; float: none; padding: 0; background: transparent; }
 	
 	.suivi .liste-items .item { float: left; clear: none; margin-right: 10px; }
 	.suivi .liste-items .item a { padding-left: 25px; padding-right: 0; background-position: left 50%; }
@@ -391,7 +391,7 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	body { min-width: 768px; }
 	.page { padding: 3%; }
 	.page_sommaire .content { width: 90%; }
-	#navigation { width: 360px !important; margin: 0 !important; }
+	#extra { width: 360px !important; margin: 0 !important; }
 }
 /* All Mobile Widths */
 @media only screen and (max-width: 767px) {
@@ -404,7 +404,7 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 /* Mobile Landscape Width to Tablet Portrait Width */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
 	body { min-width: 480px; }
-	#navigation { width: 360px !important; margin: 0 !important; }
+	#extra { width: 360px !important; margin: 0 !important; }
 }
 
 @media (max-width: 520px) { 
