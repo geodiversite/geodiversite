@@ -5,7 +5,7 @@ var map;
 // resize la carte si chgt de taille sur window
 // (placée ici pour permettre sa surcharge depuis un autre squelette)
 var resizeMap = function() {
-	var top_h = $('#top').height();
+	var top_h = $('#header').height();
 	var page_h = $('.page').height();
 	$('#geomap').height(page_h - top_h);
 };
