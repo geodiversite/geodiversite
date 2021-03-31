@@ -38,11 +38,6 @@ body { margin: 0; padding: 0; text-align: center; }
 
 .page { position: relative; background: #fff; text-align: left; }
 
-#entete .accueil { display: block; }
-#entete .accueil .spip_logos { vertical-align: bottom; line-height: 1em; }
-#entete .accueil #nom_site_spip { vertical-align: bottom; }
-#entete .formulaire_menu_lang { position: absolute; right: 0; top: 0.90em; display: block; width: 30%; } /*Cf.: spip_formulaires.css*/
-
 #container { clear: both; overflow: hidden; }
 
 #navigation { margin-top: 1em; overflow: hidden; }
@@ -262,10 +257,6 @@ h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #
 /*  le menu de navigation + entete + extra
 /*  ------------------------------------------ */
 
-#entete { padding: 10px 0 5px; background: #fff; }
-#entete .accueil { width: 960px; margin: 0 auto; text-align: left; }
-#entete .accueil #nom_site_spip { font: bold 4em geol, Arial, Helvetica, sans-serif; }
-
 #nav { background: #f2f2f2; border: 1px dashed #ddd; border-left: 0; border-right: 0; overflow: hidden; }
 #nav .menu-liste { float: right; border: 0; font-size: 1.1em; text-transform: uppercase; padding: 5px; padding-left: 30px; background: #00c0f8 url(images/bg_nav.png) left 50% no-repeat; }
 #nav .menu-liste .menu-entree { display: inline; margin: 0.20em 0; padding: 0.20em; }
@@ -365,8 +356,6 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	body,
 	.page,
 	#container, body div.container,
-	#entete,
-	#entete .accueil,
 	#nav,
 	#extra,
 	.content,
