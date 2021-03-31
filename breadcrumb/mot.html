@@ -1,0 +1,7 @@
+<BOUCLE_ariane(MOTS){id_mot}>
+<ul class="breadcrumb-items">
+	<BOUCLE_auteur(AUTEURS){id_auteur=#ENV{id_auteur,0}}>[<li class="item"><a href="#URL_AUTEUR{#ENV{id_auteur}}">(#NOM|couper{80})</a><span class="divider"> &gt; </span></li>]</BOUCLE_auteur>
+	<li class="item"><a href="#URL_PAGE{tags}"><:geol:tags:></a><span class="divider"> &gt; </span></li>
+	[<li class="item active"><span>(#TITRE|couper{80})</span></li>]
+</ul>
+</BOUCLE_ariane>
