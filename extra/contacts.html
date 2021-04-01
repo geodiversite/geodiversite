@@ -2,14 +2,14 @@
 [(#SESSION{id_auteur}|=={#ID_AUTEUR}|oui)
 <div class="menu amis auteurs">
 	[(#REM) invitations de l'auteur ]
-	[(#INCLURE{fond=liste/amis_invitations,
+	[(#INCLURE{fond=inclure/liste/amis_invitations,
 		id_auteur,
 		env,
 		ajax})]
 </div>	
 <div class="menu amis auteurs">	
 	[(#REM) sollicitations de l'auteur ]
-	[(#INCLURE{fond=liste/amis_sollicitations,
+	[(#INCLURE{fond=inclure/liste/amis_sollicitations,
 		id_auteur,
 		env,
 		ajax})]

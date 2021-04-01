@@ -3,7 +3,7 @@
 		<h1 class="h1"><:resultats_recherche:></h1>
 	</div>
 	[(#RECHERCHE|?{#SET{tri,#ENV{tri,points}},#SET{tri,#ENV{tri,date}}})]
-	[(#INCLURE{fond=liste/recherche-articles-vignette,
+	[(#INCLURE{fond=inclure/liste/recherche-articles-vignette,
 		largeur=200,hauteur=200,info_auteur=non,
 		par=#GET{tri},
 		categories=#ENV**{categories,1},
