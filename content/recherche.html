@@ -4,7 +4,7 @@
 	</div>
 	[(#RECHERCHE|?{#SET{tri,#ENV{tri,points}},#SET{tri,#ENV{tri,date}}})]
 	[(#INCLURE{fond=inclure/liste/recherche-articles-vignette,
-		largeur=200,hauteur=200,info_auteur=non,
+		info_auteur=non,
 		par=#GET{tri},
 		categories=#ENV**{categories,1},
 		id_mot=#ENV{echelle},
