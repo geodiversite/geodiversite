@@ -17,7 +17,7 @@
 	<ul class="liste-items">
 		<BOUCLE_auteurs(AUTEURS) {tri #ENV{par,nom},#GET{defaut_tri}}{tout} {pagination #ENV{pas,#GET{cols}|mult{3}}}>
 		<li class="item[ first(#COMPTEUR_BOUCLE|modulo{#GET{cols}}|=={1}|oui)]">
-			[(#INCLURE{fond=inclure/auteur-vignette,id_auteur})]
+			[(#INCLURE{fond=inclure/resume/auteur-vignette,id_auteur})]
 		</li>
 		</BOUCLE_auteurs>
 	</ul>
