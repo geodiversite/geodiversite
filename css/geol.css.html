@@ -158,22 +158,20 @@ body a.spip-admin-boutons:hover { color: #GET{couleur1}; }
 
 /* Listes d'articles et extraits introductifs */
 
-.page_mot .content .boites.liste,
-.page_rubrique .content .boites.liste { clear: both; }
+.page_mot .content .liste.articles ,
+.page_rubrique .content .liste.articles { clear: both; }
 
 .content .liste-items .item { margin-bottom: 0; }
 .liste-items .item .info-publi { margin-left: 0; padding: 0; background: transparent; }
 
 .liste .liens_options { margin: 0; color: #999; }
-/* utiliser inline-block au lieu de float http://www.webinventif.fr/inline-block/ */
-.boites .liste-items .item { width: 48%; padding-top: 20px;  margin-left: 2%; border: 0; display: inline-block; vertical-align: top; zoom: 1; *display: inline; }
-.boites .liste-items .item.first { margin-left: 0; }
-.boites .liste-items .item .titre a { display: block; }
-.boites .liste-items .item .spip_logos { float: none; margin: 0; display: block; }
 
-.boites .liste-items .item .titre { margin: 0 0 10px; }
-.boites .liste-items .item .texte { margin: 10px 0; line-height: 1.2em; }
-.boites .liste-items .item p { margin: 0; }
+.liste .liste-items .item .titre a { display: block; }
+.liste .liste-items .item .spip_logo { float: none; margin: 0; display: block; }
+
+.liste .liste-items .item .titre { margin: 0 0 10px; }
+.liste .liste-items .item .texte { margin: 10px 0; line-height: 1.2em; }
+.liste .liste-items .item p { margin: 0; }
 
 /*  ------------------------------------------
 /*  page carte
@@ -242,16 +240,6 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 
 /* listes des pages galerie
 ----------------------------------------------- */
-
-.boites .liste-items { overflow: hidden; }
-.boites .liste-items .item { width: 31.333%; }
-.boites.cols2 .liste-items .item { width: 48%; }
-.boites.cols3 .liste-items .item { width: 31.333%; }
-.boites.cols4 .liste-items .item { width: 23%; }
-.boites.cols5 .liste-items .item { width: 18%; }
-.boites.cols6 .liste-items .item { width: 14.667%; }
-.boites .liste-items .item .titre,
-.boites .liste-items .item .info_media { padding-right: 20px; }
 
 .liste .pagination { margin: 20px 0; text-align: center; }
 .liste .pagination strong.on,

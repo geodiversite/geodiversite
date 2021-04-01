@@ -21,9 +21,8 @@
 	date,-1,
 	popularite,-1
 }})]
-[(#SET{cols,#ENV{cols,3}})]
 <B_articles>
-<div class="liste articles boites[ cols(#GET{cols})]">
+<div class="liste articles">
 	#ANCRE_PAGINATION
 	<h2 class="h2"><:geol:contribs:>[ ((#GRAND_TOTAL))]</h2>
 	<div class="liens_options">
@@ -31,17 +30,17 @@
 		[(#TRI{points,<:geol:trier_par_points:>,ajax}), ]
 		[(#TRI{date,<:geol:trier_par_date:>,ajax}), ]
 		[(#TRI{popularite,<:geol:trier_par_pop:>,ajax}) | ]
-		[(#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#GET{cols},self=#SELF})]
+		[(#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#ENV{grid,3},self=#SELF})]
 	</div>
-	<ul class="liste-items">
+	<ul class="liste-items grid-[(#ENV{grid,3})]-small-[(#ENV{grid_small,2})] has-gutter-[(#ENV{grid_gutter,l})]">
 		<BOUCLE_articles(ARTICLES documents_liens documents){documents.mode=document}{documents.extension IN #GET{extensions}}
 			{id_mot?}
 			{enfants #ENV**{categories}}
 			{id_licence IN #ENV**{id_licence}}
 			{recherche?}
 			{tri #ENV{par,points},#GET{defaut_tri}}
-			{pagination #ENV{pas,#GET{cols}|mult{3}}}>
-		<li class="item[ first(#COMPTEUR_BOUCLE|modulo{#GET{cols}}|=={1}|oui)]">
+			{pagination #ENV{pas,#ENV{grid,3}|mult{3}}}>
+		<li class="item">
 			[(#INCLURE{fond=inclure/resume/article-vignette,id_article,env})]
 		</li>
 		</BOUCLE_articles>
