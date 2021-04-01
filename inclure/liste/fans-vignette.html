@@ -1,16 +1,16 @@
 #CACHE{0}
 #SET{cols,#ENV{cols,3}}<B_auteurs>
-<div class="liste auteurs fans boites[ cols(#GET{cols})]">
+<div class="liste auteurs fans">
 	#ANCRE_PAGINATION
 	<BOUCLE_combien(FAVORIS){id_objet=#ENV{id_article}}{objet=article} />
 	[<h2 class="h2">(#GRAND_TOTAL|singulier_ou_pluriel{geol:contributeur,geol:contributeurs})</h2>]
 	<//B_combien>
 	<div class="liens_options">
-		[(#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#GET{cols},objets=<:geol:objets_auteurs:>,self=#SELF})]
+		[(#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#ENV{grid,3},objets=<:geol:objets_auteurs:>,self=#SELF})]
 	</div>
-	<ul class="liste-items">
-		<BOUCLE_auteurs(FAVORIS){id_objet=#ENV{id_article}}{objet=article} {!par maj} {pagination #ENV{pas,#GET{cols}|mult{3}}}>
-		<li class="item[ first(#COMPTEUR_BOUCLE|modulo{#GET{cols}}|=={1}|oui)]">
+	<ul class="liste-items grid-[(#ENV{grid,3})]-small-[(#ENV{grid_small,2})] has-gutter-[(#ENV{grid_gutter,l})]">
+		<BOUCLE_auteurs(FAVORIS){id_objet=#ENV{id_article}}{objet=article} {!par maj} {pagination #ENV{pas,#ENV{grid,3}|mult{3}}}>
+		<li class="item">
 			[(#INCLURE{fond=inclure/resume/auteur-vignette,id_auteur=#ID_AUTEUR})]
 		</li>
 		</BOUCLE_auteurs>

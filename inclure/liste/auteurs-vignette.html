@@ -3,7 +3,7 @@
 	date_inscription,-1
 }})][(#SET{cols,#ENV{cols,3}})]
 <B_auteurs>
-<div class="liste auteurs boites[ cols(#GET{cols})]">
+<div class="liste auteurs">
 	#ANCRE_PAGINATION
 	<BOUCLE_combien(AUTEURS){tout} />
 	[<h2 class="h2">(#GRAND_TOTAL|singulier_ou_pluriel{geol:contributeur,geol:contributeurs})</h2>]
@@ -12,11 +12,11 @@
 		<strong><:geol:trier:></strong>
 		[(#TRI{nom,<:geol:trier_par_nom:>,ajax})]
 		[(#PLUGIN{date_inscription}|oui)[, (#TRI{date_inscription,<:geol:trier_par_date_inscription:>,ajax})]]
-		[ | (#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#GET{cols},objets=<:geol:objets_auteurs:>,self=#SELF})]
+		[ | (#INCLURE{fond=inclure/listes_liens_pas,pas,tri,cols=#ENV{grid,3},objets=<:geol:objets_auteurs:>,self=#SELF})]
 	</div>
-	<ul class="liste-items">
-		<BOUCLE_auteurs(AUTEURS) {tri #ENV{par,nom},#GET{defaut_tri}}{tout} {pagination #ENV{pas,#GET{cols}|mult{3}}}>
-		<li class="item[ first(#COMPTEUR_BOUCLE|modulo{#GET{cols}}|=={1}|oui)]">
+	<ul class="liste-items grid-[(#ENV{grid,3})]-small-[(#ENV{grid_small,2})] has-gutter-[(#ENV{grid_gutter,l})]">
+		<BOUCLE_auteurs(AUTEURS) {tri #ENV{par,nom},#GET{defaut_tri}}{tout} {pagination #ENV{pas,#ENV{grid,3}|mult{3}}}>
+		<li class="item">
 			[(#INCLURE{fond=inclure/resume/auteur-vignette,id_auteur})]
 		</li>
 		</BOUCLE_auteurs>

@@ -399,7 +399,7 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 	.page { padding: 5%; }
 	.page_sommaire .image_pop,
 	.page_sommaire .content .menu,
-	.page_sommaire .content .boites .h2 { width:auto !important; margin: 1em auto !important; float: none !important; }
+	.page_sommaire .content .liste .h2 { width:auto !important; margin: 1em auto !important; float: none !important; }
 }
 /* Mobile Landscape Width to Tablet Portrait Width */
 @media only screen and (min-width: 480px) and (max-width: 767px) {
@@ -409,5 +409,4 @@ Cf.: http://www.alsacreations.com/astuce/lire/1177
 
 @media (max-width: 520px) { 
 	#nav .menu-liste .menu-entree { display: block; width: 48%; float: left; }
-	.boites .liste-items .item { width: 100% !important; margin: auto !important; padding: auto !important; }
 }
