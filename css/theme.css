@@ -111,10 +111,8 @@ a:focus,a:hover,a:active { color: #005177; text-decoration: underline; backgroun
 /* Variantes
 /* ------------------------------------------ */
 
-.page_article #container { max-width: 680px; font-size: 1.125em; }
-@media (max-width: 576px) {
-    #container { font-size: 1em; }
-}
+.page_article #container { max-width: 760px; }
+
 #container.fullwidth { max-width: none; width: 100%; }
 
 .page_login .content { max-width: 360px; margin: 0 auto; padding: 1em 0; text-align: center; }
