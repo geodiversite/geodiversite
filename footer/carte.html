@@ -1,12 +1,11 @@
 [(#INCLURE{fond=footer/dist})]
 <script type="text/javascript">
-<!--
 (function($){
 	$(function(){
 		// ajouter le bouton pour afficher/masquer le pied
 		// puis le faire glisser hors de la fenetre au chargement
 		$('#footer .container').append('<div id="bouton"> </div>');
-		var pied_h = $('#footer').height();
+		var pied_h = $('#footer').outerHeight();
 		$('#footer').animate({"bottom": (0-pied_h)}).toggleClass('cache');
 		$('#bouton').on('click', function(){
 			$('#footer').toggleClass('cache');
@@ -18,5 +17,4 @@
 		});
 	});
 })(jQuery);
--->
 </script>
