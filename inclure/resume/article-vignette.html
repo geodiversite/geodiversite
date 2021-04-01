@@ -1,7 +1,7 @@
 [(#REM) 
 	Parametres :
-	-* largeur : de l'image... (largeur originale par defaut)
-	-* hauteur : de l'image... (hauteur originale par defaut)
+	-* largeur : de l'image (538 par défaut)
+	-* hauteur : de l'image (sans limite par defaut)
 	-* info_titre : si !=non afficher le titre
 	-* info_texte : si !=non afficher le texte
 	-* info_auteur : si !=non afficher le nom de l'auteur
@@ -17,10 +17,8 @@
 #SET{url_article,#URL_ARTICLE}
 
 <BOUCLE_doc(DOCUMENTS){id_article}{mode=document}{vu=non}{0,1}>
-[(#SET{largeur,#ENV{largeur,#LARGEUR}})]
-[(#SET{hauteur,#ENV{hauteur,#HAUTEUR}})]
 [<a href="#GET{url_article}">
-	(#LOGO_DOCUMENT|image_reduire{#GET{largeur},#GET{hauteur}}|inserer_attribut{alt,[(#TITRE|couper{80}|texte_backend)]})
+	(#LOGO_DOCUMENT|image_recadre{1.86:1,-,focus}|image_reduire{#ENV{largeur,538},#ENV{hauteur,0}}|inserer_attribut{alt,[(#_article_vignette:TITRE|couper{80}|texte_backend)]})
 </a>]
 </BOUCLE_doc>
 
