@@ -126,3 +126,10 @@ a:focus,a:hover,a:active { color: #005177; text-decoration: underline; backgroun
 .page_login .formulaire_login #pass_securise { display: none !important; }
 .page_login .formulaire_login *,
 .page_login .formulaire_login label { text-align: center; }
+
+/* page auteur + auteurs */
+.liste.auteurs .item { display: flex; }
+.liste.auteurs .item .vcard { margin-left: 0.5em; }
+.liste.auteurs .item .vcard .titre { margin: 0; }
+.liste.auteurs .item .vcard a { color: inherit; }
+.liste.auteurs .item .vcard a:hover { text-decoration: none; }
