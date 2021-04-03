@@ -485,6 +485,9 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 
 /* formulaire_forum */
 
+.formulaire_forum .session_qui,
+.formulaire_forum .saisie_texte label,
+.formulaire_forum .saisie_texte .explication,
 .formulaire_forum .previsu .forum-chapo .forum-titre { display: none; }
 .formulaire_forum .previsu .forum-chapo small { font-size: 1em; }
 .formulaire_forum .previsu .forum-chapo small span { font-weight: bold; }
