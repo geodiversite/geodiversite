@@ -568,3 +568,124 @@ body .resizehandle_boutons { margin-top: 0; }
 /* fausse modale pour certains formulaires */
 
 .geomodale { position: absolute; width: 600px; left: 50%; margin-left: -300px; background: #ddd; }
+
+
+
+
+
+/*
+********************
+********************
+
+habillage.css
+
+********************
+********************
+*/
+
+
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+/* 			Personnalisations geodiversite					 */
+/* --------------------------------------------------------- */
+/* --------------------------------------------------------- */
+
+
+
+h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #00c0f8; }
+.content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
+
+/*  ------------------------------------------
+/*  le menu de navigation + entete + extra
+/*  ------------------------------------------ */
+
+#nav { background: #f2f2f2; border: 1px dashed #ddd; border-left: 0; border-right: 0; overflow: hidden; }
+#nav .menu-liste { float: right; border: 0; font-size: 1.1em; text-transform: uppercase; padding: 5px; padding-left: 30px; background: #00c0f8 url(images/bg_nav.png) left 50% no-repeat; }
+#nav .menu-liste .menu-entree { display: inline; margin: 0.20em 0; padding: 0.20em; }
+#nav .menu-liste .menu-entree a { color: #fff; font-weight: bold; }
+#nav .menu-liste .menu-entree a:hover { color: #f5f5f5; text-decoration: none; }
+#nav .menu-liste.univers { position: absolute; right: 0; top: 45px; background: transparent;}
+
+/*  ------------------------------------------
+/*  hierarchie
+/*  ------------------------------------------ */
+
+#hierarchie { font: bold 1.2em geol, Arial, Helvetica, sans-serif; }
+#hierarchie li:first-child,
+div#hierarchie > a:first-child { background: #00c0f8 url(images/bg_ariane_blue.png) right 50% no-repeat; color: #fff; }
+#hierarchie .on:first-child { background-image: url(images/bg_ariane_blue_on.png) }
+#hierarchie li:first-child a,
+div#hierarchie > a:first-child { color: #fff; }
+#hierarchie li,
+div#hierarchie > a,
+div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10px; background: #f2f2f2 url(images/bg_ariane_grey.png) right 50% no-repeat; }
+#hierarchie .on { background-image: url(images/bg_ariane_grey_on.png); }
+#hierarchie li.collapsed { width: 5px; }
+#hierarchie .sep { display: none; }
+
+/*  ------------------------------------------
+/*  navigation
+/*  ------------------------------------------ */
+
+#extra .h2 span { display: table; float: right; padding: 4px 10px 4px 40px; min-width: 100px;
+	background: #f2f2f2 url(images/bg_titre_right.png) left 50% no-repeat; }
+#extra .h3 { font-size: 1em; margin: 5px 0; padding: 0 0 2px; border-bottom: 1px solid #f2f2f2; }
+
+/*  ------------------------------------------
+/*  pied
+/*  ------------------------------------------ */
+
+.footer a { color: #666; }
+.footer .on { font-weight: normal; }
+
+/*  ------------------------------------------
+/*  pages sommaire, articles et rubriques
+/*  ------------------------------------------ */
+
+.page_sommaire .content .boites .h2 { width: 50%; margin-bottom: 0; color: #fff; font-size: 1.5em;
+	background: #00c0f8 url(images/bg_ariane_blue_on.png) right 50% no-repeat; }
+
+
+.cartouche .h1 { display: none; }
+
+/*  ------------------------------------------
+/*  page carte
+/*  ------------------------------------------ */
+
+.page_carte .footer #bouton { background: transparent url(images/bouton_pied.png) -40px top no-repeat; width: 40px; height: 20px; }
+
+/* page auteur + auteurs
+----------------------------------------------- */
+
+.suivi .liste-items .item a { padding-right: 30px; }
+.suivi .rss { background: transparent url(images/rss.png) right 50% no-repeat; }
+.suivi .kml { background: transparent url(images/kml.png) right 50% no-repeat; }
+.suivi .georss { background: transparent url(images/georss.png) right 50% no-repeat; }
+
+/* page 404
+----------------------------------------------- */
+
+.page_404 #container { background: transparent url(images/bg_404.png) right 50% no-repeat; }
+
+/* boutons admin */
+body .spip-admin-float { right: 5px; margin: 5px auto 0; }
+body a.spip-admin-boutons { border: 1px solid #ddd; color: #666; background: #fff; }
+body a.spip-admin-boutons:hover { border: 1px solid #ddd; background: transparent; }
+
+/* Affichage sur petits ecrans
+Cf.: http://www.alsacreations.com/astuce/lire/1177
+------------------------------------------ */
+
+@media (max-width: 959px) {
+
+	.comments-list li { padding: 0 }
+	.comments-list .comment-meta img.photo { display: none; }
+
+	#extra .h2 { margin: 20px 0; padding: 4px 0 4px 10px; text-align: left;
+		background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
+	#extra .h2 span { display: inline; float: none; padding: 0; background: transparent; }
+	
+	.suivi .liste-items .item { float: left; clear: none; margin-right: 10px; }
+	.suivi .liste-items .item a { padding-left: 25px; padding-right: 0; background-position: left 50%; }
+	
+}
