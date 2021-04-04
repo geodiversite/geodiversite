@@ -119,7 +119,6 @@ function geol_installation(){
 			array('titre'=>'A propos', 'identifiant'=>'pied_apropos', 'css'=>''),
 			array('titre'=>'Explorer', 'identifiant'=>'pied_explorer', 'css'=>''),
 			array('titre'=>'Univers', 'identifiant'=>'pied_univers', 'css'=>''),
-			array('titre'=>'Univers', 'identifiant'=>'entete_univers', 'css'=>'univers')
 		);
 		foreach ($menus as $menu) {
 			if(!sql_getfetsel('id_menu','spip_menus','identifiant='.sql_quote($menu['identifiant']))){

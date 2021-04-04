@@ -164,10 +164,6 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /*  navigation
 /*  ------------------------------------------ */
 
-#nav .menu-liste.univers { color: var(--color); }
-#nav .menu-liste.univers .menu-entree a { color: var(--color); }
-#nav .menu-liste.univers .menu-entree a:hover { color: var(--color); }
-
 .menu.media,
 .menu .explication { text-align: right; }
 .menu.carte .h2 { margin-bottom: 10px; }
