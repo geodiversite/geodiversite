@@ -257,7 +257,7 @@ body a.spip-admin-boutons:hover { color: var(--color); }
 .cartouche .info-publi .info-date,
 .cartouche .info-publi .info-auteur { display: inline; }
 .cartouche .avatar { float: left; margin-right: 10px; }
-.cartouche p { clear: none; margin: 0; padding: 0; }
+.cartouche p { margin: 0; line-height: 1;clear: none; margin: 0; padding: 0; }
 .cartouche .spip_logos { float: left; margin: 0 16px 4px 0; }
 
 .chapo { width: 93%; margin-bottom: 15px; font-size: 1em; }
