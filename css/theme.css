@@ -590,17 +590,6 @@ h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #
 .content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
 
 /*  ------------------------------------------
-/*  le menu de navigation + entete + extra
-/*  ------------------------------------------ */
-
-#nav { background: #f2f2f2; border: 1px dashed #ddd; border-left: 0; border-right: 0; overflow: hidden; }
-#nav .menu-liste { float: right; border: 0; font-size: 1.1em; text-transform: uppercase; padding: 5px; padding-left: 30px; background: #00c0f8 url(images/bg_nav.png) left 50% no-repeat; }
-#nav .menu-liste .menu-entree { display: inline; margin: 0.20em 0; padding: 0.20em; }
-#nav .menu-liste .menu-entree a { color: #fff; font-weight: bold; }
-#nav .menu-liste .menu-entree a:hover { color: #f5f5f5; text-decoration: none; }
-#nav .menu-liste.univers { position: absolute; right: 0; top: 45px; background: transparent;}
-
-/*  ------------------------------------------
 /*  hierarchie
 /*  ------------------------------------------ */
 
