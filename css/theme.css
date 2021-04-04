@@ -346,13 +346,6 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .leaflet-progress { display: none; position: absolute; left: 50%; top: 50%; margin-left: -100px; margin-top: -10px; width: 200px; height: 20px; background-color: #fff; padding: 2px; }
 .leaflet-progress-bar { width: 0; height: 100%; background-color: var(--color); border-radius: 4px; }
 
-/*
-.page_carte #infopanel { position: absolute; left: 0; bottom: 120px; z-index: 4000; width: 100%; opacity: 0.8;
-	padding: 5px; background: #fff; border-left: 0; border-right: 0; }
-.page_carte #infopanel .liste-items .item { display: inline; padding: 0; }
-.page_carte #infopanel .liste-items .item img { padding: 5px; opacity: 1; }
-*/
-
 /* listes des pages galerie
 ----------------------------------------------- */
 
