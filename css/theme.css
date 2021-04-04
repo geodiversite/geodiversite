@@ -116,6 +116,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .page_ticket #container,
 .page_tickets #container,
 .page_editer_ticket #container,
+.page_recherche_avancee #container,
 .page_article #container { max-width: 760px; }
 
 #container.fullwidth { max-width: none; width: 100%; }
