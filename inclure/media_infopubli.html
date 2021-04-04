@@ -1,7 +1,7 @@
 <BOUCLE_art(ARTICLES){id_article}>
 <div class="info-publi #ENV{class}">
 	<BOUCLE_auteur(AUTEURS){id_article}{0,1}>
-	[(#PLUGIN{gravatar}|oui)[ (#MODELE{gravatar,id_auteur,largeur=40})]]
+	[(#PLUGIN{gravatar}|oui)[ (#MODELE{gravatar,id_auteur,largeur=70})]]
 	</BOUCLE_auteur>
 	[<p class="info-auteur"><:geol:publie_par:> (#LESAUTEURS) </p>]
 	[<p class="info-date"><abbr class="published" title="[(#DATE|date_iso)]"><:geol:date_le:> (#DATE|affdate{'d/m/Y'})</abbr></p>]
