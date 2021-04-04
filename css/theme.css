@@ -213,6 +213,8 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .footer .menu-liste .menu-entree a { display: inline; border: 0; padding: 0; }
 .footer .menu-liste .menu-entree { margin-left: 0.5em; }
 .footer .h3 { font-size: 1em; }
+.footer a { color: #666; }
+.footer .on { font-weight: normal; }
 
 /* boutons admin */
 body a.spip-admin-boutons:hover { color: var(--color); }
@@ -615,12 +617,6 @@ div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10p
 	background: #f2f2f2 url(images/bg_titre_right.png) left 50% no-repeat; }
 #extra .h3 { font-size: 1em; margin: 5px 0; padding: 0 0 2px; border-bottom: 1px solid #f2f2f2; }
 
-/*  ------------------------------------------
-/*  pied
-/*  ------------------------------------------ */
-
-.footer a { color: #666; }
-.footer .on { font-weight: normal; }
 
 /*  ------------------------------------------
 /*  pages sommaire, articles et rubriques
