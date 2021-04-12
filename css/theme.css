@@ -204,7 +204,9 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .footer .on { font-weight: normal; }
 
 /* boutons admin */
-body a.spip-admin-boutons:hover { color: var(--color); }
+body .spip-admin-float { right: 5px; margin: 5px auto 0; z-index: 2001; font-size: 80%; }
+body a.spip-admin-boutons { border: 1px solid #ddd; color: #666; background: #fff; }
+body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 
 /*  ------------------------------------------
 /*  pages sommaire, articles et rubriques
@@ -233,6 +235,7 @@ body a.spip-admin-boutons:hover { color: var(--color); }
 .page_ticket .cartouche { margin: 10px 0 20px; }
 
 .cartouche { margin-bottom: 0; }
+.cartouche .h1 { display: none; }
 .cartouche .info-publi { overflow: hidden; }
 .cartouche .info-publi .info-date,
 .cartouche .info-publi .info-auteur { display: inline; }
@@ -353,6 +356,11 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .suivi .embed,
 .suivi .liste-items { text-align: right; }
 .suivi .liste-items .item a { display: block; padding: 10px 0; }
+.suivi .liste-items .item a { padding-right: 30px; }
+.suivi .rss { background: transparent url(images/rss.png) right 50% no-repeat; }
+.suivi .kml { background: transparent url(images/kml.png) right 50% no-repeat; }
+.suivi .georss { background: transparent url(images/georss.png) right 50% no-repeat; }
+
 .vignettes .liste-items .item { display: inline; }
 .vignettes .liste-items .item a:hover { text-decoration: none; }
 
@@ -371,6 +379,7 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .page_spip_pass .page #container { width: 360px; margin: 0 auto; padding-top: 35px; }
 .page_login .content,
 .page_spip_pass .content { float: none; width: 100%; }
+.page_404 #container { background: transparent url(images/bg_404.png) right 50% no-repeat; }
 
 /* page upload
 ----------------------------------------------- */
@@ -545,45 +554,3 @@ body .resizehandle_boutons { margin-top: 0; }
 /* fausse modale pour certains formulaires */
 
 .geomodale { position: absolute; width: 600px; left: 50%; margin-left: -300px; background: #ddd; }
-
-
-
-
-
-/*
-********************
-********************
-
-habillage.css
-
-********************
-********************
-*/
-
-
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-/* 			Personnalisations geodiversite					 */
-/* --------------------------------------------------------- */
-/* --------------------------------------------------------- */
-
-
-.cartouche .h1 { display: none; }
-
-/* page auteur + auteurs
------------------------------------------------ */
-
-.suivi .liste-items .item a { padding-right: 30px; }
-.suivi .rss { background: transparent url(images/rss.png) right 50% no-repeat; }
-.suivi .kml { background: transparent url(images/kml.png) right 50% no-repeat; }
-.suivi .georss { background: transparent url(images/georss.png) right 50% no-repeat; }
-
-/* page 404
------------------------------------------------ */
-
-.page_404 #container { background: transparent url(images/bg_404.png) right 50% no-repeat; }
-
-/* boutons admin */
-body .spip-admin-float { right: 5px; margin: 5px auto 0; }
-body a.spip-admin-boutons { border: 1px solid #ddd; color: #666; background: #fff; }
-body a.spip-admin-boutons:hover { border: 1px solid #ddd; background: transparent; }
