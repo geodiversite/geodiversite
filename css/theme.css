@@ -417,17 +417,12 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 /* Messages des forums
 ----------------------------------------------- */
 
-.comments h2,
-.comments-list h2,
-#documents_portfolio h2,
-#documents_joints h2 { text-align: left; }
-.comments-list ul,
-.forum, .forum .forum-fil,
-.forum .forum-fil .forum-chapo { margin: 0; padding: 0; list-style: none; background: transparent; border: 0; color: #666; }
-.comments-list li { position: relative; list-style: none; padding: 0 0 0 45px; border-top: 1px solid #ddd; }
-.comments-list li:first-child { border: 0; }
-.comments-list .comment-meta { margin: 1em 0; }
-.comments-list .comment-meta img.photo { position: absolute; left: 0; }
+.comments-list ul { margin: 0; list-style: none; }
+.comments-list .comment-meta { margin: 0 0 1em;  display: flex; flex-wrap: wrap; background-color: #f2f2f2; }
+.comments-list .comment-meta .photo { margin: 0; }
+.comments-list .comment-meta .reviewer { margin-left: 0.5em; flex-grow: 1; }
+.comments-list .comment-meta-date { color: #999; }
+
 
 
 /*  ------------------------------------------
