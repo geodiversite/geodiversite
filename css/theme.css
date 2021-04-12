@@ -550,4 +550,4 @@ body .resizehandle_boutons { margin-top: 0; }
 
 /* fausse modale pour certains formulaires */
 
-.geomodale { position: absolute; width: 600px; left: 50%; margin-left: -300px; background: #ddd; }
+.geomodale { position: absolute; z-index: 1; width: 600px; left: 50%; margin-left: -300px; background: #ddd; }
