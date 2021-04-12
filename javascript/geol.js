@@ -24,10 +24,10 @@
 				time=1200;
 			}
 			
-			$(me).addClass('hop');
+			$(me).addClass('b');
 			setTimeout(function(){
 				// verifier que la souris n'est pas deja partie !
-				if ($(me).hasClass('hop')) {
+				if ($(me).hasClass('b')) {
 					var parent = $(me).parent();
 					// verifier que ce n'est pas une liste exposee
 					if (!$(parent).hasClass('on')) {
@@ -45,7 +45,7 @@
 				}
 			}, time);
 		},function(){
-			$(this).removeClass('hop');
+			$(this).removeClass('b');
 		});
 		
 		// Bloc dépliable pour code_embed, pompé sur mediaspip http://zone.spip.org/trac/spip-zone/browser/_squelettes_/mediaspip/mediaspip_core/trunk/javascript/mediaspip_base.js#L9
