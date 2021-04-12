@@ -147,8 +147,6 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /* ------------------------------------------ */
 
 
-#extra .h2 span,.content .h2{color:var(--color);}
-
 /*  ------------------------------------------
 /*  navigation
 /*  ------------------------------------------ */
@@ -570,27 +568,6 @@ habillage.css
 /* --------------------------------------------------------- */
 
 
-
-h1, .h1, h2, .h2 { font-family: geol; color: #00c0f8; }
-.content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(../images/bg_titre_left.png) -190px 50% no-repeat; }
-
-/*  ------------------------------------------
-/*  navigation
-/*  ------------------------------------------ */
-
-#extra .h2 span { display: table; float: right; padding: 4px 10px 4px 40px; min-width: 100px;
-	background: #f2f2f2 url(images/bg_titre_right.png) left 50% no-repeat; }
-#extra .h3 { font-size: 1em; margin: 5px 0; padding: 0 0 2px; border-bottom: 1px solid #f2f2f2; }
-
-
-/*  ------------------------------------------
-/*  pages sommaire, articles et rubriques
-/*  ------------------------------------------ */
-
-.page_sommaire .content .boites .h2 { width: 50%; margin-bottom: 0; color: #fff; font-size: 1.5em;
-	background: #00c0f8 url(images/bg_ariane_blue_on.png) right 50% no-repeat; }
-
-
 .cartouche .h1 { display: none; }
 
 /* page auteur + auteurs
@@ -610,21 +587,3 @@ h1, .h1, h2, .h2 { font-family: geol; color: #00c0f8; }
 body .spip-admin-float { right: 5px; margin: 5px auto 0; }
 body a.spip-admin-boutons { border: 1px solid #ddd; color: #666; background: #fff; }
 body a.spip-admin-boutons:hover { border: 1px solid #ddd; background: transparent; }
-
-/* Affichage sur petits ecrans
-Cf.: http://www.alsacreations.com/astuce/lire/1177
------------------------------------------- */
-
-@media (max-width: 959px) {
-
-	.comments-list li { padding: 0 }
-	.comments-list .comment-meta img.photo { display: none; }
-
-	#extra .h2 { margin: 20px 0; padding: 4px 0 4px 10px; text-align: left;
-		background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
-	#extra .h2 span { display: inline; float: none; padding: 0; background: transparent; }
-	
-	.suivi .liste-items .item { float: left; clear: none; margin-right: 10px; }
-	.suivi .liste-items .item a { padding-left: 25px; padding-right: 0; background-position: left 50%; }
-	
-}
