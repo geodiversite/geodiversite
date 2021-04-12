@@ -156,6 +156,8 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu.carte .geo { font-size: 1.3em; }
 .menu.carte .geo abbr { border: 0; }
 
+.menu.serie { margin-top: 1em; }
+.menu.serie h2 { display: none; }
 .menu.serie .image_loading { display: none; }
 .menu.serie .liste-items { text-align: center; }
 .menu.serie .liste-items .item.pagination .lien_pagination { display: block; width: 18px; height: 56px; line-height: 56px; text-align: center; font-weight: bold; background: #f2f2f2; color: #666; }
@@ -167,11 +169,13 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu.serie .liste-items .item:hover .spip_logos,
 .menu.serie .liste-items .item.on .spip_logos { border-color: #aaa; }
 
-.menu div.socialtags { margin: 7px 0 0; }
+.menu.tags .nuage dt { font-weight: normal; }
+.menu.tags .nuage dd { display: none; }
+
+.menu div.socialtags { margin: 0; display: inline; }
 .menu .socialtags ul,
-.menu .socialtags ul li { border: 0; background: none; padding: 0; }
-.menu .liste-items li.socialtags { background-position: left 0.4em; }
-.menu .puces li { padding-left: 15px; background: transparent url(img/puce.png) left 50% no-repeat; }
+.menu .socialtags ul li { background: none; padding: 0; }
+.menu .puces li { padding: 0 0 0 1em; background: transparent url(img/puce.png) left 50% no-repeat; }
 .menu .actions { text-align: right; margin: 3px 0 0; }
 .menu dl dt { font-weight: bold; margin: 5px 0; }
 .menu dl dd { margin: 2px 0 2px 20px; }
@@ -247,8 +251,8 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .image-annotate-note .note-text img { display: block; float: left; margin: 2px 5px 2px 0; }
 .image-annotate-note .note-text .author a { color: #666; }
 .image-annotate-note .note-text .author a:hover { color: var(--color); }
-.image_legendes .nb_notes { margin-bottom: 0; }
-.doc_echelle { margin: 5px 0 0; }
+.image_legendes .nb_notes { margin-bottom: 0; font-size: 80%; font-family: inherit; }
+.doc_echelle { margin: 5px 0 0; font-size: 80%; }
 .logo_audio { display: block; }
 
 .documents_annexes .documents_portfolio { text-align: left; }
@@ -517,7 +521,7 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 .actions_doc a.supprimer { background-position: 0 -260px; }
 .actions_doc a.supprimer:hover { background-position: 0 -240px; }
 
-.actions_doc .formulaire_favori { float: left; }
+.actions_doc .formulaire_favori { float: left; margin-left: 0; }
 .actions_doc .formulaire_favori form button.ajouter_favori span,
 .actions_doc .formulaire_favori form button.retirer_favori span { display: none; }
 .actions_doc .formulaire_favori form button.ajouter_favori { background-position: 0 -300px; } 

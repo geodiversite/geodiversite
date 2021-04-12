@@ -31,8 +31,10 @@
 		[<div class="notes"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
 	</div>
 
-	[<h2 class="h2"><:geol:tags_auteurs:></h2>
-	(#INCLURE{fond=inclure/media_tags,id_article,modifier_tags,ajax})]
+	[<div class="menu tags">
+		<h2 class="h2"><:geol:tags_auteurs:></h2>
+		(#INCLURE{fond=inclure/media_tags,id_article,modifier_tags,ajax})
+	</div>]
 
 	[(#REM) Gestion des documents annexes ]
 	[(#CONFIG{geol/afficher_docs_annexes}|oui)
