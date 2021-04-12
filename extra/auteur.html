@@ -3,7 +3,7 @@
 <div class="menu">
 	<h2 class="h2"><span><:geol:publier:></span></h2>
 	<BOUCLE_prepa(ARTICLES){id_auteur}{statut=prepa}{0,1}>#SET{prepa,oui}</BOUCLE_prepa>
-	<a href="[(#URL_PAGE{upload})]" rel="nofollow" class="hop">[(#GET{prepa}|?{<:geol:publier_prepa_media:>,<:geol:publier_nouveau_media:>})]</a>
+	<a href="[(#URL_PAGE{upload})]" rel="nofollow" class="b">[(#GET{prepa}|?{<:geol:publier_prepa_media:>,<:geol:publier_nouveau_media:>})]</a>
 	[(#GET{prepa}|oui)
 	<p class="explication"><:geol:message_article_publie_prepa:></p>]
 </div>

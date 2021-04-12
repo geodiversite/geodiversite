@@ -23,7 +23,7 @@
 	<//B_potes>
 	<BOUCLE_test(CONDITION){si #SESSION{id_auteur}|=={#ID_AUTEUR}}>
 	<BOUCLE_demandes(AMIS){id_ami=#ENV{id_auteur}}{statut=prop} />[
-	<p><a href="[(#URL_PAGE{contacts,id_auteur=#ID_AUTEUR})]" class="hop">
+	<p><a href="[(#URL_PAGE{contacts,id_auteur=#ID_AUTEUR})]" class="b">
 		(#TOTAL_BOUCLE|singulier_ou_pluriel{<:geol:amis_une_demande:>,<:geol:amis_nb_demandes:>})
 	</a></p>]<//B_demandes></BOUCLE_test>
 </div>
