@@ -357,9 +357,9 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .suivi .liste-items { text-align: right; }
 .suivi .liste-items .item a { display: block; padding: 10px 0; }
 .suivi .liste-items .item a { padding-right: 30px; }
-.suivi .rss { background: transparent url(images/rss.png) right 50% no-repeat; }
-.suivi .kml { background: transparent url(images/kml.png) right 50% no-repeat; }
-.suivi .georss { background: transparent url(images/georss.png) right 50% no-repeat; }
+.suivi .rss { background: transparent url(img/rss.png) right 50% no-repeat; }
+.suivi .kml { background: transparent url(img/kml.png) right 50% no-repeat; }
+.suivi .georss { background: transparent url(img/georss.png) right 50% no-repeat; }
 
 .vignettes .liste-items .item { display: inline; }
 .vignettes .liste-items .item a:hover { text-decoration: none; }
