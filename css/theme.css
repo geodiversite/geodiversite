@@ -147,15 +147,6 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /* ------------------------------------------ */
 
 
-/*  ------------------------------------------
-/*  hierarchie
-/*  ------------------------------------------ */
-
-#hierarchie { display: table; margin: 0 0 10px; padding: 0; overflow: hidden; list-style: none; color: var(--color);
-	font: bold 1.2em Arial, Helvetica, sans-serif; }
-#hierarchie li { padding-left: 10px; }
-#hierarchie li.spacer { padding-right: 5px; }
-
 #extra .h2 span,.content .h2{color:var(--color);}
 
 /*  ------------------------------------------
@@ -580,25 +571,8 @@ habillage.css
 
 
 
-h1, .h1, h2, .h2 { font: bold 1.2em geol, Arial, Helvetica, sans-serif; color: #00c0f8; }
-.content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(images/bg_titre_left.png) -190px 50% no-repeat; }
-
-/*  ------------------------------------------
-/*  hierarchie
-/*  ------------------------------------------ */
-
-#hierarchie { font: bold 1.2em geol, Arial, Helvetica, sans-serif; }
-#hierarchie li:first-child,
-div#hierarchie > a:first-child { background: #00c0f8 url(images/bg_ariane_blue.png) right 50% no-repeat; color: #fff; }
-#hierarchie .on:first-child { background-image: url(images/bg_ariane_blue_on.png) }
-#hierarchie li:first-child a,
-div#hierarchie > a:first-child { color: #fff; }
-#hierarchie li,
-div#hierarchie > a,
-div#hierarchie > strong { display: block; float: left; padding: 4px 30px 4px 10px; background: #f2f2f2 url(images/bg_ariane_grey.png) right 50% no-repeat; }
-#hierarchie .on { background-image: url(images/bg_ariane_grey_on.png); }
-#hierarchie li.collapsed { width: 5px; }
-#hierarchie .sep { display: none; }
+h1, .h1, h2, .h2 { font-family: geol; color: #00c0f8; }
+.content .h2 { margin: 20px 0; padding: 4px 0 4px 10px; background: transparent url(../images/bg_titre_left.png) -190px 50% no-repeat; }
 
 /*  ------------------------------------------
 /*  navigation
