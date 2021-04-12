@@ -2,9 +2,7 @@
 <div class="contenu-principal">
 	<div class="cartouche">
 		<div class="surlignable">
-			[<p class="#EDIT{surtitre} surtitre">(#SURTITRE)</p>]
 			<h1 class="entry-title h1">#TITRE</h1>
-			[<p class="#EDIT{soustitre} soustitre">(#SOUSTITRE)</p>]
 		</div>
 		[(#INCLURE{fond=inclure/media_infopubli,id_article})]
 		[(#REM) Inclure le modele des liens de traductions ]
@@ -15,40 +13,74 @@
 	[(#INCLURE{fond=inclure/media_doc,id_document,id_article,largeur=760,class=media,self=#SELF,modifier_echelle})]
 	</BOUCLE_documents>
 
+	[(#REM) medias precedents/suivants ]
+	[(#CONFIG{geol/afficher_serie}|oui)
+	[<div class="menu vignettes serie">
+		(#INCLURE{fond=inclure/media_serie,
+			id_article,
+			debut_serie=@#ID_ARTICLE,
+			ajax})
+	</div>]]
+
 	<h2 class="h2"><:geol:description:></h2>
 	[(#PLUGIN{estamp}|oui)
 	[(#INCLURE{fond=modeles/estampille,id_article})]]
 	<div class="surlignable">
 		[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{760,0})</div>]
 		[<div class="#EDIT{texte} texte entry-content">(#TEXTE|image_reduire{760,0}|sinon{<:geol:pas_description|paragrapher:>})</div>]
+		[<div class="notes"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
 	</div>
 
 	[<h2 class="h2"><:geol:tags_auteurs:></h2>
 	(#INCLURE{fond=inclure/media_tags,id_article,modifier_tags,ajax})]
 
-	[<p class="#EDIT{hyperlien} hyperlien"><:voir_en_ligne:> : <a href="(#URL_SITE)" class="spip_out">[(#NOM_SITE|sinon{[(#URL_SITE|couper{80})]})]</a></p>]
-
-	[<div class="ps surlignable"><h2 class="h2 pas_surlignable"><:info_ps:></h2><div class="#EDIT{ps}">(#PS|image_reduire{760,0})</div></div>]
-
 	[(#REM) Gestion des documents annexes ]
 	[(#CONFIG{geol/afficher_docs_annexes}|oui)
 	[(#INCLURE{fond=inclure/media_annexes,id_article,modifier_annexes,ajax,env})]
 	]
+
+	[(#ENV{id_rubrique}|!={-1}|oui)
+
+	[(#REM) carte ]
+	[<div class="menu carte">
+		(#INCLURE{fond=inclure/media_carte,
+			id_article,
+			signaler_erreur,
+			modifier_carte,
+			ajax})
+	</div>]
+	
+	[(#REM) albums lies au media ]
+	[(#PLUGIN{geol_albums}|oui)
+	[<div class="menu albums">
+		(#INCLURE{fond=inclure/media_albums,
+			id_article,
+			ajax=albums})
+	</div>]]
+	
+	[(#REM) partage / telechargement ]
+	[<div class="menu">
+		(#INCLURE{fond=inclure/media_partage,
+			id_article,
+			id_rubrique,
+			modifier_licence,
+			ajax})
+	</div>]
+	
+	[(#REM) tags scientifiques ]
+	[<div class="menu">
+		(#PLUGIN{polyhier}|oui)
+		[(#INCLURE{fond=inclure/media_mots,
+			id_article,
+			modifier_cats,
+			ajax})]
+	</div>]
+	
+	[(#REM) Pipeline pour ajout de contenu par autres plugins ]
+	[<div class="menu">
+		(#PIPELINE{geol_navigation_fin,#ARRAY{data,'',args,#ARRAY{id_article,#ID_ARTICLE}}})
+	</div>]
+	
+	]
 </div>
-
-[(#REM) Petition :
-La petition ayant une PAGINATION il faut absolument {env}
-et pourquoi pas ajax
-][(#PETITION|?{' '})<INCLURE{fond=inc-petition}{id_article}{env}{ajax} />]
-
-[<div class="notes surlignable"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
-
-[(#REM) Forum de l'article ]
-<a href="#forum" name="forum" id="forum"></a>
-<INCLURE{fond=inclure/forum}{id_article} />
-
-[<div id="commenter" class="comments">
-<h2 class="h2"><:geol:commenter:></h2>
-(#FORMULAIRE_FORUM{#SELF})
-</div>]
 </BOUCLE_contenu_article>
