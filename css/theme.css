@@ -151,12 +151,10 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /*  navigation
 /*  ------------------------------------------ */
 
-.menu.media,
-.menu .explication { text-align: right; }
-.menu.carte .h2 { margin-bottom: 10px; }
-.menu.carte .geo { text-align: right; font-size: 1.3em; margin-bottom: 5px; }
+.menu.carte .geo,
+.menu.carte .adr { display: inline; }
+.menu.carte .geo { font-size: 1.3em; }
 .menu.carte .geo abbr { border: 0; }
-.menu.carte .adr { text-align: right; margin-bottom: 5px; }
 
 .menu.serie .image_loading { display: none; }
 .menu.serie .liste-items { text-align: center; }
