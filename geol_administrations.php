@@ -30,8 +30,8 @@ function geol_installation(){
 	// activer l'inscription des visiteurs
 	if (lire_config('accepter_inscriptions') == 'non') ecrire_config('accepter_inscriptions', 'oui');
 	
-	// taille des vignettes à 300px
-	ecrire_config('taille_preview', '300');
+	// taille des vignettes à 640px
+	ecrire_config('taille_preview', '640');
 	
 	// thème bootstrap pour les box
 	ecrire_config('mediabox/skin', 'bootstrap');
