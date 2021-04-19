@@ -3,16 +3,13 @@
 	-* largeur : de l'image (538 par défaut)
 	-* hauteur : de l'image (sans limite par defaut)
 	-* info_titre : si !=non afficher le titre
-	-* info_texte : si !=non afficher le texte
+	-* info_texte : si ==oui afficher le texte
 	-* info_auteur : si !=non afficher le nom de l'auteur
 	-* info_date : si !=non afficher la date
 	-* info_visites : !=non oui afficher le nombre de visite
 	-* info_commentaires : !=non oui afficher le nombre de commentaires
 ] 
 <BOUCLE_article_vignette(ARTICLES){id_article}>
-
-[(#ENV{info_titre}|!={non}|oui)
-[<h3 class="titre">(#TITRE)</h3>]]
 
 #SET{url_article,#URL_ARTICLE}
 
@@ -22,9 +19,12 @@
 </a>]
 </BOUCLE_doc>
 
+[(#ENV{info_titre}|!={non}|oui)
+[<h3 class="titre">(#TITRE)</h3>]]
+
 <div class="info_media">
 
-[(#ENV{info_texte}|!={non}|oui)
+[(#ENV{info_texte}|=={oui}|oui)
 	[<div class="texte">(#TEXTE|couper{100})</div>]]
 
 [(#ENV{info_auteur}|!={non}|oui)
@@ -33,12 +33,13 @@
 [(#ENV{info_date}|!={non}|oui)
 	<p><abbr class="published" title="[(#DATE|date_iso)]">[<:geol:publie_le:> (#DATE|affdate{'d/m/Y'})]</abbr></p>]
 
-[(#ENV{info_visites}|!={non}|oui)
-	[<p>(#VISITES|singulier_ou_pluriel{geol:vue,geol:vues})</p>]]
-
 <BOUCLE_merci_bonux(CONDITION){si #ENV{info_commentaires}|!={non}|et{#ACCEPTER_FORUM|!={non}}|oui}>
 	<BOUCLE_coms(FORUMS){id_article}{plat} />
-	[<p><a href="#GET{url_article}#forum">(#TOTAL_BOUCLE|>{0}|?{[(#TOTAL_BOUCLE|singulier_ou_pluriel{geol:commentaire,geol:commentaires})],<:geol:commentaire_zero:>})</a></p>]
+	<p>
+	[(#ENV{info_visites}|!={non}|oui)
+		[(#VISITES|singulier_ou_pluriel{geol:vue,geol:vues}) - ]]
+	[<a href="#GET{url_article}#forum">(#TOTAL_BOUCLE|>{0}|?{[(#TOTAL_BOUCLE|singulier_ou_pluriel{geol:commentaire,geol:commentaires})],<:geol:commentaire_zero:>})</a>]
+	</p>
 	<//B_coms>
 </BOUCLE_merci_bonux>
 

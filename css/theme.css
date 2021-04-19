@@ -274,8 +274,8 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .liste .liste-items .item .titre a { display: block; }
 .liste .liste-items .item .spip_logo { float: none; margin: 0; display: block; }
 
-.liste .liste-items .item .titre { margin: 0 0 10px; }
-.liste .liste-items .item .texte { margin: 10px 0; line-height: 1.2em; }
+.liste .liste-items .item .titre { margin: 0.3em 0 0; }
+.liste .liste-items .item .texte { margin: 0.4em 0; line-height: 1.2em; }
 .liste .liste-items .item p { margin: 0; }
 
 /*  ------------------------------------------
