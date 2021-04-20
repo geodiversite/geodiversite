@@ -352,6 +352,10 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 
 .page_auteur .profil { overflow: hidden; margin-bottom: 1em; }
 .page_auteur .profil .avatar { display: block; }
+@media (max-width: 576px) {
+	.page_auteur .profil { text-align: center; }
+	.page_auteur .profil .avatar { float: none; margin: 0 auto 1em; }
+}
 .page_auteur .profil p { margin-bottom: 0.25em; }
 
 .menu.auteur .liste-items .item { display: inline; color: #999; }
