@@ -5,8 +5,8 @@
 <BOUCLE_auteurs(AUTEURS){recherche} {tout}{!par points}{pagination #ENV{pas,5}}>
 	<li class="item vcard">
 		<a href="#URL_AUTEUR">
-			<span class="titre fn">#NOM</span>
 			[(#PLUGIN{gravatar}|oui)[(#MODELE{gravatar,id_auteur,largeur=30})]]
+			<span class="titre fn">#NOM</span>
 		</a>
 	</li>
 </BOUCLE_auteurs>

@@ -3,11 +3,11 @@
 	<p class="explication"><:geol:explication_liste_admins:></p>
 	<B_admins>
 	<ul class="liste-items">
-	<BOUCLE_admins(AUTEURS){statut=0minirezo}{tout}{par hasard}{0,3}>
+	<BOUCLE_admins(AUTEURS){statut=0minirezo}{tout}{par hasard}{0,6}>
 		<li class="item vcard">
 			<a href="#URL_AUTEUR">
-				<span class="titre fn">#NOM</span>
 				[(#PLUGIN{gravatar}|oui)[(#MODELE{gravatar,id_auteur,largeur=30})]]
+				<span class="titre fn">#NOM</span>
 			</a>
 		</li>
 	</BOUCLE_admins>
