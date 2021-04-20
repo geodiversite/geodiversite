@@ -95,8 +95,7 @@ div.socialtags img { height: 24px; }
 .long.logos .spip_logo { float: none; margin: 0 0 0.5em; }
 .long.logos .publication { margin-bottom: 0.25em; }
 
-.extra .menu .h2,
-.extra .liste .h2 { margin-bottom: 1em; }
+.menu .h2 { margin-bottom: 1em; }
 
 .formulaire_recherche { margin: 0; }
 .formulaire_recherche input.text { min-width: 240px; text-align: center; padding: 0.25em; }
