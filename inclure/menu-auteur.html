@@ -2,7 +2,7 @@
 <div class="menu auteur">
 	<ul class="liste-items">
 		<li class="item">
-			[(#URL_AUTEUR|lien_ou_expose{<:geol:contribs:>,#SI_PAGE{auteur}})]<span class="sep"> | </span>
+			[(#URL_AUTEUR|lien_ou_expose{<:geol:contribs:>,#SI_PAGE{auteur}|et{#ENV{view}|non}})]<span class="sep"> | </span>
 		</li>
 		<li class="item">
 			[(#URL_PAGE{carte,id_auteur=#ID_AUTEUR}|lien_ou_expose{<:geol:carte:>,#SI_PAGE{carte}})]<span class="sep"> | </span>
@@ -16,6 +16,9 @@
 		</li>]
 		[(#PLUGIN{amis}|oui)
 		<INCLURE{fond=inclure/menu-auteur_amis,env} />]
+		<li class="item"><span class="sep"> | </span>
+			[(#URL_AUTEUR|parametre_url{view,about}|lien_ou_expose{<:geol:nav_a_propos:>,#SI_PAGE{auteur}|et{#ENV{view}|=={about}|oui}})]
+		</li>
 	</ul>
 </div>
 </BOUCLE_auteur>

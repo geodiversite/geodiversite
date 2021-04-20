@@ -4,24 +4,16 @@
 		<h1 class="h1 fn"><span>#NOM</span></h1>
 	</div>
 	
-	[(#INCLURE{fond=inclure/menu-auteur,id_auteur,type-page})]
+	<INCLURE{fond=inclure/menu-auteur,id_auteur,type-page,view}>
 
-	[(#REM) Articles de l'auteur ]
-	[(#INCLURE{fond=inclure/liste/articles-vignette,
+	[(#ENV{view}|=={about}|oui)
+	<INCLURE{fond=inclure/auteur_profil,id_auteur}>]
+
+	[(#ENV{view}|non)
+	<INCLURE{fond=inclure/liste/articles-vignette,
 		id_auteur,
 		ajax,
 		env,
-		info_auteur=non})]
-
-	[(#REM) Tags de l'auteur ]
-
-	[(#PLUGIN{spipicious}|oui)
-	<div class="tags">
-		<h2 class="h2"><:geol:tags_utilises_par{nom=#NOM}:></h2>
-		[(#INCLURE{fond=modeles/spipicious_nuage_auteur,
-			id_auteur,
-			tri=titre,
-			url=[(#URL_PAGE{mot}|parametre_url{id_auteur,#ID_AUTEUR})]})]
-	</div>]
+		info_auteur=non}>]
 </div>
 </BOUCLE_contenu_auteur>

@@ -350,18 +350,20 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 /* page auteur + auteurs
 ----------------------------------------------- */
 
+.page_auteur .profil { overflow: hidden; margin-bottom: 1em; }
+.page_auteur .profil .avatar { display: block; }
+.page_auteur .profil p { margin-bottom: 0.25em; }
+
 .menu.auteur .liste-items .item { display: inline; color: #999; }
 
-.menu.profil,
-.page_auteur #extra .menu { text-align: right; }
-
 .suivi .embed,
-.suivi .liste-items { text-align: right; }
+.suivi .liste-items .item { display: inline-block; margin-right: 1em; padding: 0; }
+.suivi .liste-items .item:last-child { margin-right: 0; }
 .suivi .liste-items .item a { display: block; padding: 10px 0; }
-.suivi .liste-items .item a { padding-right: 30px; }
-.suivi .rss { background: transparent url(img/rss.png) right 50% no-repeat; }
-.suivi .kml { background: transparent url(img/kml.png) right 50% no-repeat; }
-.suivi .georss { background: transparent url(img/georss.png) right 50% no-repeat; }
+.suivi .liste-items .item a { padding-left: 1.5em; }
+.suivi .rss { background: transparent url(img/rss.png) left 50% no-repeat; }
+.suivi .kml { background: transparent url(img/kml.png) left 50% no-repeat; }
+.suivi .georss { background: transparent url(img/georss.png) left 50% no-repeat; }
 
 .vignettes .liste-items .item { display: inline; }
 .vignettes .liste-items .item a:hover { text-decoration: none; }
