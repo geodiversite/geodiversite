@@ -4,13 +4,14 @@
 	<a href="#URL_MOT" class="b"><:geol:tag_docs_publics{titre=#TITRE}:></a>
 </div>]
 
-[(#REM) carte ]
-[<div class="menu">
-	(#INCLURE{fond=inclure/mot_carte,id_mot})
-</div>]
-
-[(#REM) liens de suivi ]
-[<div class="menu suivi">
-	(#INCLURE{fond=inclure/mot_suivi,id_mot})
-</div>]
+<div class="grid-2-small-1 has-gutter-xl">
+	[(#REM) carte ]
+	[<div class="menu">
+		(#INCLURE{fond=inclure/mot_carte,id_mot})
+	</div>]
+	[(#REM) liens de suivi ]
+	[<div class="menu suivi">
+		(#INCLURE{fond=inclure/mot_suivi,id_mot})
+	</div>]
+</div>
 </BOUCLE_navigation_mot>
