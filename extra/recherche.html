@@ -4,16 +4,8 @@
 	<div class="menu">
 		[(#INCLURE{fond=inclure/recherche_carte,recherche})]
 	</div>]
-	[(#REM) filtres de recherche ]
-	[<div class="menu">
-		(#INCLURE{fond=inclure/recherche_filtres,env})
-	</div>]
 	[(#REM) auteurs trouves ]
 	[<div class="menu auteurs">
 		(#INCLURE{fond=inclure/recherche_auteurs,recherche,env,ajax})
-	</div>]
-	[(#REM) rubriques trouvees ]
-	[<div class="menu rubriques">
-		(#INCLURE{fond=inclure/recherche_rubriques,recherche,env,ajax})
 	</div>]
 </div>
