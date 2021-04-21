@@ -150,8 +150,6 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /*  navigation
 /*  ------------------------------------------ */
 
-.list-inline .item { padding: 0; }
-
 .menu.carte .geo,
 .menu.carte .adr { display: inline; }
 .menu.carte .geo { font-size: 1.3em; }
@@ -180,8 +178,14 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu .actions { text-align: right; margin: 3px 0 0; }
 .menu dl dt { font-weight: bold; margin: 5px 0; }
 .menu dl dd { margin: 2px 0 2px 20px; }
-.menu .liste-items .item a.delete { display: inline-block; padding-left: 18px; color: #666; background: transparent url(img/noeud_moins.gif) left 50% no-repeat; }
-.menu .liste-items .item a.delete:hover { color: var(--color); }
+
+.menu.filtres .liste-items .item { display: inline-block; margin-right: 1em; padding-top: 0; padding-bottom: 0; }
+.menu.filtres .liste-items .item:last-child { margin-right: 0; }
+.menu.filtres .liste-items .item a.delete { display: inline-block; padding-left: 18px; color: #666; background: transparent url(img/noeud_moins.gif) left 50% no-repeat; }
+.menu.filtres .liste-items .item a.delete:hover { color: var(--color); }
+.menu.rubriques .liste-items .item { margin-right: 0; }
+.menu.rubriques .liste-items .item:not(:last-child):after { content: " | "; }
+
 .categories li.item { padding: 4px 0 4px 18px; background: transparent url(img/noeud_plus.gif) left 3px no-repeat; }
 .categories li a { color: #666; }
 .categories li a:hover { color: var(--color); }
@@ -373,6 +377,7 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .vignettes .liste-items .item a:hover { text-decoration: none; }
 
 .menu.auteurs .liste-items .item { display: inline-block; margin-right: 1em; padding: 0.25em 0.5em; border: 1px solid #ddd; border-radius: 0.5em; line-height: 1; }
+.menu.auteurs .liste-items .item:last-child { margin-right: 0; }
 .menu.auteurs .liste-items .item a { display: flex; flex-direction: row; align-items: center; text-decoration: none; color: #666; }
 .menu.auteurs .liste-items .item a:hover { color: var(--color); }
 .menu.auteurs .liste-items .item .fn { display: inline; font-size: 1.2em; font-weight: bold; }

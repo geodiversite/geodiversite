@@ -2,7 +2,7 @@
 	
 <BOUCLE_test(CONDITION){si #ENV{categories}|ou{#ENV{id_licence}}|ou{#ENV{type_doc}}|ou{#ENV{echelle}}|oui}>
 <p class="explication"><:geol:explication_recherche_filtree:></p>
-<ul class="liste-items list-inline">
+<ul class="liste-items">
 	<BOUCLE_cat(RUBRIQUES){tout}{id_rubrique IN #ENV**{categories}}>
 	<li class="item">
 		<a href="[(#VAL{&amp;categories%5B%5D=#ID_RUBRIQUE}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
