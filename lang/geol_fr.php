@@ -8,6 +8,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// A
+	'administration' => 'Administration',
 	'afficher' => 'Afficher',
 	'afficher_par_page' => 'par page',
 	'aide' => 'Aide',
