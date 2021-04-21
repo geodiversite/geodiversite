@@ -187,6 +187,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu.rubriques .liste-items .item:not(:last-child):after { content: " | "; }
 
 .menu.categories { text-align: center; }
+.menu.categories .select2 { text-align: left; }
 
 /*  ------------------------------------------
 /*  pied
