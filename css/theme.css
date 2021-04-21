@@ -180,8 +180,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu .actions { text-align: right; margin: 3px 0 0; }
 .menu dl dt { font-weight: bold; margin: 5px 0; }
 .menu dl dd { margin: 2px 0 2px 20px; }
-.menu .liste-items .item a.delete { padding-left: 18px; display: block; color: #666;
-	background: transparent url(img/noeud_moins.gif) left 50% no-repeat; }
+.menu .liste-items .item a.delete { display: inline-block; padding-left: 18px; color: #666; background: transparent url(img/noeud_moins.gif) left 50% no-repeat; }
 .menu .liste-items .item a.delete:hover { color: var(--color); }
 .categories li.item { padding: 4px 0 4px 18px; background: transparent url(img/noeud_plus.gif) left 3px no-repeat; }
 .categories li a { color: #666; }

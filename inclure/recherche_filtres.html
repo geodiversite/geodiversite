@@ -1,64 +1,43 @@
 <h2 class="h2"><span><:geol:recherche_options:></span></h2>
 	
-	[(#ENV{categories}|ou{#ENV{id_licence}}|ou{#ENV{type_doc}}|oui)
-	<p class="explication"><:geol:explication_recherche_filtree:></p>]
-	
-	<B_cat>
-	<h3 class="h3"><:geol:categories:></h3>
-	<ul class="liste-items">
-		<BOUCLE_cat(RUBRIQUES){tout}{id_rubrique IN #ENV**{categories}}>
-		<li class="item">
+<BOUCLE_test(CONDITION){si #ENV{categories}|ou{#ENV{id_licence}}|ou{#ENV{type_doc}}|ou{#ENV{echelle}}|oui}>
+<p class="explication"><:geol:explication_recherche_filtree:></p>
+<ul class="liste-items list-inline">
+	<BOUCLE_cat(RUBRIQUES){tout}{id_rubrique IN #ENV**{categories}}>
+	<li class="item">
 		<a href="[(#VAL{&amp;categories%5B%5D=#ID_RUBRIQUE}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
-		#TITRE
+			#TITRE
 		</a>
-		</li>
-		</BOUCLE_cat>
-	</ul>
-	</B_cat>
-	
-	<B_echelle>
-	<h3 class="h3"><:geol:echelle_media:></h3>
-	<ul class="liste-items">
+	</li>
+	</BOUCLE_cat>
 	<BOUCLE_echelle(MOTS){id_mot=#ENV{echelle}}>
-		<li class="item">
+	<li class="item">
 		<a href="[(#VAL{echelle=#ID_MOT}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
-		#TITRE
+			#TITRE
 		</a>
-		</li>
+	</li>
 	</BOUCLE_echelle>
-	</ul>
-	</B_echelle>
-	
-	<B_pour2>
-	<h3 class="h3"><:geol:licence_media:></h3>
-	<ul class="liste-items"> 
-		<BOUCLE_pour2(POUR){tableau #ENV**{id_licence}}>
-		<li class="item">
+	<BOUCLE_pour2(POUR){tableau #ENV**{id_licence}}>
+	<li class="item">
 		<a href="[(#VAL{&amp;id_licence%5B%5D=#VALEUR}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
-		[(#INCLURE{fond=modeles/licence,
-			id_licence=#VALEUR,
-			lien=non,
-			logo=non})]
+			[(#INCLURE{fond=modeles/licence,
+				id_licence=#VALEUR,
+				lien=non,
+				logo=non})]
 		</a
-		</li>
-		</BOUCLE_pour2>
-	</ul>
-	</B_pour2>
-	
-	<B_pour3>
-	<h3 class="h3"><:geol:media_type:></h3>
-	<ul class="liste-items"> 
-		<BOUCLE_pour3(POUR){tableau #ENV**{type_doc}}>
-		<li class="item">
+	</li>
+	</BOUCLE_pour2>
+	<BOUCLE_pour3(POUR){tableau #ENV**{type_doc}}>
+	<li class="item">
 		<a href="[(#VAL{&amp;type_doc%5B%5D=#VALEUR}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
-		[(#VALEUR|=={type_images}|oui)<:geol:media_type_images:>]
-		[(#VALEUR|=={type_audios}|oui)<:geol:media_type_audios:>]
-		[(#VALEUR|=={type_videos}|oui)<:geol:media_type_videos:>]
-		[(#VALEUR|=={type_textes}|oui)<:geol:media_type_textes:>]
+			[(#VALEUR|=={type_images}|oui)<:geol:media_type_images:>]
+			[(#VALEUR|=={type_audios}|oui)<:geol:media_type_audios:>]
+			[(#VALEUR|=={type_videos}|oui)<:geol:media_type_videos:>]
+			[(#VALEUR|=={type_textes}|oui)<:geol:media_type_textes:>]
 		</a>
-		</li>
-		</BOUCLE_pour3>
-	</ul>
-	</B_pour3>
+	</li>
+	</BOUCLE_pour3>
 </ul>
+</BOUCLE_test>
+
 <p class="explication"><a href="#URL_PAGE{recherche_avancee}" class="b"><:geol:recherche_avancee:></a></p>
