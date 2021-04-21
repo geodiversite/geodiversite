@@ -1,8 +1,8 @@
 <B_rubriques>
 #ANCRE_PAGINATION
 <h2 class="h2"><span><:geol:categories:></span></h2>
-<ul class="liste-items puces">
-	<BOUCLE_rubriques(RUBRIQUES) {recherche} {tout}{!par points}{pagination #ENV{pas,5}}>
+<ul class="liste-items list-inline list-inline-sep">
+	<BOUCLE_rubriques(RUBRIQUES){recherche}{tout}{!par points}{pagination #ENV{pas,30}}>
 	<li class="item"><a href="#URL_RUBRIQUE">#TITRE</a></li>
 	</BOUCLE_rubriques>
 </ul>
