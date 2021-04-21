@@ -179,9 +179,9 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu dl dt { font-weight: bold; margin: 5px 0; }
 .menu dl dd { margin: 2px 0 2px 20px; }
 
-.menu.filtres .liste-items .item { display: inline-block; margin-right: 1em; padding-top: 0; padding-bottom: 0; }
+.menu.filtres .liste-items .item { display: inline-block; margin-right: 1em; padding: 0 0.25em; border: 1px solid #ddd; border-radius: 0.25em; }
 .menu.filtres .liste-items .item:last-child { margin-right: 0; }
-.menu.filtres .liste-items .item a.delete { display: inline-block; padding-left: 18px; color: #666; background: transparent url(img/noeud_moins.gif) left 50% no-repeat; }
+.menu.filtres .liste-items .item a.delete { display: inline-block; padding-left: 20px; color: #666; background: transparent url(img/close.png) left 50% no-repeat; }
 .menu.filtres .liste-items .item a.delete:hover { color: var(--color); }
 .menu.rubriques .liste-items .item { margin-right: 0; }
 .menu.rubriques .liste-items .item:not(:last-child):after { content: " | "; }
