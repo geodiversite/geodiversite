@@ -1,0 +1,17 @@
+<B_sous_rubriques>
+<form action="[(#VAL{redirect}|generer_url_action)]" method="get">
+	[(#VAL{redirect}|generer_url_action|form_hidden)]
+	<input type="hidden" name="type" value="rubrique">
+	<select name="id" onchange="this.form.submit()">
+		<option value="#CONFIG{geol/secteur_medias,1}"[(#ENV{id_rubrique}|=={#CONFIG{geol/secteur_medias,1}}|oui)selected="selected"]><:geol:categories_toutes:></option>
+	<BOUCLE_sous_rubriques(RUBRIQUES){id_parent=#CONFIG{geol/secteur_categories,2}}{par num titre, titre}{tout}>
+		<option value="#ID_RUBRIQUE"[(#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)selected="selected"]>[(#VAL{&gt; }|str_repeat{#PROFONDEUR})]#TITRE</option>
+		<BOUCLE_filles(RUBRIQUES){id_parent}{par num titre, titre}{tout}>
+		<option value="#ID_RUBRIQUE"[(#ENV{id_rubrique}|=={#ID_RUBRIQUE}|oui)selected="selected"]>[(#VAL{&gt; }|str_repeat{#PROFONDEUR})]#TITRE</option>
+		<BOUCLE_f2(BOUCLE_filles)></BOUCLE_f2>
+		</BOUCLE_filles>
+	</BOUCLE_sous_rubriques>
+	</select>
+	<noscript><p class="boutons"><input type="submit" class="submit" value="&gt;&gt;" /></p></noscript>
+</form>
+</B_sous_rubriques>
