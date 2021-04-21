@@ -186,13 +186,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu.rubriques .liste-items .item { margin-right: 0; }
 .menu.rubriques .liste-items .item:not(:last-child):after { content: " | "; }
 
-.categories li.item { padding: 4px 0 4px 18px; background: transparent url(img/noeud_plus.gif) left 3px no-repeat; }
-.categories li a { color: #666; }
-.categories li a:hover { color: var(--color); }
-.categories li ul { margin-top: 4px; background: transparent url(img/dots.gif) 6px top repeat-y; }
-.categories li.on { font-weight: normal; background-image: url(img/noeud_moins.gif); }
-.categories li.deplie { background: transparent url(img/noeud_moins.gif) left 4px no-repeat; }
-.categories li.on>a { font-weight: bold; }
+.menu.categories { text-align: center; }
 
 /*  ------------------------------------------
 /*  pied

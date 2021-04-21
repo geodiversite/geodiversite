@@ -5,8 +5,12 @@
 		[(#LOGO_RUBRIQUE|match{rubon#ID_RUBRIQUE\.}|oui)[(#LOGO_RUBRIQUE|image_reduire{150,150})]]
 	</div>
 	
-
 	[<div class="#EDIT{texte} chapo">(#TEXTE|sinon{<:geol:pas_description:>})</div>]
+
+	[(#REM) affiche un sélecteur de catégories ]
+	<div class="menu categories">
+		<INCLURE{fond=inclure/rubrique_categories,id_rubrique}>
+	</div>
 
 	[(#REM) Articles de la galerie ]
 	[(#INCLURE{fond=inclure/liste/articles-vignette,

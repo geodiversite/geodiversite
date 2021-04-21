@@ -29,6 +29,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	// C
 	'carte' => 'Carte',
 	'categories' => 'Catégories',
+	'categories_toutes' => 'Toutes les catégories',
 	'categories_scientifiques' => 'Catégories scientifiques',
 	'cfg_descr_geol' => 'Configuration du squelette Géodiversité',
 	'cfg_explication_afficher_docs_annexes' => 'Afficher un bloc "Documents annexes" sous la description des médias pour permettre l’ajout de documents complémentaires.',
