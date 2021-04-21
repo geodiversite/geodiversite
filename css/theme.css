@@ -364,7 +364,6 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 
 .menu.auteur .liste-items .item { display: inline; color: #999; }
 
-.suivi .embed,
 .suivi .liste-items .item { display: inline-block; margin-right: 1em; padding: 0; }
 .suivi .liste-items .item:last-child { margin-right: 0; }
 .suivi .liste-items .item a { display: block; padding: 10px 0; }
