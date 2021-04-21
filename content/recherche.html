@@ -3,11 +3,11 @@
 		<h1 class="h1"><:resultats_recherche:></h1>
 	</div>
 	[(#REM) filtres de recherche ]
-	[<div class="menu">
+	[<div class="menu filtres">
 		(#INCLURE{fond=inclure/recherche_filtres,env})
 	</div>]
 	[(#REM) rubriques trouvees ]
-	[<div class="menu rubriques">
+	[<div class="menu filtres rubriques">
 		(#INCLURE{fond=inclure/recherche_rubriques,recherche,env,ajax})
 	</div>]
 	[(#RECHERCHE|?{#SET{tri,#ENV{tri,points}},#SET{tri,#ENV{tri,date}}})]
