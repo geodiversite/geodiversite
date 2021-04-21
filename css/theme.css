@@ -371,11 +371,11 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .vignettes .liste-items .item { display: inline; }
 .vignettes .liste-items .item a:hover { text-decoration: none; }
 
-.menu.auteurs .liste-items .item { display: inline-block; margin-right: 1em; padding: 0; }
-.menu.auteurs .liste-items .item a { display: block; text-decoration: none; color: #666; }
+.menu.auteurs .liste-items .item { display: inline-block; margin-right: 1em; padding: 0.25em 0.5em; border: 1px solid #ddd; border-radius: 0.5em; line-height: 1; }
+.menu.auteurs .liste-items .item a { display: flex; flex-direction: row; align-items: center; text-decoration: none; color: #666; }
 .menu.auteurs .liste-items .item a:hover { color: var(--color); }
 .menu.auteurs .liste-items .item .fn { display: inline; font-size: 1.2em; font-weight: bold; }
-.menu.auteurs .liste-items .item img { float: none; margin: 0 0.5em 0 0; vertical-align: top; }
+.menu.auteurs .liste-items .item img { float: none; margin: 0 0.5em 0 0; border-radius: 100%; }
 
 .amis .liste-items .item .action { display: block; margin-top: 5px; }
 
