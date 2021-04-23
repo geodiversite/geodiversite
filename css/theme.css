@@ -131,11 +131,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .page_login .formulaire_login label { text-align: center; }
 
 /* page auteur + auteurs */
-.liste.auteurs .item { display: flex; }
-.liste.auteurs .item .vcard { margin-left: 0.5em; }
-.liste.auteurs .item .vcard .titre { margin: 0; }
-.liste.auteurs .item .vcard a { color: inherit; }
-.liste.auteurs .item .vcard a:hover { text-decoration: none; }
+
 
 
 
@@ -210,19 +206,10 @@ body a.spip-admin-boutons { border: 1px solid #ddd; color: #666; background: #ff
 body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 
 /*  ------------------------------------------
-/*  pages sommaire, articles et rubriques
+/*  page sommaire
 /*  ------------------------------------------ */
 
-.page_sommaire #extra { display: none; }
-
 .page_sommaire .image_pop { margin-bottom: 2em; }
-
-.page_sommaire .content .menu { padding: 1em; background: #f2f2f2; }
-.page_sommaire .content .menu .h2 { margin-bottom: 0.5em; }
-.page_sommaire .content .menu .menu-liste { margin: 0; font-size: 1.1em; }
-.page_sommaire .content .menu .menu-liste .menu-entree { display: inline; margin: 0; padding: 0; }
-.page_sommaire .content .menu .menu-liste .menu-entree:not(:last-child):after { content: " ;" }
-
 .page_sommaire .image_pop { position: relative; }
 .page_sommaire .image_pop .description { display: block; padding: 0.5em; background: #f2f2f2; position: absolute; top: 1em; left: 0; opacity: 0.75; }
 .page_sommaire .image_pop .description:hover { opacity: 1; }
@@ -230,6 +217,17 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_sommaire .image_pop .description .auteur { margin: 0; padding: 0; font-size: 0.85em; font-weight: bold; opacity: 1; }
 .page_sommaire .image_pop .description a { color: initial; text-decoration: none; }
 
+.page_sommaire .content .menu { padding: 1em; background: #f2f2f2; }
+.page_sommaire .content .menu .h2 { margin-bottom: 0.5em; }
+.page_sommaire .content .menu .menu-liste { margin: 0; font-size: 1.1em; }
+.page_sommaire .content .menu .menu-liste .menu-entree { display: inline; margin: 0; padding: 0; }
+.page_sommaire .content .menu .menu-liste .menu-entree:not(:last-child):after { content: " ;" }
+
+.page_sommaire #extra { display: none; }
+
+/*  ------------------------------------------
+/*  pages articles et rubriques
+/*  ------------------------------------------ */
 
 .page_article .cartouche,
 .page_ticket .cartouche { margin: 10px 0 20px; }
@@ -293,24 +291,16 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_carte .footer #bouton:hover { cursor: pointer; }
 
 /* TODO à reprendre */
-.page_carte .info_filtre { display: block; float: left; padding: 5px 15px 4px 10px;
-	background: #999 url(img/bg_info_filtre.png) right 50% no-repeat; color: #fff; }
-.page_carte .info_filtre #close_filtre { display: inline-block; height: 16px; width: 16px; margin-left: 5px;
-	text-indent: -3000em; background: transparent url(img/close.png) 50% 50% no-repeat; }
-
-/* forcer le fullscreen pour webkit 
-https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differences */
-#geomap:-webkit-full-screen { width: 100% !important; height: 100% !important; }
+.page_carte .info_filtre { display: block; float: left; padding: 5px 15px 4px 10px; background: #999 url(img/bg_info_filtre.png) right 50% no-repeat; color: #fff; }
+.page_carte .info_filtre #close_filtre { display: inline-block; height: 16px; width: 16px; margin-left: 5px; text-indent: -3000em; background: transparent url(img/close.png) 50% 50% no-repeat; }
 
 .page_carte .leaflet-control-layers label { float: left; }
 .page_carte .leaflet-bottom.leaflet-right { right: 60px; }
 
-.page_carte div#kml_panel { margin-right: 10px; margin-top: 35px; width: 200px; padding: 5px;
-	background: #fff; border: 5px solid #f2f2f2; }
+.page_carte div#kml_panel { margin-right: 10px; margin-top: 35px; width: 200px; padding: 5px; background: #fff; border: 5px solid #f2f2f2; }
 .page_carte #kml_panel h3 { margin: 0 0 5px; cursor: move; padding-right: 18px; }
 .page_carte #kml_panel.replie h3 { margin: 0; border: 0; }
-.page_carte #kml_panel #toggle { display: block; float: right; width: 18px; height: 18px; text-indent: -3000em;
-	background: transparent url(img/noeud_moins.gif) 50% top no-repeat; }
+.page_carte #kml_panel #toggle { display: block; float: right; width: 18px; height: 18px; text-indent: -3000em; background: transparent url(img/noeud_moins.gif) 50% top no-repeat; }
 .page_carte #kml_panel #toggle:active,
 .page_carte #kml_panel #toggle:focus { outline: 0 none; }
 .page_carte #kml_panel.replie #toggle { background: transparent url(img/noeud_plus.gif) 50% top no-repeat; }
@@ -365,6 +355,12 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .suivi .rss { background: transparent url(img/rss.png) left 50% no-repeat; }
 .suivi .kml { background: transparent url(img/kml.png) left 50% no-repeat; }
 .suivi .georss { background: transparent url(img/georss.png) left 50% no-repeat; }
+
+.liste.auteurs .item { display: flex; }
+.liste.auteurs .item .vcard { margin-left: 0.5em; }
+.liste.auteurs .item .vcard .titre { margin: 0; }
+.liste.auteurs .item .vcard a { color: inherit; }
+.liste.auteurs .item .vcard a:hover { text-decoration: none; }
 
 .vignettes .liste-items .item { display: inline; }
 .vignettes .liste-items .item a:hover { text-decoration: none; }
@@ -426,8 +422,6 @@ https://developer.mozilla.org/en/DOM/Using_full-screen_mode#Presentation_differe
 .comments-list .comment-meta .photo { margin: 0; }
 .comments-list .comment-meta .reviewer { margin-left: 0.5em; flex-grow: 1; }
 .comments-list .comment-meta-date { color: #999; }
-
-
 
 /*  ------------------------------------------
 /*  Les formulaires
@@ -502,9 +496,7 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 .actions_doc .formulaire_favori form button.ajouter_favori,
 .actions_doc .formulaire_favori form button.ajouter_favori:hover,
 .actions_doc .formulaire_favori form button.retirer_favori,
-.actions_doc .formulaire_favori form button.retirer_favori:hover {
-	display: block; float: left; width: 20px; height: 20px; margin-right: 10px; text-indent: -3000em;
-	background: transparent url(img/sprite_actions_doc.png) left top no-repeat; }
+.actions_doc .formulaire_favori form button.retirer_favori:hover { display: block; float: left; width: 20px; height: 20px; margin-right: 10px; text-indent: -3000em; background: transparent url(img/sprite_actions_doc.png) left top no-repeat; }
 .actions_doc a.zoom { background-position: 0 -20px; }
 .actions_doc a.zoom:hover { background-position: 0 0; }
 .actions_doc a.telecharger { background-position: 0 -60px; }
