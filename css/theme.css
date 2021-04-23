@@ -194,11 +194,11 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 /*  ------------------------------------------ */
 
 #footer a:hover { color: var(--color);}
-.footer .liste { margin: 10px 0; }
+.footer .liste { margin: 0.75em 0; }
 .footer .h3,
 .footer .menu-liste,
 .footer .menu-liste .menu-entree,
-.footer .menu-liste .menu-entree a { display: inline; border: 0; padding: 0; }
+.footer .menu-liste .menu-entree a { display: inline; margin:0; border: 0; padding: 0; }
 .footer .menu-liste .menu-entree { margin-left: 0.5em; }
 .footer .h3 { font-size: 1em; }
 .footer a { color: #666; }
