@@ -477,17 +477,15 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 
 /* recherche avancee */
 
-.formulaire_recherche_geol { width: 90%; margin-top: 10px; }
-.formulaire_spip.formulaire_recherche_geol ul li { overflow: hidden; padding: 15px 10px 15px 150px; border-top: 1px solid #ddd; }
-.formulaire_recherche_geol ul li:first-child { border-top: 0; }
-.formulaire_recherche_geol ul li label { float: left; width: 140px; margin-left: -145px; text-align: left; vertical-align: top;
-	/* pour IE6 */ position: relative; display: inline; }
-.formulaire_recherche_geol ul>li label { display: block; position: static; }
-.formulaire_recherche_geol li.choix { padding-left : 10px; }
-.formulaire_recherche_geol .choix label { float: none; margin-left: 5px; display: inline; width: auto; vertical-align: middle; }
-.formulaire_recherche_geol .choix input.radio,
-.formulaire_recherche_geol .choix input.checkbox { width: auto; vertical-align: middle; }
-.formulaire_recherche_geol .saisie_mot select { width: 15em; }
+@media (min-width: 768px) {
+	.formulaire_recherche_geol .editer-groupe .editer { overflow: hidden; padding: 1em 0 1em 150px; }
+	.formulaire_recherche_geol .editer-groupe .editer + .editer { border-top: 1px solid #ddd; }
+	.formulaire_recherche_geol .editer-groupe .editer > label { float: left; width: 140px; margin-left: -145px; text-align: left; vertical-align: top; }
+	.formulaire_recherche_geol .editer.choix { padding-left : 10px; }
+	.formulaire_recherche_geol .choix label { float: none; margin-left: 5px; display: inline; width: auto; vertical-align: middle; }
+	.formulaire_recherche_geol .choix input.radio,
+	.formulaire_recherche_geol .choix input.checkbox { width: auto; vertical-align: middle; }
+}
 
 
 /* boutons actions */
