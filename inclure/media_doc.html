@@ -4,7 +4,7 @@
 [(#MEDIA|=={image}|oui)#SET{embed,oui}
 	<div class="actions_doc">
 		[(#FORMULAIRE_FAVORI{article,#ID_ARTICLE})]
-		<a href="[(#URL_DOCUMENT|url_absolue)]" type="#MIME_TYPE" title="<:geol:zoom|texte_backend:>" class="zoom"><:geol:zoom:></a>
+		<a href="[(#URL_DOCUMENT|url_absolue)]" data-photo="#FICHIER" data-photo-h="#HAUTEUR" data-photo-w="#LARGEUR" data-photo-title="[(#INFO_TITRE{article,#ID_ARTICLE}|attribut_html)]" type="#MIME_TYPE" title="<:geol:zoom|texte_backend:>" class="zoom"><:geol:zoom:></a>
 		<a href="[(#URL_DOCUMENT|url_absolue)]" title="<:geol:doc_telecharger|texte_backend:>" class="telecharger"><:geol:doc_telecharger:></a>
 		#SET{notes_editables,non}
 		[(#AUTORISER{creerdans,legende,#ID_DOCUMENT}|oui)
