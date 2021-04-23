@@ -64,5 +64,5 @@
 
 [(#AUTORISER{modifier,article,#ENV{id_article}}|et{#ENV{signaler_erreur}|non}|oui)
 <div class="actions">
-	[(#VAL{91}|chr) ]<a href="[(#SELF|parametre_url{modifier_carte,#ENV{modifier_carte}|?{'',oui}})]">[(#ENV{modifier_carte}|?{<:geol:annuler:>,<:geol:modifier_carte:>})]</a>[ (#VAL{93}|chr)]
+	[(#VAL{91}|chr) ]<a href="[(#SELF|parametre_url{modifier_carte,#ENV{modifier_carte}|?{'',oui}}|ancre_url{formulaire_editer_gis})]">[(#ENV{modifier_carte}|?{<:geol:annuler:>,<:geol:modifier_carte:>})]</a>[ (#VAL{93}|chr)]
 </div>]
