@@ -5,7 +5,7 @@
 	etat="stable"
 	compatibilite="[3.2.0;3.2.*]"
 	logo="images/logo_site.png"
-	schema="0.2.2"
+	schema="0.2.3"
 >
 
 	<nom>Géodiversité</nom>

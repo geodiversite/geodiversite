@@ -19,6 +19,9 @@ function geol_upgrade($nom_meta_base_version,$version_cible){
 	$maj['0.2.2'] = array(
 		array('geol_upgrade_022'),
 	);
+	$maj['0.2.3'] = array(
+		array('geol_upgrade_023'),
+	);
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
@@ -132,6 +135,7 @@ function geol_installation(){
 	geol_upgrade_02();
 	geol_upgrade_021();
 	geol_upgrade_022();
+	geol_upgrade_023();
 
 }
 
@@ -169,6 +173,10 @@ function geol_upgrade_021(){
 
 function geol_upgrade_022(){
 	ecrire_config('notifications/forum_article','on');
+}
+
+function geol_upgrade_023(){
+	ecrire_config('taille_preview', '640');
 }
 
 function geol_vider_tables($nom_meta_base_version){
