@@ -221,7 +221,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_sommaire .content .menu .h2 { margin-bottom: 0.5em; }
 .page_sommaire .content .menu .menu-liste { margin: 0; font-size: 1.1em; }
 .page_sommaire .content .menu .menu-liste .menu-entree { display: inline; margin: 0; padding: 0; }
-.page_sommaire .content .menu .menu-liste .menu-entree:not(:last-child):after { content: " ;" }
+.page_sommaire .content .menu .menu-liste .menu-entree:not(:last-child):after { content: " - " }
 
 .page_sommaire #extra { display: none; }
 
