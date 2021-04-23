@@ -281,6 +281,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_carte html,
 .page_carte body { height: 100%; }
 .page_carte .page { overflow: hidden; width: 100%; margin: 0; height: 100%; position: absolute; left: 0; }
+.page_carte #header { border: 0; }
 .page_carte #container,
 .page_carte #container .content,
 .page_carte #container .content .carte_gis { width: 100%; max-width: none; margin: 0; height: 100%; position: relative; }
@@ -290,9 +291,8 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_carte .footer.cache #bouton { background-position: left top; }
 .page_carte .footer #bouton:hover { cursor: pointer; }
 
-/* TODO à reprendre */
-.page_carte .info_filtre { display: block; float: left; padding: 5px 15px 4px 10px; background: #999 url(img/bg_info_filtre.png) right 50% no-repeat; color: #fff; }
-.page_carte .info_filtre #close_filtre { display: inline-block; height: 16px; width: 16px; margin-left: 5px; text-indent: -3000em; background: transparent url(img/close.png) 50% 50% no-repeat; }
+.page_carte .info_filtre { display: block; text-align: center; background: #999; color: #fff; }
+.page_carte .info_filtre #close_filtre { display: inline-block; height: 16px; width: 16px; margin-left: 5px; vertical-align: middle; text-indent: -3000em; background: transparent url(img/close.png) 50% 50% no-repeat; }
 
 .page_carte .leaflet-control-layers label { float: left; }
 .page_carte .leaflet-bottom.leaflet-right { right: 60px; }

@@ -69,8 +69,7 @@ var resizeMap = function() {
 			[(#GET{kml}|oui)
 			filtre.push('#INFO_TITRE{article,#ENV{id_article}}');]
 			$('<span class="info_filtre">'+ filtre.join(", ") +' '+ close_filtre +'</span>')
-				.prependTo('#nav')
-				.hide().fadeIn(3500);
+				.prependTo('#container');
 		};
 		
 		// panel de gestion des kml dans #extra
