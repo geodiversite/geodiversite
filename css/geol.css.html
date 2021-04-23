@@ -15,15 +15,7 @@
 
 
 /*  ------------------------------------------
-/*  Styles Geodiversite & modules
+/*  Couleur de base de Geodiversite
 /*  ------------------------------------------ */
 
 :root { --color: [(#VAL{_GEOL_COULEUR_PRIMAIRE}|defined|?{#EVAL{_GEOL_COULEUR_PRIMAIRE},#CONFIG{geol/couleur_primaire,#00c0f8}});] }
-
-[(#CHEMIN{geol_albums.css}|oui)
-[(#INCLURE{#CHEMIN{geol_albums.css}})]
-]
-
-[(#CHEMIN{geol_balades.css}|oui)
-[(#INCLURE{#CHEMIN{geol_balades.css}})]
-]
