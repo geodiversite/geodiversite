@@ -6,7 +6,7 @@
 	<input type="hidden" value="recherche" name="page">
 	<fieldset>
 		<[(#DIV|sinon{ul})] class="editer-groupe">
-			<[(#DIV|sinon{li})] class="recherche">
+			<[(#DIV|sinon{li})] class="editer recherche">
 				<label for="recherche"><:info_rechercher:></label>
 				<input type="text" class="text" size="10" name="recherche" id="recherche"[ value="(#ENV{recherche})"] />
 				[(#PLUGIN{Fulltext}|oui)<p class="explication"><:fulltext:casse_indifferente:> <:fulltext:accents_pas_pris:>.</p>]
