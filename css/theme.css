@@ -24,7 +24,7 @@ body { background: #fff; font-size: 120%; }
 .page { display: flex; min-height: 100vh; flex-direction: column; }
 .page .container { flex: 1; }
 
-.header { margin: 0; padding : 0.5em 0; position: relative; background: #111; box-shadow: 0 6px 6px -6px rgba(0,0,0,0.2); border-bottom: 1px solid #dedcd2; }
+.header { margin: 0; padding : 0.5em 0; position: relative; background: #111; box-shadow: 0 6px 6px -6px rgba(0,0,0,0.2); }
 .header .container { position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; }
 .header .accueil .spip_logo { float: none; margin: 0 0.25em 0 0; }
 .header .accueil #nom_site_spip { display: flex; align-items: center; margin-bottom: 0; color: #fff; line-height: 1; }
@@ -209,13 +209,13 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 /*  page sommaire
 /*  ------------------------------------------ */
 
-.page_sommaire .image_pop { margin-bottom: 2em; }
-.page_sommaire .image_pop { position: relative; }
-.page_sommaire .image_pop .description { display: block; padding: 0.5em; background: #f2f2f2; position: absolute; top: 1em; left: 0; opacity: 0.75; }
-.page_sommaire .image_pop .description:hover { opacity: 1; }
+.page_sommaire .content { margin: 0; }
+.page_sommaire .image_pop { position: relative; margin-bottom: 2em; }
+.page_sommaire .image_pop .cover_image { min-height: 130px; height: 60vh; background-repeat: no-repeat; background-position: center; background-size: cover; }
+.page_sommaire .image_pop .description { display: block; position: absolute; bottom: 1em; left: 0; right: 0; text-align: center; color: #fff; text-shadow: 0 1px 3px rgba(0,0,0,0.55); }
 .page_sommaire .image_pop .description h2,
-.page_sommaire .image_pop .description .auteur { margin: 0; padding: 0; font-size: 0.85em; font-weight: bold; opacity: 1; }
-.page_sommaire .image_pop .description a { color: initial; text-decoration: none; }
+.page_sommaire .image_pop .description .auteur { margin: 0; padding: 0; font-size: 0.85em; font-weight: bold; }
+.page_sommaire .image_pop .description a { color: #fff; text-decoration: none; }
 
 .page_sommaire .content .menu { padding: 1em; background: #f2f2f2; }
 .page_sommaire .content .menu .h2 { margin-bottom: 0.5em; }
@@ -281,7 +281,6 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_carte html,
 .page_carte body { height: 100%; }
 .page_carte .page { overflow: hidden; width: 100%; margin: 0; height: 100%; position: absolute; left: 0; }
-.page_carte #header { border: 0; }
 .page_carte #container,
 .page_carte #container .content,
 .page_carte #container .content .carte_gis { width: 100%; max-width: none; margin: 0; height: 100%; position: relative; }
