@@ -50,4 +50,5 @@ function autoriser_modererforum($faire, $type, $id, $qui, $opt) {
 define('_PAGE_PUBLIER','upload');
 define('_DIOGENE_REDIRIGE_PUBLICATION',true);
 define('_DIOGENE_MODIFIER_PUBLIC',false);
+define('_EM_PREVISU_LARGEUR',720);
 define('_TAILLE_MAX_GRAVATAR',200);
