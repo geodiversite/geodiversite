@@ -1,16 +1,13 @@
 [(#REM) recuperer une des dix images les plus populaires au hasard ]
 #SET{images_pop,#ARRAY}
-<BOUCLE_pop(ARTICLES documents_liens documents){id_secteur = #CONFIG{geol/secteur_medias,1}}{documents.mode=document}{documents.extension IN 'jpg','png','gif'}{documents.largeur >= #ENV{largeur,1170}}{!par popularite}{0,10}>#SET_PUSH{images_pop,#ID_ARTICLE}</BOUCLE_pop>
+<BOUCLE_pop(ARTICLES documents_liens documents){id_secteur = #CONFIG{geol/secteur_medias,1}}{documents.mode=document}{documents.extension IN 'jpg','png','gif'}{documents.largeur >= #ENV{largeur,1920}}{!par popularite}{0,10}>#SET_PUSH{images_pop,#ID_ARTICLE}</BOUCLE_pop>
 <BOUCLE_article(ARTICLES){id_article IN #GET{images_pop}}{par hasard}{0,1}>
-	<div class="description">
-		[<h2>(#TITRE)</h2>]
-		[<span class="auteur"><:geol:de:> <span class="contributor">(#LESAUTEURS)</span></span>]
-	</div>
 	<BOUCLE_doch(DOCUMENTS){id_article}{extension IN 'jpg','png','gif'}{mode=document}{0,1}>
-	[<a href="#_article:URL_ARTICLE" title="#_article:TITRE">
-		(#FICHIER|image_recadre{#ENV{largeur,1170}:#ENV{hauteur,540},-,focus}
-			|image_reduire{#ENV{largeur,1170},#ENV{hauteur,540},center}
-			|inserer_attribut{alt,[(#TITRE|couper{80}|texte_backend)]})
-	</a>]
+	<div class="cover_image" style="background-image: url('[(#FICHIER|image_recadre{3.14:1,-,focus}|image_reduire{#ENV{largeur,1920},#ENV{hauteur,0},center}|extraire_attribut{src})]');">
+		<div class="description">
+			[<h2><a href="#URL_ARTICLE">(#_article:TITRE)</a></h2>]
+			[<span class="auteur"><:geol:de:> <span class="contributor">(#_article:LESAUTEURS)</span></span>]
+		</div>
+	</div>
 	</BOUCLE_doch>
 </BOUCLE_article>
