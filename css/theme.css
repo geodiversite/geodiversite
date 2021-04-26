@@ -393,7 +393,10 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_upload #formulaire_diogene .diogene_dates,
 .page_upload #formulaire_diogene .editer_texte,
 .page_upload #formulaire_diogene .fieldset { margin: 20px 0; padding: 10px; border: 5px solid #f2f2f2; background: #fff; }
+.page_upload #em_upload_fichier .actions-documents,
+.page_upload #em_upload_fichier .previsu_document h3 { display: none; }
 .page_upload .previsu_document { border: 0; }
+.page_upload .previsu_document .spip_documents { margin: 0; }
 .page_upload .content .h2,
 .page_upload .content div.texte,
 .page_upload .previsu_document h4,
