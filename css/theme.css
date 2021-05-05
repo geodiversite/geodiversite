@@ -250,6 +250,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .image_legendes .nb_notes { margin-bottom: 0; font-size: 80%; font-family: inherit; }
 .doc_echelle { margin: 5px 0 0; font-size: 80%; }
 .logo_audio { display: block; }
+.page_article .content .description { margin-top: 1.5em; }
 
 .documents_annexes .documents_portfolio { text-align: left; }
 .documents_annexes .documents_portfolio .liste-items .item { display: inline-block; text-align: center; }
