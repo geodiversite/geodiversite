@@ -22,10 +22,11 @@
 			ajax})
 	</div>]]
 
-	<h2 class="h2"><:geol:description:></h2>
 	[(#PLUGIN{estamp}|oui)
 	[(#INCLURE{fond=modeles/estampille,id_article})]]
-	<div class="surlignable">
+	
+	<div class="description surlignable">
+		<h2 class="h2"><:geol:description:></h2>
 		[<div class="#EDIT{chapo} chapo">(#CHAPO|image_reduire{760,0})</div>]
 		[<div class="#EDIT{texte} texte entry-content">(#TEXTE|image_reduire{760,0}|sinon{<:geol:pas_description|paragrapher:>})</div>]
 		[<div class="notes"><h2 class="h2 pas_surlignable"><:info_notes:></h2>(#NOTES)</div>]
