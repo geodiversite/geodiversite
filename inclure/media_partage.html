@@ -26,6 +26,6 @@
 
 [(#PLUGIN{licence}|et{#AUTORISER{modifier,article,#ENV{id_article}}}|oui)
 <div class="actions">
-	[(#VAL{91}|chr) ]<a href="[(#SELF|parametre_url{modifier_licence,#ENV{modifier_licence}|?{'',oui}})]" class="ajax">[(#ENV{modifier_licence}|?{<:geol:annuler:>,<:geol:modifier_licence:>})]</a>[ (#VAL{93}|chr)]
+	<a href="[(#SELF|parametre_url{modifier_licence,#ENV{modifier_licence}|?{'',oui}})]" class="button ajax">[(#ENV{modifier_licence}|?{<:geol:annuler:>,<:geol:modifier_licence:>})]</a>
 </div>]
 </BOUCLE_media_partage>
