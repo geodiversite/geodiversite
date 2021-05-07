@@ -3,9 +3,9 @@
 <h2 class="h2"><:geol:documents_annexes:></h2>
 
 [(#AUTORISER{modifier,article,#ENV{id_article}}|oui)
-<p class="actions">
-	\[ <a href="[(#SELF|parametre_url{modifier_annexes,#ENV{modifier_annexes}|?{'',oui}})]" class="ajax">[(#ENV{modifier_annexes}|?{<:geol:annuler:>,<:geol:modifier:>})]</a> \]
-</p>]
+<div class="actions">
+	<a href="[(#SELF|parametre_url{modifier_annexes,#ENV{modifier_annexes}|?{'',oui}})]" class="button ajax">[(#ENV{modifier_annexes}|?{<:geol:annuler:>,<:geol:modifier:>})]</a>
+</div>]
 
 [(#REM) Portfolio : album d'images ]
 <B_documents_portfolio>
