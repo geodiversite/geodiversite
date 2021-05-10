@@ -120,6 +120,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 
 #container.fullwidth { max-width: none; width: 100%; }
 
+.page_login #container { display: flex; align-items: center; }
 .page_login .content { max-width: 360px; margin: 0 auto; padding: 1em 0; text-align: center; }
 .page_login #breadcrumb,
 .page_login .cartouche h1 small,
