@@ -1,8 +1,4 @@
 [(#PLUGIN{spipicious}|oui)
-[(#AUTORISER{tagger_spipicious,article,#ID_ARTICLE}|oui)
-<div class="actions"><a href="[(#SELF|parametre_url{modifier_tags,#ENV{modifier_tags}|?{'',oui}})]" class="button ajax">[(#ENV{modifier_tags}|?{<:geol:annuler:>,<:geol:tags_modifier:>})]</a></div>
-]
-
 
 [(#ENV{modifier_tags}|oui)
 	[(#FORMULAIRE_SPIPICIOUS_AJAX{#ID_ARTICLE,'article',#URL_ARTICLE})]
@@ -13,6 +9,11 @@
 		{id=#CONFIG{geol/groupe_tags,#CONFIG{spipicious/groupe_mot,1}}}
 		{id_article})]
 ]
+
+[(#AUTORISER{tagger_spipicious,article,#ID_ARTICLE}|oui)
+<div class="actions"><a href="[(#SELF|parametre_url{modifier_tags,#ENV{modifier_tags}|?{'',oui}})]" class="button ajax">[(#ENV{modifier_tags}|?{<:geol:annuler:>,<:geol:tags_modifier:>})]</a></div>
+]
+
 ]
 
 #FILTRE{trim}
