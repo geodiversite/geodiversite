@@ -173,6 +173,7 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 .menu .socialtags ul,
 .menu .socialtags ul li { background: none; padding: 0; }
 .menu .puces li { padding: 0 0 0 1em; background: transparent url(img/puce.png) left 50% no-repeat; }
+.menu .puces { margin-bottom: 0; }
 .menu dl dt { font-weight: bold; margin: 5px 0; }
 .menu dl dd { margin: 2px 0 2px 20px; }
 
