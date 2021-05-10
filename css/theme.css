@@ -400,7 +400,8 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_upload #em_upload_fichier .actions-documents,
 .page_upload #em_upload_fichier .previsu_document h3 { display: none; }
 .page_upload .previsu_document { border: 0; }
-.page_upload .previsu_document .spip_documents { margin: 0; }
+.page_upload .previsu_document .spip_documents,
+.page_upload .previsu_document .spip_documents .image-annotate-canvas { margin: 0 auto; }
 .page_upload .content .h2,
 .page_upload .content div.texte,
 .page_upload .previsu_document h4,
