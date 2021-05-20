@@ -11,7 +11,7 @@ if (!defined('_ECRIRE_INC_VERSION')) return;
  * @return array $flux
  */
 function geol_insert_head_css($flux) {
-	$flux .= '<link rel="stylesheet" href="'.produire_fond_statique('css/geol.css', array('lang' => $GLOBALS['spip_lang_left'])).'" type="text/css" media="all" />';
+	$flux .= '<link rel="stylesheet" href="'.produire_fond_statique('css/geol.css', array('ltr' => $GLOBALS['spip_lang_left'])).'" type="text/css" media="all" />';
 	return $flux;
 }
 
