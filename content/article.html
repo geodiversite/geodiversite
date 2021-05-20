@@ -39,8 +39,6 @@
 	[(#INCLURE{fond=inclure/media_annexes,id_article,modifier_annexes,ajax,env})]
 	]
 
-	[(#ENV{id_rubrique}|!={-1}|oui)
-
 	[(#REM) carte ]
 	[<div class="menu carte">
 		(#INCLURE{fond=inclure/media_carte,
@@ -77,6 +75,5 @@
 			ajax})]
 	</div>]
 
-	]
 </div>
 </BOUCLE_contenu_article>
