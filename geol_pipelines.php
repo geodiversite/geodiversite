@@ -31,7 +31,7 @@ function geol_insert_head($flux) {
 /**
  * Insertion dans le pipeline styliser (SPIP)
  * 
- * Par défaut, appliquer la composition 'page' aux articles de la rubrique -1 (les pages donc)
+ * Par défaut, appliquer le squelette de la composition 'page' aux pages uniques
  * 
  * @param array $flux
  * @return array
@@ -40,10 +40,8 @@ function geol_styliser($flux){
 	// Si c'est un squelette ayant rapport avec un article
 	if (isset($flux['args']['contexte']['type-page'])
 		and $flux['args']['contexte']['type-page'] == 'article'
-		// Et qu'on sait que ça se passe dans la rubrique -1
-		and $flux['args']['contexte']['id_rubrique'] == '-1'
-		// Et qu'il n'y a pas déjà une composition appliquée
-		and $flux['args']['contexte']['composition'] == ''
+		// Et qu'il porte la composition automatique des pages uniques
+		and strpos($flux['args']['contexte']['composition'], 'pageunique-') === 0
 		// Et qu'il existe un squelette du même fond, mais avec le suffixe "page"
 		and $f=find_in_path($flux['args']['fond'].'-page.'.$flux['args']['ext'])
 	){
