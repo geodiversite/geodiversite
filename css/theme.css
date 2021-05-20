@@ -539,7 +539,7 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 /* les crayons */
 
 .geomodale,
-.mot_doux { padding: 5px; border: 5px solid #f2f2f2; background: #fff; }
+.mot_doux { padding: 5px; border: 1px solid rgba(0, 0, 0, 0.08); border-radius: .25em; background: #f5f5f5; }
 body .crayon-html .formulaire_spip { margin-bottom: 5px; padding: 5px; background: #fff; }
 body .crayon-html .formulaire_spip .formulaire_crayon { padding-bottom: 10px; }
 body .crayon-html .formulaire_spip .legend { text-align: left; }
@@ -554,4 +554,4 @@ body .resizehandle_boutons { margin-top: 0; }
 
 /* fausse modale pour certains formulaires */
 
-.geomodale { position: absolute; z-index: 1; width: 600px; left: 50%; margin-left: -300px; background: #ddd; }
+.geomodale { position: absolute; z-index: 1; width: 600px; padding: 1em 1em 0; left: 50%; margin-left: -300px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.25); }
