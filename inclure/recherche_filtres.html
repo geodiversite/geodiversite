@@ -5,7 +5,7 @@
 <ul class="liste-items">
 	<BOUCLE_cat(RUBRIQUES){tout}{id_rubrique IN #ENV**{categories}}>
 	<li class="item">
-		<a href="[(#VAL{&amp;categories%5B%5D=#ID_RUBRIQUE}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
+		<a href="[(#SELF|parametre_url{categories\[\],#ENV**{categories}|array_diff{#LISTE{#ID_RUBRIQUE}}})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
 			#TITRE
 		</a>
 	</li>
@@ -19,7 +19,7 @@
 	</BOUCLE_echelle>
 	<BOUCLE_pour2(POUR){tableau #ENV**{id_licence}}>
 	<li class="item">
-		<a href="[(#VAL{&amp;id_licence%5B%5D=#VALEUR}|str_replace{'',#SELF})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
+		<a href="[(#SELF|parametre_url{id_licence\[\],#ENV**{id_licence}|array_diff{#LISTE{#VALEUR}}})]" class="delete" title="<:geol:recherche_retirer_filtre|texte_backend:>">
 			[(#INCLURE{fond=modeles/licence,
 				id_licence=#VALEUR,
 				lien=non,
