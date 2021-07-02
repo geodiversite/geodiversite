@@ -29,7 +29,7 @@
 	<B_cat>
 	<li class="item">
 		[(#_cat_mere:TITRE|unique|couper{80}) : ]
-		<BOUCLE_cat(RUBRIQUES){branche}{id_rubrique IN #GET{parents_indirects}}{tout}{', '}>[<a href="#URL_RUBRIQUE">(#TITRE|couper{80})</a>]</BOUCLE_cat>
+		<BOUCLE_cat(RUBRIQUES){branche_principale}{id_rubrique IN #GET{parents_indirects}}{tout}{', '}>[<a href="#URL_RUBRIQUE">(#TITRE|couper{80})</a>]</BOUCLE_cat>
 	</li>
 	</B_cat>
 </BOUCLE_cat_mere>
