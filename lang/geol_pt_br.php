@@ -10,6 +10,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS[$GLOBALS['idx_lang']] = array(
 
 	// A
+	'administration' => 'Administração',
 	'afficher' => 'Exibir',
 	'afficher_par_page' => 'por página',
 	'aide' => 'Ajuda',
@@ -32,6 +33,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'carte' => 'Mapa',
 	'categories' => 'Categorias',
 	'categories_scientifiques' => 'Categorias científicas',
+	'categories_toutes' => 'Todas as categorias',
 	'cfg_descr_geol' => 'Configuação do esqueleto Géodiversité',
 	'cfg_explication_afficher_docs_annexes' => 'Exibir um bloco "Documentos anexados" abaixo da descrição das mídias para permitir o acréscimo de documentos complementares.',
 	'cfg_explication_afficher_serie' => 'Exibir um bloco "Outras mídias na navegação das páginas para permitir a navegação entre as mídias anteriores/sucessivas.',
@@ -58,15 +60,15 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'commentaire_aucun' => 'Nenhum comentário',
 	'commentaire_zero' => '0 comentário',
 	'commentaires' => '@nb@ comentários',
-	'commentaires_permalink_pour' => 'Link permanente para', # MODIF
+	'commentaires_permalink_pour' => 'Link permanente',
 	'commentaires_titre' => 'Seus comentários',
 	'commenter' => 'Comentar',
 	'contact_auteur' => 'Entrar em contato @nom@',
 	'contrib' => 'Contribuição',
-	'contrib_0' => 'Nenhuma contribuição neste dia', # MODIF
-	'contrib_auteur' => '1 contribuição neste dia', # MODIF
+	'contrib_0' => 'Nenhuma contribuição',
+	'contrib_auteur' => '1 contribuição',
 	'contribs' => 'Contribuições',
-	'contribs_auteur' => '@nb@ contribuições neste dia', # MODIF
+	'contribs_auteur' => '@nb@ contribuições',
 	'contribuer' => 'Contribuir',
 	'contributeur' => '1 autor no total',
 	'contributeurs' => '@nb@ autores no total',
