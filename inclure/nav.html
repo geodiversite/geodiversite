@@ -8,7 +8,7 @@
 		<li class="item menu-entree"><a href="#URL_RUBRIQUE{#CONFIG{geol/secteur_medias,1}}"><:geol:galerie:></a></li>
 		<li class="item menu-entree"><a href="#URL_PAGE{carte}"><:geol:carte:></a></li>[
 		<li class="item menu-entree">(#SESSION{id_auteur}|oui)<a href="#URL_AUTEUR{#SESSION{id_auteur}}"><:geol:mon_espace:></a></li>
-		<li class="item menu-entree"><a href="#URL_PAGE{upload}" rel="nofollow"><:geol:publier_media:></a></li>
+		<li class="item menu-entree"><a href="#URL_PAGE{#CONST{_GEOL_PAGE_UPLOAD}|sinon{upload}}" rel="nofollow"><:geol:publier_media:></a></li>
 		<li class="item menu-entree"><a href="#URL_LOGOUT" rel="nofollow"><:icone_deconnecter:></a></li>][
 		<li class="item menu-entree">(#SESSION{id_auteur}|non)<a href="#URL_PAGE{inscription}" rel="nofollow"><:geol:creer_compte:></a></li>
 		<li class="item menu-entree"><a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a></li>]

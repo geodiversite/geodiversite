@@ -27,7 +27,7 @@
 				<li class="menu-entree item"><a href="[(#URL_PAGE{inscription})]" rel="nofollow" class='login_modal'><:geol:creer_compte:></a></li>
 				<li class="menu-entree item"><a href="[(#URL_PAGE{login}|parametre_url{url,#SELF})]" rel="nofollow" class='login_modal'><:lien_connecter:></a></li>
 				][(#SESSION{id_auteur}|oui)<li class="menu-entree item"><a href="#URL_AUTEUR{#SESSION{id_auteur}}"><:geol:mon_espace:></a></li>
-				<li class="menu-entree item"><a href="[(#URL_PAGE{upload})]" rel="nofollow"><:geol:publier_media:></a></li>]
+				<li class="menu-entree item"><a href="[(#URL_PAGE{#CONST{_GEOL_PAGE_UPLOAD}|sinon{upload}})]" rel="nofollow"><:geol:publier_media:></a></li>]
 			</ul>
 		<//B_menu2>
 		</div>
