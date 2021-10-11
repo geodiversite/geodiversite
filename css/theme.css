@@ -120,9 +120,16 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 
 #container.fullwidth { max-width: none; width: 100%; }
 
-.page_login #container { display: flex; align-items: center; }
-.page_login .content { max-width: 360px; margin: 0 auto; padding: 1em 0; text-align: center; }
+.page_login #container,
+.page_spip_pass #container,
+.page_inscription #container { display: flex; align-items: center; }
+.page_login .content,
+.page_spip_pass .content,
+.page_inscription .content { max-width: 360px; margin: 0 auto; padding: 1em 0; text-align: center; }
 .page_login #breadcrumb,
+.page_spip_pass #breadcrumb,
+.page_inscription #breadcrumb { display: none !important; }
+
 .page_login .cartouche h1 small,
 .page_login #formulaire_menu_lang,
 .page_login #formulaire_login legend,
@@ -377,13 +384,9 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 
 .amis .liste-items .item .action { display: block; margin-top: 5px; }
 
-/* page login + spip_pass + 404
+/* page 404
 ----------------------------------------------- */
 
-.page_login .page #container,
-.page_spip_pass .page #container { width: 360px; margin: 0 auto; padding-top: 35px; }
-.page_login .content,
-.page_spip_pass .content { float: none; width: 100%; }
 .page_404 #container { background: transparent url(images/bg_404.png) right 50% no-repeat; }
 
 /* page upload
@@ -457,12 +460,15 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 .formulaire_spip .reponse_formulaire { text-align: center; font-size: 1.1em; }
 .formulaire_spip .reponse_formulaire_ok { color: var(--color); }
 
-/* inscription + login */
+/* inscription + login + oubli */
 
 .formulaire_inscription fieldset legend,
 .formulaire_inscription fieldset p.explication { display: none; }
 .formulaire_inscription p.boutons { text-align: center; }
-.formulaire_login .password { width: 15em; border: 1px inset; }
+.formulaire_login { width: 360px; }
+.formulaire_inscription,
+.formulaire_login,
+.formulaire_oubli { padding: 10px 25px; }
 
 /* editer_mot_article */
 
