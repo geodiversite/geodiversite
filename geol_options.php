@@ -20,9 +20,31 @@ if (!isset($GLOBALS['z_blocs'])) {
 // urls prorpes en minuscules
 define ('_url_minuscules',1);
 
+// largeur de la prévisu lors de l'upload
+if (!defined('_GEOL_PREVISU_LARGEUR')) {
+	define('_GEOL_PREVISU_LARGEUR', 710);
+}
+
 // autoriser le prive uniquement pour les admins
 function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
 	return $qui['statut'] == '0minirezo';
+}
+
+// permettre aux rédacteurs de publier dans le secteur des médias
+function autoriser_rubrique_publierdans($faire, $type, $id, $qui, $opt) {
+	if (($qui['statut'] == '0minirezo') and (!$qui['restreint'] or !$id or in_array($id, $qui['restreint']))) {
+		// cas par défaut de SPIP
+		return true;
+	} elseif (
+		$id_secteur = sql_getfetsel('id_secteur', 'spip_rubriques', 'id_rubrique=' . intval($id))
+		and $id_secteur == lire_config('geol/secteur_medias', 1)
+		and in_array($qui['statut'], array('0minirezo', '1comite'))
+	) {
+		// surcharge geodiv
+		return true;
+	} else {
+		return false;
+	}
 }
 
 // surcharger autoriser_rubrique_modifier_dist pour y reproduire autoriser_rubrique_publierdans_dist
@@ -47,8 +69,4 @@ function autoriser_modererforum($faire, $type, $id, $qui, $opt) {
 	return autoriser_ecrire($faire, $type, $id, $qui, $opt);
 }
 
-define('_PAGE_PUBLIER','upload');
-define('_DIOGENE_REDIRIGE_PUBLICATION',true);
-define('_DIOGENE_MODIFIER_PUBLIC',false);
-define('_EM_PREVISU_LARGEUR',720);
 define('_TAILLE_MAX_GRAVATAR',200);
