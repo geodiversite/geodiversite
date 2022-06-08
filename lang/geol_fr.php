@@ -175,6 +175,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'partage_telechargement' => 'Partage / Téléchargement',
 	'pas_description' => 'Pas encore de descriptif.',
 	'pied_vous' => 'Vous',
+	'previsu_document' => 'Prévisualisation du document',
 	'profil' => 'Profil',
 	'profil_bio' => 'Présentation',
 	'profil_mail' => 'Adresse email',

@@ -1,0 +1,18 @@
+<BOUCLE_doc(DOCUMENTS){id_article}{mode=document}>
+<div class="fieldset"><fieldset>
+	<legend><:geol:previsu_document:></legend>
+	[(#MIME_TYPE|match{image}|oui)
+	<INCLURE{fond=modeles/doc,id_document,
+		mode_force="image",
+		largeur=#CONST{_GEOL_PREVISU_LARGEUR}}>
+	]
+	[(#MIME_TYPE|match{video/}|oui)
+	<INCLURE{fond=modeles/emb,id_document,
+		largeur=#CONST{_GEOL_PREVISU_LARGEUR}}>
+	]
+	[(#MIME_TYPE|match{audio/}|oui)
+	<INCLURE{fond=modeles/emb,id_document,
+		largeur=#CONST{_GEOL_PREVISU_LARGEUR}}>
+	]
+</fieldset></div>
+</BOUCLE_doc>

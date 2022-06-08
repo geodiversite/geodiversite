@@ -390,37 +390,8 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 /* page upload
 ----------------------------------------------- */
 
-.page_upload #em_message_avant_upload { border: 0; }
-.page_upload #em_upload_document .fieldset,
-.page_upload .formulaire_supprimer_document,
-.page_upload #formulaire_diogene .editer_titre,
-.page_upload #formulaire_diogene .editer_id_collection,
-.page_upload #formulaire_diogene .diogene_dates,
-.page_upload #formulaire_diogene .editer_texte,
-.page_upload #formulaire_diogene .fieldset { margin: 20px 0; padding: 10px; border: 5px solid #f2f2f2; background: #fff; }
-.page_upload #em_upload_fichier .actions-documents,
-.page_upload #em_upload_fichier .previsu_document h3 { display: none; }
-.page_upload .previsu_document { border: 0; }
-.page_upload .previsu_document .spip_documents,
-.page_upload .previsu_document .spip_documents .image-annotate-canvas { margin: 0 auto; }
-.page_upload .content .h2,
-.page_upload .content div.texte,
-.page_upload .previsu_document h4,
-.page_upload .previsu_document .infos_document,
-.page_upload .previsu_document a.legende_add,
-.page_upload #formulaire_diogene .editer_titre .aide,
-.page_upload #formulaire_diogene .editer_texte .aide,
-.page_upload #formulaire_diogene .editer_id_parent,
-.page_upload #formulaire_diogene .editer_parent,
-.page_upload #formulaire_diogene .editer_parents,
-.page_upload #formulaire_diogene .diogene_geo > fieldset > .choix,
-.page_upload #formulaire_diogene .editer_zoom,
-.page_upload #formulaire_diogene .editer_gis_titre,
-.page_upload #formulaire_diogene .editer_gis_descriptif { display: none; }
-.page_upload #formulaire_diogene h3.legend { margin-bottom: 10px; } /* obsolète, à virer ? */
+.page_upload .formulaire_editer_media .fieldset { margin: 20px 0; padding: 10px 20px; border: 5px solid #f2f2f2; background: #fff; }
 .page_upload .formulaire_message { font-weight: bold; }
-.page_upload .diogene_geo #geomap { width: 100%; height: 350px; }
-.page_upload #em_upload_boutons { background: #f2f2f2; color: #666; border: 4px solid #fff; border-radius: 8px; box-shadow: 0 1px 3px #999; }
 
 /* Messages des forums
 ----------------------------------------------- */
