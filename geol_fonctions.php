@@ -25,3 +25,15 @@ function geol_couleur_hex_to_dec($couleur) {
 if (!defined('_DIR_PLUGIN_COLLECTIONS')){
 	function critere_id_collection_dist($idb, &$boucles, $crit){}
 }
+
+// backport du filtre nettoyer_label de SPIP 4
+// ref https://git.spip.net/spip/spip/src/commit/3aac8ca539db781ca7a25926df7371afb54c45b4/ecrire/inc/filtres.php#L5602
+if (!function_exists('label_nettoyer')) {
+	function label_nettoyer(string $text, bool $ucfirst = true): string {
+		$label = preg_replace('#([\s:]|\&nbsp;)+$#u', '', $text);
+		if ($ucfirst) {
+			$label = spip_ucfirst($label);
+		}
+		return $label;
+	}
+}
