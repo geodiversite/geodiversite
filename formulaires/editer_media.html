@@ -51,5 +51,15 @@
 </div>
 <!--extra-->
 <p class="boutons"><input class="submit" type="submit" value="<:bouton_enregistrer:>" /></p>
-</div></form>]
+</div></form>
+<script type="text/javascript">
+;(function($){
+	// autosubmit du formulaire après upload
+	$('.formulaire_editer_media input.bigup').bigup({}, {
+		complete: function(){
+			$('.formulaire_editer_media form').submit();
+		}
+	});
+})(jQuery);
+</script>]
 </div>
