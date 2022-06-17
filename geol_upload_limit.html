@@ -1,0 +1,9 @@
+#HTTP_HEADER{Content-type:text/html}
+#CACHE{0}
+[(#SET{result,0})]
+[(#REM) Récupérer le nombre de docs attachés à l'article passé dans l'env ]
+<BOUCLE_doc(DOCUMENTS){id_article=#ENV{id_article}}{!par id_document}{tout} />
+[(#SET{result,#TOTAL_BOUCLE})]
+<//B_doc>
+[(#GET{result})]
+[(#FILTRE{trim})]

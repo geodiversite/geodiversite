@@ -54,9 +54,25 @@
 </div></form>
 <script type="text/javascript">
 ;(function($){
-	// autosubmit du formulaire après upload
 	$('.formulaire_editer_media input.bigup').bigup({}, {
+		fileSubmitted: function(event, file){
+			// vérifier le quota d'upload
+			$.ajax({
+				url: '#URL_PAGE{geol_upload_limit}',
+				async: false,
+				type: 'GET',
+				data: ({id_article: '#ENV{id_article}'}),
+				dataType: 'html',
+				success: function(msg){
+					if (parseInt(msg) >= 1) {
+						file.bigup.presenter_erreur(file.emplacement, _T('bigup:erreur_probleme_survenu'));
+						file.bigup.enlever_fichier(file.emplacement);
+					}
+				}
+			});
+		},
 		complete: function(){
+			// autosubmit du formulaire après upload
 			$('.formulaire_editer_media form').submit();
 		}
 	});
