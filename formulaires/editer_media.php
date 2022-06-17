@@ -48,7 +48,7 @@ function formulaires_editer_media_charger_dist(){
 			"lien.id_objet=$id_article"
 		);
 		if ($id_document) {
-			$valeurs['_etape'] = 2;
+			set_request('_etape', 2);
 		}
 	} else {
 		$valeurs['editable'] = false;
