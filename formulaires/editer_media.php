@@ -58,30 +58,36 @@ function formulaires_editer_media_charger_dist(){
 	return $valeurs;
 }
 
-
 function formulaires_editer_media_verifier_etape_dist($etape){
 
 	$erreurs = array();
 	$id_rubrique = lire_config('geol/secteur_medias', 1);
 	$id_article = _request('id_article');
+	$id_document = sql_getfetsel(
+		'document.id_document',
+		"spip_documents AS document LEFT JOIN spip_documents_liens AS lien ON lien.id_document=document.id_document AND lien.objet='article'",
+		"lien.id_objet=$id_article"
+	);
 
 	if ($etape == 1) {
-		// fichier obligatoire
-		if (!isset($_FILES['media']) or !file_exists($_FILES['media']['tmp_name'])) {
-			$erreurs['media'] = _T('info_obligatoire');
-		} else {
-			// créer l'article s'il n'y en a pas
-			if (!intval($id_article)) {
-				$id_article = objet_inserer('article', $id_rubrique);
-				set_request('id_article', $id_article);
-				objet_instituer('article', $id_article, array('statut' => 'prepa'));
-			}
-			// lier le fichier en doc joint à l'article
-			include_spip('action/ajouter_documents');
-			$ajouter_document = charger_fonction('ajouter_un_document', 'action');
-			$id_document = $ajouter_document('new', $_FILES['media'], 'article', $id_article, 'document');
-			if (!intval($id_document)) {
-				$res['media'] = $id_document;
+		// fichier obligatoire si aucun document
+		if (!$id_document) {
+			if (!isset($_FILES['media']) or !file_exists($_FILES['media']['tmp_name'])) {
+				$erreurs['media'] = _T('info_obligatoire');
+			} else {
+				// créer l'article s'il n'y en a pas
+				if (!intval($id_article)) {
+					$id_article = objet_inserer('article', $id_rubrique);
+					set_request('id_article', $id_article);
+					objet_instituer('article', $id_article, array('statut' => 'prepa'));
+				}
+				// lier le fichier en doc joint à l'article
+				include_spip('action/ajouter_documents');
+				$ajouter_document = charger_fonction('ajouter_un_document', 'action');
+				$id_document = $ajouter_document('new', $_FILES['media'], 'article', $id_article, 'document');
+				if (!intval($id_document)) {
+					$erreurs['media'] = $id_document;
+				}
 			}
 		}
 	}
