@@ -100,6 +100,13 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 			include_spip('action/dissocier_document');
 			supprimer_lien_document($id_document, 'article', $id_article, true);
 			set_request('aller_a_etape', 1);
+			// supprimer le fichier temporaire du cache de bigup
+			// bof, on doit pouvoir faire simple ?
+			include_spip('inc/Bigup');
+			$bigup = new \Spip\Bigup\Bigup(
+				\Spip\Bigup\Identifier::depuisRequest()
+			);
+			$bigup->supprimer_fichiers();
 		}
 	}
 
