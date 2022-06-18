@@ -96,11 +96,15 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 		if (!_request('titre')) {
 			$erreurs['titre'] = _T('info_obligatoire');
 		}
+		if (_request('supprimer_document')) {
+			include_spip('action/dissocier_document');
+			supprimer_lien_document($id_document, 'article', $id_article, true);
+			set_request('aller_a_etape', 1);
+		}
 	}
 
 	return $erreurs;
 }
-
 
 function formulaires_editer_media_traiter_dist(){
 	
