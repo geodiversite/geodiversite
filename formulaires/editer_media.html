@@ -27,6 +27,8 @@
 
 		[(#SAISIE{carte,gis,
 			inserer_debut=<label><:geol:localisation:></label>[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{gis})</span>],
+			nodraw=oui,
+			noimport=oui,
 			env})]
 
 		[(#SAISIE{input,lat,
