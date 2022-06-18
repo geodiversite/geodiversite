@@ -121,8 +121,9 @@ function formulaires_editer_media_traiter_dist(){
 	include_spip('action/editer_objet');
 	include_spip('action/editer_liens');
 	
-	// mettre à jour l'article
+	// mettre à jour l'article et le publier
 	objet_modifier('article', $id_article);
+	objet_instituer('article', $id_article, array('statut' => 'publie'));
 
 	// créer le point ou le mettre à jour
 	$id_gis = _request('id_gis');
