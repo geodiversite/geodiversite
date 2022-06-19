@@ -89,6 +89,24 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 				$id_document = $ajouter_document('new', $_FILES['media'], 'article', $id_article, 'document');
 				if (!intval($id_document)) {
 					$erreurs['media'] = $id_document;
+				} elseif ($id_gis = sql_getfetsel('gis.id_gis',
+						'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
+						'gis_liens.objet="document" AND gis_liens.id_objet='.intval($id_document))
+				) {
+					// si le document a été géolocalisé à partir de ses exifs
+					// supprimer l'éventuel point déjà lié à l'article
+					if ($old_gis = sql_getfetsel('gis.id_gis',
+						'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
+						'gis_liens.objet="article" AND gis_liens.id_objet='.intval($id_article))
+					) {
+						include_spip('action/editer_gis');
+						gis_supprimer($old_gis);
+					}
+					// délier le point du document et le lier à l'article
+					include_spip('action/editer_liens');
+					objet_dissocier(array('gis' => $id_gis), array('document' => $id_document));
+					objet_associer(array('gis' => $id_gis), array('article' => $id_article));
+					set_request('id_gis', $id_gis);
 				}
 			}
 		}
