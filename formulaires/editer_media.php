@@ -77,6 +77,7 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 			} else {
 				// créer l'article s'il n'y en a pas
 				if (!intval($id_article)) {
+					include_spip('action/editer_objet');
 					$id_article = objet_inserer('article', $id_rubrique);
 					set_request('id_article', $id_article);
 					objet_instituer('article', $id_article, array('statut' => 'prepa'));
