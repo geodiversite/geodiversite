@@ -78,6 +78,11 @@
 			$('.formulaire_editer_media form').submit();
 		}
 	});
+	// désactiver la validation HTML5 des champs obligatoires
+	// au clic sur le boouton de suppression du document
+	$('.formulaire_editer_media input\[name=supprimer_document\]').click(function(){
+		$('.formulaire_editer_media form').attr('novalidate', 'novalidate');
+	});
 })(jQuery);
 </script>]
 </div>
