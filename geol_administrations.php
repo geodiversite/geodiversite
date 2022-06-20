@@ -10,9 +10,6 @@ function geol_upgrade($nom_meta_base_version,$version_cible){
 	$maj['create'] = array(
 		array('geol_installation'),
 	);
-	$maj['0.2'] = array(
-		array('geol_upgrade_02'),
-	);
 	$maj['0.2.1'] = array(
 		array('geol_upgrade_021'),
 	);
@@ -59,13 +56,6 @@ function geol_installation(){
 	// configuration de GIS : activer le geocoder + geolocalisation sur les articles
 	ecrire_config('gis/geocoder','on');
 	ecrire_config('gis/gis_objets',array('spip_articles','spip_documents'));
-	
-	// configuration d'Emballe médias
-	ecrire_config('emballe_medias/fichiers/chercher_article','on');
-	ecrire_config('emballe_medias/fichiers/fichiers_images',array('gif','jpg','png'));
-	ecrire_config('emballe_medias/fichiers/fichiers_audios',array('mp3'));
-	ecrire_config('emballe_medias/fichiers/fichiers_videos',array('flv','mp4'));
-	ecrire_config('emballe_medias/fichiers/fichiers_textes',array('kml'));
 	
 	// configuration de socialtags
 	ecrire_config('socialtags/jsselector','#socialtags');
@@ -132,39 +122,10 @@ function geol_installation(){
 	}
 
 	// maj suivantes
-	geol_upgrade_02();
 	geol_upgrade_021();
 	geol_upgrade_022();
 	geol_upgrade_023();
 
-}
-
-function geol_upgrade_02(){
-	include_spip('action/editer_diogene');
-	$secteur_medias = lire_config('geol/secteur_medias',1);
-	if(!$id_diogene_medias = sql_getfetsel('id_diogene','spip_diogenes','objet="emballe_media" AND id_secteur = '.intval($secteur_medias))){
-		$id_diogene_medias = diogene_inserer();
-		$set_media = array(
-			'titre' => _T('geol:publier_media'),
-			'description' => '',
-			'champs_caches' => '',
-			'champs_ajoutes' => array(
-				'geo','mots','licence'
-			),
-			'menu'=> '',
-			'statut_auteur' => '1comite',
-			'statut_auteur_publier' => '1comite'
-
-		);
-		$err = diogene_modifier($id_diogene_medias, $set_media);
-		$err = diogene_instituer($id_diogene_medias, array(
-			'id_secteur' => $secteur_medias,
-			'objet' => 'emballe_media',
-			'type' => 'article'
-			)
-		);
-	}
-	ecrire_config('emballe_medias/fichiers/publier_dans_secteur','on');
 }
 
 function geol_upgrade_021(){
