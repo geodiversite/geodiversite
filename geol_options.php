@@ -20,6 +20,30 @@ if (!isset($GLOBALS['z_blocs'])) {
 // urls prorpes en minuscules
 define ('_url_minuscules',1);
 
+// extensions autorisées à l'upload
+if (!defined('_GEOL_FICHIERS_IMAGES')) {
+	define('_GEOL_FICHIERS_IMAGES', array('gif', 'jpg' , 'png'));
+}
+if (!defined('_GEOL_FICHIERS_AUDIOS')) {
+	define('_GEOL_FICHIERS_AUDIOS', array('mp3'));
+}
+if (!defined('_GEOL_FICHIERS_VIDEOS')) {
+	define('_GEOL_FICHIERS_VIDEOS', array('mp4'));
+}
+if (!defined('_GEOL_FICHIERS_TEXTES')) {
+	define('_GEOL_FICHIERS_TEXTES', array('kml'));
+}
+
+define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(function($extension){
+		return '.' . $extension;
+	}, array_merge(
+		_GEOL_FICHIERS_IMAGES,
+		_GEOL_FICHIERS_AUDIOS,
+		_GEOL_FICHIERS_VIDEOS,
+		_GEOL_FICHIERS_TEXTES
+	)
+)));
+
 // largeur de la prévisu lors de l'upload
 if (!defined('_GEOL_PREVISU_LARGEUR')) {
 	define('_GEOL_PREVISU_LARGEUR', 710);
