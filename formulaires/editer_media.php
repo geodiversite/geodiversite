@@ -31,6 +31,20 @@ function formulaires_editer_media_charger_dist(){
 		$valeurs['titre'] = $article['titre'];
 		$valeurs['texte'] = $article['texte'];
 		$valeurs['id_licence'] = $article['id_licence'];
+		if (test_plugin_actif('cextras')) {
+			// récupérer les saisies des extras automagiquement cf https://zone.spip.net/trac/spip-zone/changeset/99133/
+			include_spip('inc/cextras');
+			// pour ne pas se faire bloquer par champs_extras_autorisation() dans cextras_obtenir_saisies_champs_extras()
+			// à cause de la restriction d'affichage des extras sur la rubrique
+			set_request('id_rubrique', $id_rubrique);
+			$saisies = cextras_obtenir_saisies_champs_extras('article', $id_article);
+			$champs = saisies_lister_champs(champs_extras_saisies_lister_avec_sql($saisies), false);
+			$valeurs['_extras'] = $saisies;
+			foreach ($champs as $champ) {
+				$valeurs[$champ] = $article[$champ];
+			}
+		}
+		// récupérer les données de l'éventuel point lié
 		$gis = sql_fetsel('*',
 			'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
 			'gis_liens.objet="article" AND gis_liens.id_objet='.intval($id_article)
@@ -127,6 +141,19 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 				\Spip\Bigup\Identifier::depuisRequest()
 			);
 			$bigup->supprimer_fichiers();
+		}
+		if (test_plugin_actif('cextras')) {
+			// vérifier les saisies des extras automagiquement
+			include_spip('cextras_pipelines');
+			set_request('id_rubrique', $id_rubrique);
+			$objet = 'article';
+			if ($saisies = champs_extras_objet( $table = table_objet_sql($objet) )) {
+				include_spip('inc/autoriser');
+				include_spip('inc/saisies');
+				// restreindre les saisies selon les autorisations
+				$saisies = champs_extras_autorisation('modifier', $objet, $saisies, array('id' => $id_article));
+				$erreurs = array_merge($erreurs, saisies_verifier($saisies));
+			}
 		}
 	}
 

@@ -26,6 +26,8 @@
 			inserer_barre=forum,
 			rows=10})]
 
+		[(#GENERER_SAISIES{#ENV{_extras},_etape=''})]
+
 		[(#SAISIE{carte,gis,
 			inserer_debut=<label><:geol:localisation:></label>[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{gis})</span>],
 			nodraw=oui,
