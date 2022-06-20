@@ -10,7 +10,8 @@
 [(#ENV{_etape}|=={1}|oui)
 	[(#SAISIE_FICHIER{bigup,media,
 		obligatoire=oui,
-		previsualiser=oui})]
+		previsualiser=oui,
+		accept=#CONST{_GEOL_UPLOAD_EXTENSIONS}})]
 ]
 [(#ENV{_etape}|=={2}|oui)
 	<INCLURE{fond=formulaires/editer_media_previsu,id_article}>

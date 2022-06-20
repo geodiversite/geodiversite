@@ -1,20 +1,20 @@
-#SET{extensions,#ARRAY|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_images,#ARRAY}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_videos,#ARRAY}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_audios,#ARRAY}}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_textes,#ARRAY}}}
+#SET{extensions,#ARRAY|array_merge{#CONST{_GEOL_FICHIERS_IMAGES}|sinon{#ARRAY}}|array_merge{#CONST{_GEOL_FICHIERS_VIDEOS}|sinon{#ARRAY}}|array_merge{#CONST{_GEOL_FICHIERS_AUDIOS}|sinon{#ARRAY}}|array_merge{#CONST{_GEOL_FICHIERS_TEXTES}|sinon{#ARRAY}}}
 
 [(#ENV{type_doc}|oui)
 	#SET{extensions,#ARRAY}
 ]
 
 [(#VAL{'type_images'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
-	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_images,#ARRAY}}}
+	#SET{extensions,#GET{extensions}|array_merge{#CONST{_GEOL_FICHIERS_IMAGES}|sinon{#ARRAY}}}
 ]
 [(#VAL{'type_videos'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
-	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_videos,#ARRAY}}}
+	#SET{extensions,#GET{extensions}|array_merge{#CONST{_GEOL_FICHIERS_VIDEOS}|sinon{#ARRAY}}}
 ]
 [(#VAL{'type_audios'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
-	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_audios,#ARRAY}}}
+	#SET{extensions,#GET{extensions}|array_merge{#CONST{_GEOL_FICHIERS_AUDIOS}|sinon{#ARRAY}}}
 ]
 [(#VAL{'type_textes'}|in_array{#ENV{type_doc,#ARRAY}}|oui)
-	#SET{extensions,#GET{extensions}|array_merge{#CONFIG{emballe_medias/fichiers/fichiers_textes,#ARRAY}}}
+	#SET{extensions,#GET{extensions}|array_merge{#CONST{_GEOL_FICHIERS_TEXTES}|sinon{#ARRAY}}}
 ]
 [(#SET{defaut_tri,#ARRAY{
 	points,-1,
