@@ -22,7 +22,7 @@ function geol_couleur_hex_to_dec($couleur) {
 /**
  * Définition du id_collection du plugin collections s'il n'est pas dispo
  */
-if (!defined('_DIR_PLUGIN_COLLECTIONS')){
+if (!defined('_DIR_PLUGIN_GEOL_ALBUMS')){
 	function critere_id_collection_dist($idb, &$boucles, $crit){}
 }
 
