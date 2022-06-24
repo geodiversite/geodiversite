@@ -19,6 +19,9 @@ function geol_upgrade($nom_meta_base_version,$version_cible){
 	$maj['0.2.3'] = array(
 		array('geol_upgrade_023'),
 	);
+	$maj['0.2.4'] = array(
+		array('geol_upgrade_024'),
+	);
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
@@ -138,6 +141,10 @@ function geol_upgrade_022(){
 
 function geol_upgrade_023(){
 	ecrire_config('taille_preview', '640');
+}
+
+function geol_upgrade_024(){
+	ecrire_config('bigup/max_file_size', lire_config('emballe_medias/fichiers/file_size_limit', 128));
 }
 
 function geol_vider_tables($nom_meta_base_version){
