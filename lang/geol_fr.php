@@ -102,6 +102,7 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'explication_suivi_auteur' => 'Suivre les contributions de l’auteur via le fil RSS. Exporter la carte de ses contributions vers un autre outil de cartographie.',
 	'explication_suivi_categorie' => 'Suivre les contributions de la catégorie via le fil RSS. Exporter la carte de ces contributions vers un autre outil de cartographie.',
 	'explication_suivi_mot' => 'Suivre les contributions du tag via le fil RSS. Exporter la carte de ces contributions vers un autre outil de cartographie.',
+	'explication_upload_media' => 'La taille maximale d’un fichier est de @max@ MB<br> Les extensions autorisées sont @exts@',
 	'exporter_coordonnees' => 'Exporter les coordonnées : GPS, KML',
 
 	// F

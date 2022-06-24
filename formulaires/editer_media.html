@@ -11,6 +11,7 @@
 	[(#SAISIE_FICHIER{bigup,media,
 		obligatoire=oui,
 		previsualiser=oui,
+		explication=#VAL{geol:explication_upload_media}|_T{#ARRAY{max,#CONFIG{bigup/max_file_size},exts,#CONST{_GEOL_UPLOAD_EXTENSIONS}|explode{','}|implode{', '}}},
 		accept=#CONST{_GEOL_UPLOAD_EXTENSIONS}})]
 ]
 [(#ENV{_etape}|=={2}|oui)
@@ -55,7 +56,7 @@
 ]
 </div>
 <!--extra-->
-<p class="boutons"><input class="submit" type="submit" value="[(#ENV{_etape}|<{#ENV{_etapes}}|?{<:bouton_suivant:>,<:bouton_enregistrer:>})]" /></p>
+<p class="boutons"><input class="submit[(#ENV{_etape}|<{#ENV{_etapes}}|oui) offscreen]" type="submit" value="[(#ENV{_etape}|<{#ENV{_etapes}}|?{<:bouton_suivant:>,<:bouton_enregistrer:>})]" /></p>
 </div></form>
 <script type="text/javascript">
 ;(function($){
