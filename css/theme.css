@@ -393,6 +393,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_upload .formulaire_message { font-weight: bold; }
 .page_upload .formulaire_editer_media .fieldset { margin: 20px 0; padding: 10px 20px; border: 5px solid #f2f2f2; background: #fff; }
 .page_upload .formulaire_editer_media .editer_media { text-align: center; }
+.page_upload .formulaire_editer_media .editer_media .explication { margin-bottom: 1.5em; }
 
 /* Messages des forums
 ----------------------------------------------- */
