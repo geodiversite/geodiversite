@@ -144,6 +144,7 @@ function geol_upgrade_023(){
 }
 
 function geol_upgrade_024(){
+	ecrire_config('bigup/charger_public', 1);
 	ecrire_config('bigup/max_file_size', lire_config('emballe_medias/fichiers/file_size_limit', 128));
 }
 
