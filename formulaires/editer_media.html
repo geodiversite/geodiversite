@@ -29,6 +29,7 @@
 
 		[(#GENERER_SAISIES{#ENV{_extras},_etape=''})]
 
+		[(#CONST{_GEOL_UPLOAD_DESACTIVER_GIS}|non)
 		[(#SAISIE{carte,gis,
 			inserer_debut=<label><:geol:localisation:></label>[<span class='erreur_message'>(#ENV**{erreurs}|table_valeur{gis})</span>],
 			nodraw=oui,
@@ -47,6 +48,7 @@
 			label=<:gis:zoom:>,
 			size=2,
 			maxlength=2})]
+		]
 
 		[(#SAISIE{licences,licence,
 			label=<:licence:cfg_titre_licence:>,
