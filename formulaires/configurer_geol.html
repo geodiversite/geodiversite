@@ -31,9 +31,16 @@
 					label=<:geol:cfg_label_nom_fichier_kml:>,
 					explication=<:geol:cfg_explication_nom_fichier_kml:>,
 					defaut=geodiversite})]
-				[(#SAISIE{input,cle_mapquest,
-					label=<:geol:cfg_label_cle_mapquest:>,
-					explication=<:geol:cfg_explication_cle_mapquest:>})]
+				#SET{layers,#ARRAY}
+				<BOUCLE_layer(DATA){source table, #EVAL{$GLOBALS['gis_layers']}}{cle IN #LISTE{openstreetmap_mapnik,openstreetmap_de,openstreetmap_fr,openstreetmap_hot,opentopomap,stamen_toner,stamen_tonerlite,stamen_terrain,stamen_watercolor,esri_worldstreetmap,esri_delorme,esri_worldtopomap,esri_worldimagery,esri_worldterrain,esri_worldshadedrelief,esri_worldphysical,esri_oceanbasemap,esri_natgeoworldmap,esri_worldgraycanvas,cartodb_positron,cartodb_positron_base,cartodb_darkmatter,cartodb_darkmatter_base,cartodb_voyager,cartodb_voyager_base}}>
+				#SET{layers,#GET{layers}|array_merge{#ARRAY{#CLE,#VALEUR|table_valeur{nom}}}}
+				</BOUCLE_layer>
+				[(#SAISIE{selection,fond_minicartes,
+					label=<:geol:cfg_label_fond_minicartes:>,
+					explication=<:geol:cfg_explication_fond_minicartes:>,
+					cacher_option_intro=oui,
+					defaut=cartodb_voyager,
+					data=#GET{layers}})]
 				[(#SAISIE{input,zoom_minicartes,
 					label=<:geol:cfg_label_zoom_minicartes:>,
 					explication=<:geol:cfg_explication_zoom_minicartes:>,
