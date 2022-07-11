@@ -37,7 +37,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'cfg_explication_afficher_serie' => 'Afficher un bloc "Autres médias" dans la navigation des pages médias pour permettre la navigation entre les médias précédents/suivants.',
 	'cfg_explication_fond_minicartes' => 'Fond à utiliser à utiliser pour les cartes statiques dans la navigation des pages du site.',
 	'cfg_explication_largeur_gravatar' => 'Taille des gravatars dans les messages des forums.',
-	'cfg_explication_largeur_gravatar' => 'Taille des gravatars dans les messages des forums.',
 	'cfg_explication_medias_calques' => 'Personnaliser la liste des médias affichés dans le menu des calques de la page carte (numéros des médias séparés par une virgule).',
 	'cfg_explication_nom_fichier_kml' => 'Personnaliser le nom des fichiers KML générés par le site (sans extension).',
 	'cfg_explication_zoom_minicartes' => 'Niveau de zoom à utiliser pour les cartes statiques dans la navigation des pages du site.',
