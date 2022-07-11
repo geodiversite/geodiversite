@@ -30,7 +30,7 @@
 	<necessite nom="pages" compatibilite="[1.0.0;[" />
 	<necessite nom="mesfavoris" compatibilite="[2.2.0;[" />
 	<necessite nom="menus" compatibilite="[1.2.1;[" />
-	<necessite nom="gis" compatibilite="[4.45.1;[" />
+	<necessite nom="gis" compatibilite="[4.53.1;[" />
 	<necessite nom="polyhier" compatibilite="[1.0.0;[" />
 	<necessite nom="legendes" compatibilite="[1.1.4;[" />
 	<necessite nom="nuage" compatibilite="[4.0.5;[" />
