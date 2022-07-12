@@ -10,11 +10,12 @@ Géodiversité, ou geodiv pour les intimes, est un squelette pour SPIP qui perme
 - https://peluche.umontpellier.fr/
 - https://trektic.org/
 - https://cornes.debru.me/
-- http://www.sequoia-act.net/
-- http://www.streetart-brest.fr/
-- http://www.portal.zoo.bio.br/
-- http://inventaire.eau-et-rivieres.org/
-- http://geodiversidade.net/
+- https://www.portal.zoo.bio.br/
+- https://inventaire.eau-et-rivieres.org/
+- https://geodiversidade.net/
+- https://nounours.umontpellier.fr/
+- https://www.biodivaquart.fr/
+- https://litternature.umontpellier.fr/
 
 ## Installation
 
