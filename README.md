@@ -21,7 +21,7 @@ Géodiversité, ou geodiv pour les intimes, est un squelette pour SPIP qui perme
 
 Plusieurs méthodes d'installation sont disponibles :
 
-- le script [`install_geodiv.sh`](https://github.com/geodiversite/geodiversite_install_sh) pour installer Gédiversité par svn ;
+- le script [`install_geodiv.sh`](https://github.com/geodiversite/geodiversite_install_sh) pour installer Gédiversité par git ;
 - le plugin [geodiversite_install](https://github.com/geodiversite/geodiversite_install) permet d'installer Géodiversité et ses dépendances à l'aide de SVP depuis l'espace privé de SPIP.
 
 ## Fichier `.htaccess`
