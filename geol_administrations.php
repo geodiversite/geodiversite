@@ -36,9 +36,6 @@ function geol_installation(){
 	// taille des vignettes à 640px
 	ecrire_config('taille_preview', '640');
 	
-	// thème bootstrap pour les box
-	ecrire_config('mediabox/skin', 'bootstrap');
-	
 	// publication des articles post-datés
 	ecrire_config('post_dates', 'oui');
 	
