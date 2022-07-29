@@ -507,8 +507,8 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 
 /* formulaire favoris */
 
-.liste.articles form.lien_action button.submit { width: auto; overflow: visible; border: 0; cursor: pointer; color: var(--color); background: transparent url(img/puce.png) left 50% no-repeat; padding: 0 0 0 12px; font-size: 100%; }
-.liste.articles form.lien_action button.submit:hover { color: #e83418; }
+.liste.articles form.bouton_action_post button.submit { width: auto; overflow: visible; border: 0; cursor: pointer; color: var(--color); background: transparent url(img/puce.png) left 50% no-repeat; padding: 0 0 0 12px; font-size: 100%; }
+.liste.articles form.bouton_action_post button.submit:hover { color: #e83418; }
 
 /* formulaire legendes */
 #image-annotate-edit-form form .boutons { font-size: 75% !important; }
