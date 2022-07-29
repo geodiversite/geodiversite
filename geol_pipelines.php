@@ -16,19 +16,6 @@ function geol_insert_head_css($flux) {
 }
 
 /**
- * Insertion dans le pipeline insert_head (SPIP)
- * 
- * Ajout du js de geodiversite
- * 
- * @param array $flux
- * @return array $flux
- */
-function geol_insert_head($flux) {
-	$flux .= "\n<script type='text/javascript' src='".find_in_path('javascript/geol.js')."'></script>\n";
-	return $flux;
-}
-
-/**
  * Insertion dans le pipeline styliser (SPIP)
  * 
  * Par défaut, appliquer le squelette de la composition 'page' aux pages uniques
