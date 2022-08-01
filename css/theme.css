@@ -380,8 +380,6 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .menu.auteurs .liste-items .item .fn { display: inline; font-size: 1.2em; font-weight: bold; }
 .menu.auteurs .liste-items .item img { float: none; margin: 0 0.5em 0 0; border-radius: 100%; }
 
-.amis .liste-items .item .action { display: block; margin-top: 5px; }
-
 /* page 404
 ----------------------------------------------- */
 

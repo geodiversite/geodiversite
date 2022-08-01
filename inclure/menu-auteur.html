@@ -14,8 +14,6 @@
 		<li class="item"><span class="sep"> | </span>
 			[(#URL_PAGE{albums,id_auteur=#ID_AUTEUR}|lien_ou_expose{<:collection:titre_collections:>,#SI_PAGE{albums}})]
 		</li>]
-		[(#PLUGIN{amis}|oui)
-		<INCLURE{fond=inclure/menu-auteur_amis,env} />]
 		<li class="item"><span class="sep"> | </span>
 			[(#URL_AUTEUR|parametre_url{view,about}|lien_ou_expose{<:geol:nav_a_propos:>,#SI_PAGE{auteur}|et{#ENV{view}|=={about}|oui}})]
 		</li>
