@@ -5,12 +5,12 @@
 	url="https://trad.spip.net"
 	source="https://github.com/geodiversite/geodiversite.git"
 	reference="fr">
-	<langue code="en" url="https://trad.spip.net/tradlang_module/geol?lang_cible=en" total="197" traduits="159" relire="12" modifs="4" nouveaux="22" pourcent="80.71">
+	<langue code="en" url="https://trad.spip.net/tradlang_module/geol?lang_cible=en" total="185" traduits="147" relire="12" modifs="4" nouveaux="22" pourcent="79.46">
 		<traducteur nom="b_b" lien="https://trad.spip.net/auteur/b_b" />
 	</langue>
-	<langue code="es" url="https://trad.spip.net/tradlang_module/geol?lang_cible=es" total="197" traduits="185" relire="0" modifs="4" nouveaux="8" pourcent="93.91" />
-	<langue code="fr" url="https://trad.spip.net/tradlang_module/geol?lang_cible=fr" total="197" traduits="197" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
-	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/geol?lang_cible=pt_br" total="197" traduits="193" relire="0" modifs="0" nouveaux="4" pourcent="97.97">
+	<langue code="es" url="https://trad.spip.net/tradlang_module/geol?lang_cible=es" total="185" traduits="173" relire="0" modifs="4" nouveaux="8" pourcent="93.51" />
+	<langue code="fr" url="https://trad.spip.net/tradlang_module/geol?lang_cible=fr" total="185" traduits="185" relire="0" modifs="0" nouveaux="0" pourcent="100.00" />
+	<langue code="pt_br" url="https://trad.spip.net/tradlang_module/geol?lang_cible=pt_br" total="185" traduits="181" relire="0" modifs="0" nouveaux="4" pourcent="97.84">
 		<traducteur nom="b_b" lien="https://trad.spip.net/auteur/b_b" />
 		<traducteur nom="filipaun" lien="https://trad.spip.net/auteur/filipaun" />
 		<traducteur nom="Ricardo Porto" lien="https://trad.spip.net/auteur/ricardo-porto" />

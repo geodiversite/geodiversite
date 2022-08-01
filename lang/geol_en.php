@@ -13,17 +13,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'afficher' => 'Show',
 	'afficher_par_page' => 'per page',
 	'aide' => 'Help',
-	'amis_accepter_demande' => 'Accept request',
-	'amis_ajouter' => 'Add to my contacts',
-	'amis_aucun' => '0 contact',
-	'amis_demandes' => 'Requests',
-	'amis_nb' => 'Contacts',
-	'amis_nb_demandes' => '@nb@ new requests',
-	'amis_nb_un' => 'Contact',
-	'amis_titre' => 'Contacts',
-	'amis_titre_auteur' => '@nom@’s contacts',
-	'amis_une_demande' => '1 new request',
-	'amis_voir_tous' => 'Show all contacts',
 	'annuler' => 'Cancel',
 	'auteur_carte' => 'Show contributions on a map', # RELIRE
 
@@ -107,7 +96,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'galerie' => 'Gallery',
 
 	// I
-	'info_embed_carte' => 'Embed the map on your website',
 	'info_vide' => 'not specified',
 	'info_vide_f' => 'not specified',
 	'inscription' => 'Sign up',
