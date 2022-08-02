@@ -54,7 +54,7 @@ L.Map.Geodiv = L.Map.extend({
 		
 		this.on('zoomend', function(e) {
 			if (this.infowindow)
-				this.infowindow._close();
+				this.infowindow.close();
 		});
 	},
 
