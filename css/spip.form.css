@@ -30,9 +30,15 @@ input, textarea, select { -webkit-box-sizing: border-box; -ms-box-sizing: border
 
 
 /* Champs de saisie */
-.formulaire_spip input.text { width: 100%; }
-.formulaire_spip textarea { width: 100%; }
-.formulaire_spip select { width: 100%; }
+.formulaire_spip input.text,
+.formulaire_spip select,
+.formulaire_spip textarea {
+	width: 100%;
+	box-sizing: border-box;
+	padding:.25em;
+	border:solid 1px #ccc;
+	border-radius:4px;
+}
 
 /* Boutons */
 .formulaire_spip .boutons { clear: both; margin: 0; padding: 0; text-align: right; margin-top: 1.5em; }

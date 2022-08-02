@@ -67,19 +67,16 @@ hr.clear {
 .clearfix {
   display: inline-table;
 }
-/* Hides from IE-mac \*/
-.clearfix {
-  height: 1%;
-}
-.clearfix {
-  display: block;
-}
-/* End hide from IE-mac */
 /* Not visible */
 .offscreen {
   position: absolute;
-  left: -999em;
-  height: 1%;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 .hidden {
   visibility: hidden;

@@ -51,7 +51,7 @@ body { background: #fff; font-size: 120%; }
     .toggle-text { display: none; }
     #nav-toggle-label { position: absolute; top: 0; right: 1em; }
 }
-#nav .menu { position: fixed; left: 0; right: 0; height: 100%; overflow-y: auto; background: #111; z-index: 1498; }
+#nav .menu { position: fixed; left: 0; right: 0; height: 100%; overflow-y: auto; overscroll-behavior-y: contain; background: #111; z-index: 1498; }
 
 .footer,
 .footer a { color: rgba(0,0,0,0.55); font-family: var(--font-sans); }
@@ -337,10 +337,11 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 /* listes des pages galerie
 ----------------------------------------------- */
 
-.liste .pagination { margin: 20px 0; text-align: center; }
-.liste .pagination strong.on,
-.liste .pagination a { padding: 5px 10px; line-height: 2em; border: 1px solid #ddd;  }
-.liste .pagination strong.on { background: #ddd; }
+.liste .pagination { margin: 1.125em 0; }
+.pagination a.pagination-item-label:hover,
+.pagination a.pagination-item-label:focus,
+.pagination a.pagination-item-label:active { background: var(--color); }
+.liste .pagination .on .pagination-item-label { background: #ddd; }
 .liste .pagination .disabled { display:none; }
 
 /* page auteur + auteurs

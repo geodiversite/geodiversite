@@ -1,10 +1,8 @@
-/* fixes for SPIP */
-.formulaire_spip ul,
-.comments-items { list-style: none; margin: 0; }
-
 /* fixes for tinytypo */
+ul, ol { list-style: none; margin-left: 0; }
 .invisible { display: none; }
 .on { font-weight: bold; }
+.traductions a[hreflang]:after { content: ''; }
 
 /* https://github.com/tetue/tinytypo/issues/17 */
 a:focus img,

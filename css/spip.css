@@ -1,4 +1,22 @@
 /* TODO penser à reporter https://git.spip.net/spip/dist/commit/f044188c218cf4b4924343d2cf1e59ddc77677f9 ici */
+
+/* puce */
+.spip-puce b {display:none;}
+.spip-puce {
+	position: relative;
+	top: 1px;
+	display: inline-block;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 1.4em;
+	line-height: 0.7;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.spip-puce:before {
+	content: "\203A";
+}
+
 /* Listes SPIP */
 ul.spip,
 ol.spip { margin-left: 50px; }
@@ -21,12 +39,24 @@ dl.spip dt { clear: both; }
 .spip_documents,
 .spip_documents_center,
 .spip_doc_titre,
-.spip_doc_descriptif { margin-right: auto; margin-left: auto; text-align: center; }
+.spip_doc_descriptif,
+.spip_doc_credits { margin-right: auto; margin-left: auto; text-align: center; min-width: 120px; }
 .spip_documents_center { clear: both; display: block; width: 100%; }
-.spip_documents_left { float: left; margin-right: 1.5em; }
-.spip_documents_right { float: right; margin-left: 1.5em; }
-.spip_doc_titre { }
+.spip_documents_left { float: left; margin-right: 1.5em; max-width: 33%; }
+.spip_documents_right { float: right; margin-left: 1.5em; max-width: 33%; }
 .spip_doc_descriptif { clear: both; }
+.spip_doc_credits { font-style: italic; clear: both; }
+.spip_documents > a { display: inline-block; }
+.spip_documents table { text-align: left; }
+table.spip .spip_document_image { width: auto !important; }
+
+/* Adaptation aux nouveaux modeles document SPIP 3.3 */
+.spip_document { display: flex; justify-content: center;align-items: center; }
+.spip_doc_inner{ margin: 0 auto; text-align: center; max-width: 100%; }
+.spip_doc_inner > * { margin-left: auto; margin-right: auto; }
+.spip_document .spip_doc_lien { display: inline-block; }
+.spip_doc_legende { display: block; max-width: 25em; }
+/* Fin adaptation */
 
 /* Modeles par defaut */
 .spip_modele { float: right; display: block; width: 25%; border: 1px dotted #666; }
@@ -65,8 +95,6 @@ a.spip_note { font-weight: bold; }
 .bouton_action_post>div { display: inline; }
 
 /* Boutons d'admin */
-.ie6 .spip-admin,
-.ie6 #spip-admin { display: none; }
 @media print {
 	.spip-admin,
 	#spip-admin { display: none; }

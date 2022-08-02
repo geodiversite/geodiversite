@@ -5,7 +5,7 @@
 .comments { margin-bottom: 1.5em; }
 
 /* comments list */
-.comments-items { }
+.comments-items { margin-bottom: 0; }
 .comments-items .comments-items { margin-left: 50px; border-bottom: 0; }
 .comments-items .comments-items .comments-items .comments-items { margin-left: 25px; border-bottom: 0; }
 
