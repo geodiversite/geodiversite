@@ -2,7 +2,7 @@
 	<h3>#TITRE</h3>
 	<BOUCLE_imaxe(DOCUMENTS){extension !IN 'kml','kmz'}{id_article}{vu=non}{0,1}>
 	[<a href="[(#URL_ARTICLE|url_absolue)]" class="lien_logo"[ title="(#_un_article:TITRE|attribut_html)"]>
-		<img src="(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{src}|url_absolue)" height="[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{height})]" width="[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{width})]" alt="" />
+		<img src="(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{src}|url_absolue)" height="[(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{height})]" width="[(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{width})]" alt="" />
 	</a>]
 	</BOUCLE_imaxe>
 	[<div class="auteurs"><:geol:publie_par:> (#LESAUTEURS) </div>]
