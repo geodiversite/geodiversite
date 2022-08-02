@@ -35,9 +35,15 @@ input, textarea, select { -webkit-box-sizing: border-box; -ms-box-sizing: border
 .formulaire_spip textarea {
 	width: 100%;
 	box-sizing: border-box;
-	padding:.25em;
+	padding:.5em;
 	border:solid 1px #ccc;
 	border-radius:4px;
+}
+
+.formulaire_spip textarea.markItUpEditor {
+	border-top: 0;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
 }
 
 /* Boutons */
