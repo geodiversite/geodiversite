@@ -9,8 +9,8 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  *
  * Ajout de la feuille de styles calculée de geodiversite
  *
- * @param array $flux
- * @return array $flux
+ * @param string $flux
+ * @return string $flux
  */
 function geol_insert_head_css($flux) {
 	$flux .= '<link rel="stylesheet" href="' . produire_fond_statique('css/geol.css', ['ltr' => $GLOBALS['spip_lang_left']]) . '" type="text/css" media="all" />';
