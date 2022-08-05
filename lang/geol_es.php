@@ -181,7 +181,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'retour_page_media' => 'Volver a la página del documento',
 
 	// S
-	'signaler_bug' => 'Reportar un bug',
 	'signaler_erreur_localisation' => 'Reportar un error de localización al autor',
 	'site_spip' => 'Sitio cristalizado en SPIP',
 	'statut_admin' => 'Admin',

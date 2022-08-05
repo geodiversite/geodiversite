@@ -168,7 +168,6 @@ $GLOBALS[$GLOBALS['idx_lang']] = array(
 	'retour_page_media' => 'Back to document page',
 
 	// S
-	'signaler_bug' => 'Create a bug report',
 	'signaler_erreur_localisation' => 'Report location error', # RELIRE
 	'site_spip' => 'Made with SPIP',
 	'statut_admin' => 'Admin',
