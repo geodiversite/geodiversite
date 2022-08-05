@@ -17,9 +17,9 @@ version="1.0" encoding="#CHARSET" ?>
 				<div class="descriptif_window">
 					<h3>#_un_article:TITRE</h3>
 					<BOUCLE_imaxe(DOCUMENTS){extension !IN 'kml','kmz'}{id_article}{vu=non}{0,1}>
-					#SET{logo_doc,#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_passe_partout{28,28}|image_recadre{28,28}|image_recadre{32,32,center}|image_aplatir{jpg,ffffff}}
+					#SET{logo_doc,#LOGO_DOCUMENT|image_passe_partout{28,28}|image_recadre{28,28}|image_recadre{32,32,center}|image_aplatir{jpg,ffffff}}
 					<a href='[(#URL_ARTICLE|url_absolue)]' [title='(#_un_article:TITRE|texte_backend)'] class="lien_infowindow">
-						<img src='[(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{src}|url_absolue)]' height='[(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{height})]' width='[(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_reduire{225}|extraire_attribut{width})]' alt='[(#_un_article:TITRE|texte_backend|sinon{Image})]' />
+						<img src='[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{src}|url_absolue)]' height='[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{height})]' width='[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{width})]' alt='[(#_un_article:TITRE|texte_backend|sinon{Image})]' />
 					</a>
 					</BOUCLE_imaxe>
 					[<span class="auteurs"><:geol:publie_par:> (#LESAUTEURS|liens_absolus) </span>]
