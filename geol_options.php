@@ -84,12 +84,6 @@ function autoriser_rubrique_modifier($faire, $type, $id, $qui, $opt) {
 		);
 }
 
-// surcharger autoriser_ecrire_ticket_dist sinon autoriser_ecrire passe avant
-function autoriser_ticket_ecrire($faire, $type, $id, $qui, $opt) {
-	include_spip('inc/tickets_autoriser');
-	return autoriser_ticket_ecrire_dist($faire, $type, $id, $qui, $opt);
-}
-
 // surcharger autoriser_modererforum_article pour ne pas envoyer de notifs avec un lien vers le privé aux rédacteurs
 function autoriser_modererforum($faire, $type, $id, $qui, $opt) {
 	return autoriser_ecrire($faire, $type, $id, $qui, $opt);

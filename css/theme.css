@@ -112,9 +112,6 @@ a:focus,a:hover,a:active { color: var(--color); text-decoration: underline; back
 
 .page_upload #container,
 .page_publier #container,
-.page_ticket #container,
-.page_tickets #container,
-.page_editer_ticket #container,
 .page_recherche_avancee #container,
 .page_article #container { max-width: 760px; }
 
@@ -237,8 +234,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 /*  pages articles et rubriques
 /*  ------------------------------------------ */
 
-.page_article .cartouche,
-.page_ticket .cartouche { margin: 10px 0 20px; }
+.page_article .cartouche { margin: 10px 0 20px; }
 
 .cartouche { margin-bottom: 0; }
 .cartouche .h1 { display: none; }

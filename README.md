@@ -33,7 +33,6 @@ Géodiversité utilise des urls personnalisées, voici les règles à ajouter à
 	RewriteRule ^cat([0-9]+)$		spip.php?page=rubrique&id_rubrique=$1 [QSA,L]
 	RewriteRule ^tag([0-9]+)$		spip.php?page=mot&id_mot=$1 [QSA,L]
 	RewriteRule ^auteur([0-9]+)$		spip.php?page=auteur&id_auteur=$1 [QSA,L]
-	RewriteRule ^ticket([0-9]+)$		spip.php?page=ticket&id_ticket=$1 [QSA,L]
 	RewriteRule ^album([0-9]+)$		spip.php?page=album&id_collection=$1 [QSA,L]
 	RewriteRule ^newsletter([0-9]+)$	spip.php?page=newsletter&id_newsletter=$1 [QSA,L]
 
