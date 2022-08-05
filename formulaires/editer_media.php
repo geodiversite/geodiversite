@@ -6,13 +6,13 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 include_spip('inc/autoriser');
 
-function formulaires_editer_media_charger_dist(){
+function formulaires_editer_media_charger_dist() {
 
-	$valeurs = array(
+	$valeurs = [
 		'editable' => true,
 		'_bigup_rechercher_fichiers' => true,
 		'_etapes' => 2
-	);
+	];
 
 	$id_rubrique = lire_config('geol/secteur_medias', 1);
 
@@ -26,7 +26,7 @@ function formulaires_editer_media_charger_dist(){
 	if (!intval($id_article) and (autoriser('publierdans', 'rubrique', $id_rubrique) or autoriser('configurer'))) {
 		$valeurs['editable'] = true;
 	} elseif (autoriser('modifier', 'article', $id_article)) {
-		$article = sql_fetsel('*','spip_articles','id_article=' . intval($id_article));
+		$article = sql_fetsel('*', 'spip_articles', 'id_article=' . intval($id_article));
 		$valeurs['id_article'] = $id_article;
 		$valeurs['titre'] = $article['titre'];
 		$valeurs['texte'] = $article['texte'];
@@ -45,9 +45,10 @@ function formulaires_editer_media_charger_dist(){
 			}
 		}
 		// récupérer les données de l'éventuel point lié
-		$gis = sql_fetsel('*',
+		$gis = sql_fetsel(
+			'*',
 			'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
-			'gis_liens.objet="article" AND gis_liens.id_objet='.intval($id_article)
+			'gis_liens.objet="article" AND gis_liens.id_objet=' . intval($id_article)
 		);
 		if ($gis) {
 			$valeurs['id_gis'] = $gis['id_gis'];
@@ -72,9 +73,9 @@ function formulaires_editer_media_charger_dist(){
 	return $valeurs;
 }
 
-function formulaires_editer_media_verifier_etape_dist($etape){
+function formulaires_editer_media_verifier_etape_dist($etape) {
 
-	$erreurs = array();
+	$erreurs = [];
 	$id_rubrique = lire_config('geol/secteur_medias', 1);
 	if ($id_article = _request('id_article')) {
 		$id_document = sql_getfetsel(
@@ -95,7 +96,7 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 					include_spip('action/editer_objet');
 					$id_article = objet_inserer('article', $id_rubrique);
 					set_request('id_article', $id_article);
-					objet_instituer('article', $id_article, array('statut' => 'prepa'));
+					objet_instituer('article', $id_article, ['statut' => 'prepa']);
 				}
 				// lier le fichier en doc joint à l'article
 				include_spip('action/ajouter_documents');
@@ -103,23 +104,29 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 				$id_document = $ajouter_document('new', $_FILES['media'], 'article', $id_article, 'document');
 				if (!intval($id_document)) {
 					$erreurs['media'] = $id_document;
-				} elseif ($id_gis = sql_getfetsel('gis.id_gis',
+				} elseif (
+					$id_gis = sql_getfetsel(
+						'gis.id_gis',
 						'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
-						'gis_liens.objet="document" AND gis_liens.id_objet='.intval($id_document))
+						'gis_liens.objet="document" AND gis_liens.id_objet=' . intval($id_document)
+					)
 				) {
 					// si le document a été géolocalisé à partir de ses exifs
 					// supprimer l'éventuel point déjà lié à l'article
-					if ($old_gis = sql_getfetsel('gis.id_gis',
-						'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
-						'gis_liens.objet="article" AND gis_liens.id_objet='.intval($id_article))
+					if (
+						$old_gis = sql_getfetsel(
+							'gis.id_gis',
+							'spip_gis as gis LEFT JOIN spip_gis_liens as gis_liens ON gis.id_gis=gis_liens.id_gis',
+							'gis_liens.objet="article" AND gis_liens.id_objet=' . intval($id_article)
+						)
 					) {
 						include_spip('action/editer_gis');
 						gis_supprimer($old_gis);
 					}
 					// délier le point du document et le lier à l'article
 					include_spip('action/editer_liens');
-					objet_dissocier(array('gis' => $id_gis), array('document' => $id_document));
-					objet_associer(array('gis' => $id_gis), array('article' => $id_article));
+					objet_dissocier(['gis' => $id_gis], ['document' => $id_document]);
+					objet_associer(['gis' => $id_gis], ['article' => $id_article]);
 					set_request('id_gis', $id_gis);
 				}
 			}
@@ -147,11 +154,11 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 			include_spip('cextras_pipelines');
 			set_request('id_rubrique', $id_rubrique);
 			$objet = 'article';
-			if ($saisies = champs_extras_objet( $table = table_objet_sql($objet) )) {
+			if ($saisies = champs_extras_objet($table = table_objet_sql($objet))) {
 				include_spip('inc/autoriser');
 				include_spip('inc/saisies');
 				// restreindre les saisies selon les autorisations
-				$saisies = champs_extras_autorisation('modifier', $objet, $saisies, array('id' => $id_article));
+				$saisies = champs_extras_autorisation('modifier', $objet, $saisies, ['id' => $id_article]);
 				$erreurs = array_merge($erreurs, saisies_verifier($saisies));
 			}
 		}
@@ -160,17 +167,17 @@ function formulaires_editer_media_verifier_etape_dist($etape){
 	return $erreurs;
 }
 
-function formulaires_editer_media_traiter_dist(){
-	
-	$res = array();
+function formulaires_editer_media_traiter_dist() {
+
+	$res = [];
 	$id_article = _request('id_article');
-	
+
 	include_spip('action/editer_objet');
 	include_spip('action/editer_liens');
-	
+
 	// mettre à jour l'article et le publier
 	objet_modifier('article', $id_article);
-	objet_instituer('article', $id_article, array('statut' => 'publie'));
+	objet_instituer('article', $id_article, ['statut' => 'publie']);
 
 	// créer le point ou le mettre à jour
 	$id_gis = _request('id_gis');
@@ -178,14 +185,13 @@ function formulaires_editer_media_traiter_dist(){
 		$id_gis = objet_inserer('gis');
 	}
 	if ($id_gis and intval($id_gis)) {
-		objet_modifier('gis', $id_gis, array(
+		objet_modifier('gis', $id_gis, [
 			'lat' => _request('lat'),
 			'lon' => _request('lon'),
 			'zoom' => _request('zoom'),
 			'titre' => _request('titre'),
-			'objet'=> 'article',
-			'id_objet' => $id_article)
-		);
+			'objet' => 'article',
+			'id_objet' => $id_article]);
 	}
 
 	include_spip('inc/invalideur');
@@ -194,7 +200,7 @@ function formulaires_editer_media_traiter_dist(){
 	// redirection
 	include_spip('inc/headers');
 	$res['message_ok'] = _T('info_modification_enregistree');
-	$res['redirect'] = generer_url_entite($id_article,'article');
-	
+	$res['redirect'] = generer_url_entite($id_article, 'article');
+
 	return $res;
 }

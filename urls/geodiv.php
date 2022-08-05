@@ -1,6 +1,8 @@
 <?php
 
-if (!defined("_ECRIRE_INC_VERSION")) return; // securiser
+if (!defined('_ECRIRE_INC_VERSION')) {
+	return;
+}
 
 define('URLS_GEODIV_EXEMPLE', 'media12');
 
@@ -15,11 +17,12 @@ define('URLS_GEODIV_EXEMPLE', 'media12');
  * @param string $ancre
  * @return string
  */
-function _generer_url_geodiv($type, $id, $args='', $ancre='') {
+function _generer_url_geodiv($type, $id, $args = '', $ancre = '') {
 
 	if ($type == 'forum') {
-		if ($generer_url_externe = charger_fonction("generer_url_forum",'urls',true))
+		if ($generer_url_externe = charger_fonction('generer_url_forum', 'urls', true)) {
 			return $generer_url_externe($id, $args, $ancre);
+		}
 		return '';
 	}
 
@@ -27,28 +30,28 @@ function _generer_url_geodiv($type, $id, $args='', $ancre='') {
 		include_spip('inc/documents');
 		return generer_url_document_dist($id, $args, $ancre);
 	}
-	
+
 	if ($type == 'article') {
-		return _DIR_RACINE . 'media' . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
-	}
-	
-	if ($type == 'rubrique') {
-		return _DIR_RACINE . 'cat' . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
-	}
-	
-	if ($type == 'mot') {
-		return _DIR_RACINE . 'tag' . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
-	}
-	
-	if ($type == 'auteur') {
-		return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
-	}
-	
-	if ($type == 'collection') {
-		return _DIR_RACINE . 'album' . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
+		return _DIR_RACINE . 'media' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') .($ancre ? "#$ancre" : '');
+	if ($type == 'rubrique') {
+		return _DIR_RACINE . 'cat' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	}
+
+	if ($type == 'mot') {
+		return _DIR_RACINE . 'tag' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	}
+
+	if ($type == 'auteur') {
+		return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	}
+
+	if ($type == 'collection') {
+		return _DIR_RACINE . 'album' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	}
+
+	return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 }
 
 /**
@@ -64,27 +67,39 @@ function _generer_url_geodiv($type, $id, $args='', $ancre='') {
  * @param string $ancre
  * @return array|string
  */
-function urls_geodiv_dist($i, $entite, $args='', $ancre='') {
+function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
 	$contexte = $GLOBALS['contexte']; // recuperer aussi les &debut_xx
 
-	if (is_numeric($i))
+	if (is_numeric($i)) {
 		return _generer_url_geodiv($entite, $i, $args, $ancre);
+	}
 
 	// traiter les injections du type domaine.org/spip.php/cestnimportequoi/ou/encore/plus/rubrique23
-	if ($GLOBALS['profondeur_url']>0 AND $entite=='sommaire'){
-		return array(array(),'404');
+	if ($GLOBALS['profondeur_url'] > 0 and $entite == 'sommaire') {
+		return [[],'404'];
 	}
 	$url = $i;
 
 	// Decoder l'url html, page ou standard
 	$objets = 'article|breve|rubrique|mot|auteur|site|syndic|media|cat|tag|collection|album';
-	if (preg_match(
-	',^(?:[^?]*/)?('.$objets.')([0-9]+)(?:\.html)?([?&].*)?$,', $url, $regs)
-	OR preg_match(
-	',^(?:[^?]*/)?('.$objets.')\.php3?[?]id_\1=([0-9]+)([?&].*)?$,', $url, $regs)
-	OR preg_match(
-	',^(?:[^?]*/)?(?:spip[.]php)?[?]('.$objets.')([0-9]+)(&.*)?$,', $url, $regs)) {
-		switch ($regs[1]){
+	if (
+		preg_match(
+			',^(?:[^?]*/)?(' . $objets . ')([0-9]+)(?:\.html)?([?&].*)?$,',
+			$url,
+			$regs
+		)
+		or preg_match(
+			',^(?:[^?]*/)?(' . $objets . ')\.php3?[?]id_\1=([0-9]+)([?&].*)?$,',
+			$url,
+			$regs
+		)
+		or preg_match(
+			',^(?:[^?]*/)?(?:spip[.]php)?[?](' . $objets . ')([0-9]+)(&.*)?$,',
+			$url,
+			$regs
+		)
+	) {
+		switch ($regs[1]) {
 			case 'media':
 				$regs[1] = 'article';
 				break;
@@ -103,8 +118,9 @@ function urls_geodiv_dist($i, $entite, $args='', $ancre='') {
 		$id_objet = $regs[2];
 		$suite = $regs[3];
 		$contexte[$_id] = $id_objet;
-		if ($type == 'syndic') $type = 'site';
-		return array($contexte, $type, null, $type);
+		if ($type == 'syndic') {
+			$type = 'site';
+		}
+		return [$contexte, $type, null, $type];
 	}
-
 }

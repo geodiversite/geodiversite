@@ -1,12 +1,14 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) return;
+if (!defined('_ECRIRE_INC_VERSION')) {
+	return;
+}
 
 // Activer HTML5 depuis le squelette
 $GLOBALS['meta']['version_html_max'] = 'html5';
 
 if (!isset($GLOBALS['z_blocs'])) {
-	$GLOBALS['z_blocs'] = array(
+	$GLOBALS['z_blocs'] = [
 		'content',
 		'extra',
 		'head',
@@ -14,42 +16,41 @@ if (!isset($GLOBALS['z_blocs'])) {
 		'header',
 		'footer',
 		'breadcrumb'
-	);
+	];
 }
 
 // urls prorpes en minuscules
-define ('_url_minuscules',1);
+define('_url_minuscules', 1);
 
 // extensions autorisées à l'upload
 if (!defined('_GEOL_FICHIERS_IMAGES')) {
-	define('_GEOL_FICHIERS_IMAGES', array('gif', 'jpg' , 'png'));
+	define('_GEOL_FICHIERS_IMAGES', ['gif', 'jpg' , 'png']);
 }
 if (!defined('_GEOL_FICHIERS_AUDIOS')) {
-	define('_GEOL_FICHIERS_AUDIOS', array('mp3'));
+	define('_GEOL_FICHIERS_AUDIOS', ['mp3']);
 }
 if (!defined('_GEOL_FICHIERS_VIDEOS')) {
-	define('_GEOL_FICHIERS_VIDEOS', array('mp4'));
+	define('_GEOL_FICHIERS_VIDEOS', ['mp4']);
 }
 if (!defined('_GEOL_FICHIERS_TEXTES')) {
-	define('_GEOL_FICHIERS_TEXTES', array('kml'));
+	define('_GEOL_FICHIERS_TEXTES', ['kml']);
 }
 
-define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(function($extension){
+define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(function ($extension) {
 		return '.' . $extension;
-	}, array_merge(
-		_GEOL_FICHIERS_IMAGES,
-		_GEOL_FICHIERS_AUDIOS,
-		_GEOL_FICHIERS_VIDEOS,
-		_GEOL_FICHIERS_TEXTES
-	)
-)));
+}, array_merge(
+	_GEOL_FICHIERS_IMAGES,
+	_GEOL_FICHIERS_AUDIOS,
+	_GEOL_FICHIERS_VIDEOS,
+	_GEOL_FICHIERS_TEXTES
+))));
 
 // largeur de la prévisu lors de l'upload
 if (!defined('_GEOL_PREVISU_LARGEUR')) {
 	define('_GEOL_PREVISU_LARGEUR', 710);
 }
 
-define('_TAILLE_MAX_GRAVATAR',200);
+define('_TAILLE_MAX_GRAVATAR', 200);
 
 // autoriser le prive uniquement pour les admins
 function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
@@ -64,7 +65,7 @@ function autoriser_rubrique_publierdans($faire, $type, $id, $qui, $opt) {
 	} elseif (
 		$id_secteur = sql_getfetsel('id_secteur', 'spip_rubriques', 'id_rubrique=' . intval($id))
 		and $id_secteur == lire_config('geol/secteur_medias', 1)
-		and in_array($qui['statut'], array('0minirezo', '1comite'))
+		and in_array($qui['statut'], ['0minirezo', '1comite'])
 	) {
 		// surcharge geodiv
 		return true;
