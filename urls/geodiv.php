@@ -80,7 +80,7 @@ function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
 	}
 	$url = $i;
 
-	// Decoder l'url html, page ou standard
+	// décoder l'url html, page ou standard
 	$objets = 'article|breve|rubrique|mot|auteur|site|syndic|media|cat|tag|collection|album';
 	if (
 		preg_match(
@@ -123,4 +123,6 @@ function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
 		}
 		return [$contexte, $type, null, $type];
 	}
+	// on ne peut plus rien...
+	return '';
 }
