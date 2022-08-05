@@ -210,10 +210,10 @@ function geodiv_lire_media($args) {
 				$largeur_vignette = $args['vignette_largeur'] ? $args['vignette_largeur'] : 100;
 				$hauteur_vignette = $args['vignette_hauteur'] ? $args['vignette_hauteur'] : 100;
 				if ($format_vignette == 'carre') {
-					$vignette = extraire_attribut(quete_logo_document($document, $lien, $align, $mode_logo, '', '', $connect = null), 'src');
+					$vignette = extraire_attribut(quete_logo_document($document, '', '', '', '', '', $connect = null), 'src');
 					$res['result'][0]['vignette'] = url_absolue(extraire_attribut(image_recadre(image_passe_partout($vignette, $largeur_vignette, $hauteur_vignette), $largeur_vignette, $hauteur_vignette), 'src'));
 				}else {
-					$vignette = liens_absolus(quete_logo_document($document, $lien, $align, $mode_logo, $largeur_vignette, $hauteur_vignette, $connect = null));
+					$vignette = liens_absolus(quete_logo_document($document, '', '', '', $largeur_vignette, $hauteur_vignette, $connect = null));
 					$res['result'][0]['vignette'] = extraire_attribut($vignette, 'src');
 				}
 			}
