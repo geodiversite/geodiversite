@@ -49,6 +49,8 @@ if (!defined('_GEOL_PREVISU_LARGEUR')) {
 	define('_GEOL_PREVISU_LARGEUR', 710);
 }
 
+define('_TAILLE_MAX_GRAVATAR',200);
+
 // autoriser le prive uniquement pour les admins
 function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
 	return $qui['statut'] == '0minirezo';
@@ -92,5 +94,3 @@ function autoriser_ticket_ecrire($faire, $type, $id, $qui, $opt) {
 function autoriser_modererforum($faire, $type, $id, $qui, $opt) {
 	return autoriser_ecrire($faire, $type, $id, $qui, $opt);
 }
-
-define('_TAILLE_MAX_GRAVATAR',200);
