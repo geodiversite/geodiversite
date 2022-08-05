@@ -1,0 +1,9 @@
+<BOUCLE_article(ARTICLES){id_article}>
+<ul class="breadcrumb-items">
+	<li class="item"><a href="#URL_SITE_SPIP/"><:accueil_site:></a><span class="divider"> &gt; </span></li>
+	<BOUCLE_ariane_hier(HIERARCHIE){id_rubrique}{tout}>
+	<li class="item"><a href="#URL_RUBRIQUE">[(#TITRE|couper{80})]</a><span class="divider"> &gt; </span></li>
+	</BOUCLE_ariane_hier>
+	<li class="item active"><span class="on #EDIT{titre}">[(#TITRE|couper{80})]</span></li>	
+</ul>
+</BOUCLE_article>
