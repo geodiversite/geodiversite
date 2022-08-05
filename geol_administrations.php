@@ -72,7 +72,7 @@ function geol_installation() {
 	ecrire_config('socialtags/jsselector', '#socialtags');
 
 	// création du groupe de mots clés echelle et de ses mots clés
-	$Terreur = [];
+	$Terreurs = [];
 	if (sql_countsel('spip_groupes_mots', "titre = 'echelle'") == 0) {
 		$id_groupe = sql_insertq('spip_groupes_mots', [
 			'titre' => 'echelle',
