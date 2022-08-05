@@ -77,6 +77,7 @@ function formulaires_editer_media_verifier_etape_dist($etape) {
 
 	$erreurs = [];
 	$id_rubrique = lire_config('geol/secteur_medias', 1);
+	$id_document = '';
 	if ($id_article = _request('id_article')) {
 		$id_document = sql_getfetsel(
 			'document.id_document',
