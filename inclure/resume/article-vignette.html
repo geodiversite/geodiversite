@@ -15,7 +15,7 @@
 
 <BOUCLE_doc(DOCUMENTS){id_article}{mode=document}{vu=non}{0,1}>
 [<a href="#GET{url_article}">
-	(#EXTENSION|in_array{#LISTE{flv,kml,kmz,mp3,mp4,ogv,pdf}}|?{#CHEMIN{images/#EXTENSION.png},#LOGO_DOCUMENT}|image_recadre{1.86:1,-,focus}|image_reduire{#ENV{largeur,538},#ENV{hauteur,0}}|inserer_attribut{alt,[(#_article_vignette:TITRE|couper{80}|texte_backend)]})
+	(#LOGO_DOCUMENT|image_recadre{1.86:1,-,focus}|image_reduire{#ENV{largeur,538},#ENV{hauteur,0}}|inserer_attribut{alt,[(#_article_vignette:TITRE|couper{80}|texte_backend)]})
 </a>]
 </BOUCLE_doc>
 
