@@ -36,6 +36,8 @@ Géodiversité utilise des urls personnalisées, voici les règles à ajouter à
 	RewriteRule ^album([0-9]+)$		spip.php?page=album&id_collection=$1 [QSA,L]
 	RewriteRule ^newsletter([0-9]+)$	spip.php?page=newsletter&id_newsletter=$1 [QSA,L]
 
-## Version pour SPIP 3.0
+## Anciennes versions
 
-La version compatible avec SPIP 3.0 est disponible dans la branche [spip30](https://github.com/geodiversite/geodiversite_monolithe/tree/spip30) du dépôt archive.
+- la version compatible avec SPIP 3.2 est dans la branche [v3](https://github.com/geodiversite/geodiversite/tree/v3)
+- la version hitorique (fonctionnant avec les plugins emballe_medias & diogene) compatible avec SPIP 3.2 est dans la branche [v2](https://github.com/geodiversite/geodiversite/tree/v2)
+- la version compatible avec SPIP 3.0 est disponible dans la branche [spip30](https://github.com/geodiversite/geodiversite_monolithe/tree/spip30) du dépôt archive.
