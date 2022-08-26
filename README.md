@@ -39,5 +39,5 @@ Géodiversité utilise des urls personnalisées, voici les règles à ajouter à
 ## Anciennes versions
 
 - la version compatible avec SPIP 3.2 est dans la branche [v3](https://github.com/geodiversite/geodiversite/tree/v3)
-- la version hitorique (fonctionnant avec les plugins emballe_medias & diogene) compatible avec SPIP 3.2 est dans la branche [v2](https://github.com/geodiversite/geodiversite/tree/v2)
+- la version historique (fonctionnant avec les plugins emballe_medias & diogene) compatible avec SPIP 3.2 est dans la branche [v2](https://github.com/geodiversite/geodiversite/tree/v2)
 - la version compatible avec SPIP 3.0 est disponible dans la branche [spip30](https://github.com/geodiversite/geodiversite_monolithe/tree/spip30) du dépôt archive.
