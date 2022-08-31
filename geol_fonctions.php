@@ -11,6 +11,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * @return string
  */
 function geol_couleur_hex_to_dec($couleur) {
+	$retour = [];
 	include_spip('inc/filtres_images_mini');
 	$couleur = couleur_html_to_hex($couleur);
 	$couleur = preg_replace(',^#,', '', $couleur);

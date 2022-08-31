@@ -23,6 +23,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * -* limite
  */
 function geodiv_liste_medias($args) {
+	$what = [];
 	global $spip_xmlrpc_serveur;
 	$objet = 'article';
 	$table_objet = 'articles';
@@ -73,7 +74,7 @@ function geodiv_liste_medias($args) {
 	 */
 	if (is_string($args['recherche']) and strlen($args['recherche']) > 3) {
 		$prepare_recherche = charger_fonction('prepare_recherche', 'inc');
-		list($rech_select, $rech_where) = $prepare_recherche($args['recherche'], $table_objet, $where);
+		[$rech_select, $rech_where] = $prepare_recherche($args['recherche'], $table_objet, $where);
 		$what[] = $rech_select;
 		$from .= ' INNER JOIN spip_resultats AS resultats ON ( resultats.id = ' . $table_objet . '.id_article ) ';
 		$where[] = $rech_where;
@@ -129,7 +130,7 @@ function geodiv_lire_media($args) {
 		return $spip_xmlrpc_serveur->error;
 	}
 
-	$id_secteur = $res['result'][0]['id_secteur'] ? $res['result'][0]['id_secteur'] : sql_getfetsel('id_secteur', 'spip_articles', 'id_article=' . intval($args['id_article']));
+	$id_secteur = $res['result'][0]['id_secteur'] ?: sql_getfetsel('id_secteur', 'spip_articles', 'id_article=' . intval($args['id_article']));
 	/**
 	 * Sécurité : L'article demandé n'est pas un média
 	 */
@@ -207,8 +208,8 @@ function geodiv_lire_media($args) {
 			}
 
 			if ((count($champs_demandes) == 0) || in_array('vignette', $champs_demandes)) {
-				$largeur_vignette = $args['vignette_largeur'] ? $args['vignette_largeur'] : 100;
-				$hauteur_vignette = $args['vignette_hauteur'] ? $args['vignette_hauteur'] : 100;
+				$largeur_vignette = $args['vignette_largeur'] ?: 100;
+				$hauteur_vignette = $args['vignette_hauteur'] ?: 100;
 				if ($format_vignette == 'carre') {
 					$vignette = extraire_attribut(quete_logo_document($document, '', '', '', '', '', $connect = null), 'src');
 					$res['result'][0]['vignette'] = url_absolue(extraire_attribut(image_recadre(image_passe_partout($vignette, $largeur_vignette, $hauteur_vignette), $largeur_vignette, $hauteur_vignette), 'src'));
@@ -348,7 +349,7 @@ function geodiv_creer_media($args) {
 	 *
 	 */
 	if ($f = fopen($tmp_name, 'w+')) {
-		fwrite($f, $fichier_64 ? $fichier_64 : $args['document']['bits']);
+		fwrite($f, $fichier_64 ?: $args['document']['bits']);
 		fclose($f);
 	}else {
 		$erreur = _T('geol:erreur_fichier_inconnu');
@@ -375,6 +376,7 @@ function geodiv_creer_media($args) {
  * Met à jour un média
  */
 function geodiv_update_media($args) {
+	$args_media = [];
 	global $spip_xmlrpc_serveur;
 
 	/**
