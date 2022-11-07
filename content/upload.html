@@ -22,7 +22,7 @@
 	<//B_art_auteur>
 	</BOUCLE_session>
 	
-	[(#SESSION{id_auteur}|non)#LOGIN_PUBLIC]
-	[(#FORMULAIRE_EDITER_MEDIA)]
+	[(#SESSION{id_auteur}|non)#FORMULAIRE_LOGIN]
+	[(#SESSION{id_auteur}|oui)#FORMULAIRE_EDITER_MEDIA]
 
 </div>
