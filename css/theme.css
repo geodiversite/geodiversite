@@ -362,6 +362,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .suivi .georss { background: transparent url(img/georss.png) left 50% no-repeat; }
 
 .liste.auteurs .item { display: flex; }
+.liste.auteurs .item > a { min-width: 100px; }
 .liste.auteurs .item .vcard { margin-left: 0.5em; }
 .liste.auteurs .item .vcard .titre { margin: 0; }
 .liste.auteurs .item .vcard a { color: inherit; }
