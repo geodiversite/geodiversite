@@ -2,7 +2,7 @@
 #SET{markers,#ARRAY}
 <BOUCLE_articles(ARTICLES){gis}{branche}{tout}{0,100}{!par date}>#SET{markers,#GET{markers}|push{#LAT|concat{';',#LON,';',#CHEMIN{images/geol_minimarker.png}}}}</BOUCLE_articles>
 <a href="[(#ID_RUBRIQUE|!={#CONFIG{geol/secteur_medias,1}}|?{#URL_PAGE{carte,id_rubrique=#ID_RUBRIQUE},#URL_PAGE{carte}})]">
-	[(#REM|gis_static_map{#ENV{largeur,560},#ENV{hauteur,200},#CONFIG{geol/fond_minicartes,cartodb_voyager},'',#GET{markers}|implode{'|'}})]
+	[(#REM|gis_static_map{#ENV{largeur,200},#ENV{hauteur,200},#CONFIG{geol/fond_minicartes,cartodb_voyager},'',#GET{markers}|implode{'|'}})]
 </a>
 <ul class="liste-items">
 	[<li class="item"><a href="(#ID_RUBRIQUE|!={#CONFIG{geol/secteur_medias,1}}|?{#URL_PAGE{carte,id_rubrique=#ID_RUBRIQUE},#URL_PAGE{carte}})"><:geol:lien_grande_carte:></a></li>]

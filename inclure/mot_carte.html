@@ -2,7 +2,7 @@
 #SET{markers,#ARRAY}
 <BOUCLE_articles(ARTICLES){gis}{id_mot}{id_auteur?}{tout}{0,100}{!par date}>#SET{markers,#GET{markers}|push{#LAT|concat{';',#LON,';',#CHEMIN{images/geol_minimarker.png}}}}</BOUCLE_articles>
 <a href="[(#URL_PAGE{carte,id_mot=#ID_MOT}|parametre_url{id_auteur,#ENV{id_auteur}})]">
-	[(#REM|gis_static_map{#ENV{largeur,560},#ENV{hauteur,200},#CONFIG{geol/fond_minicartes,cartodb_voyager},'',#GET{markers}|implode{'|'}})]
+	[(#REM|gis_static_map{#ENV{largeur,200},#ENV{hauteur,200},#CONFIG{geol/fond_minicartes,cartodb_voyager},'',#GET{markers}|implode{'|'}})]
 </a>
 <ul class="liste-items">
 	[<li class="item"><a href="(#URL_PAGE{carte,id_mot=#ID_MOT}|parametre_url{id_auteur,#ENV{id_auteur}})"><:geol:lien_grande_carte:></a></li>]
