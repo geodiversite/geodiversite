@@ -71,6 +71,25 @@ function autoriser_rubrique_publierdans($faire, $type, $id, $qui, $opt) {
 	}
 }
 
+// permettre aux auteurs de modifier leurs articles, mêmes publiés
+function autoriser_article_modifier($faire, $type, $id, $qui, $opt) {
+	$r = sql_fetsel('id_rubrique,statut', 'spip_articles', 'id_article=' . sql_quote($id));
+
+	return
+		$r
+		and
+		(
+			autoriser('publierdans', 'rubrique', $r['id_rubrique'], $qui, $opt)
+			and auteurs_objet('article', $id, 'id_auteur=' . $qui['id_auteur']) // surcharge geodiv
+			or (
+				(!isset($opt['statut']) or $opt['statut'] !== 'publie')
+				and in_array($qui['statut'], ['0minirezo', '1comite'])
+				and in_array($r['statut'], ['prop', 'prepa', 'poubelle'])
+				and auteurs_objet('article', $id, 'id_auteur=' . $qui['id_auteur'])
+			)
+		);
+}
+
 // surcharger autoriser_rubrique_modifier_dist pour y reproduire autoriser_rubrique_publierdans_dist
 // puisque diogene surcharge autoriser_rubrique_publierdans et permet donc aux rédacteurs de modifier les rubriques
 function autoriser_rubrique_modifier($faire, $type, $id, $qui, $opt) {
