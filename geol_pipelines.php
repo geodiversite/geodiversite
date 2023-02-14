@@ -31,6 +31,7 @@ function geol_styliser($flux) {
 		isset($flux['args']['contexte']['type-page'])
 		and $flux['args']['contexte']['type-page'] == 'article'
 		// Et qu'il porte la composition automatique des pages uniques
+		and isset($flux['args']['contexte']['composition'])
 		and strpos($flux['args']['contexte']['composition'], 'pageunique-') === 0
 		// Et qu'il existe un squelette du même fond, mais avec le suffixe "page"
 		and $f = find_in_path($flux['args']['fond'] . '-page.' . $flux['args']['ext'])
