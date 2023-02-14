@@ -77,7 +77,7 @@ function autoriser_article_modifier($faire, $type, $id, $qui, $opt) {
 
 	return
 		$r
-		and
+		and in_array($qui['statut'], array('0minirezo')) or
 		(
 			autoriser('publierdans', 'rubrique', $r['id_rubrique'], $qui, $opt)
 			and auteurs_objet('article', $id, 'id_auteur=' . $qui['id_auteur']) // surcharge geodiv
