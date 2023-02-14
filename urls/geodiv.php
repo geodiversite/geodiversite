@@ -68,7 +68,7 @@ function _generer_url_geodiv($type, $id, $args = '', $ancre = '') {
  * @return array|string
  */
 function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
-	$contexte = $GLOBALS['contexte']; // recuperer aussi les &debut_xx
+	$contexte = $GLOBALS['contexte'] ?? []; // recuperer aussi les &debut_xx
 
 	if (is_numeric($i)) {
 		return _generer_url_geodiv($entite, $i, $args, $ancre);
