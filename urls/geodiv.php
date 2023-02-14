@@ -116,7 +116,6 @@ function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
 		$type = preg_replace(',s$,', '', table_objet($regs[1]));
 		$_id = id_table_objet($regs[1]);
 		$id_objet = $regs[2];
-		$suite = $regs[3];
 		$contexte[$_id] = $id_objet;
 		if ($type == 'syndic') {
 			$type = 'site';
