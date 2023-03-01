@@ -53,7 +53,7 @@
 [(#ENV{modifier_annexes}|oui|et{#AUTORISER{modifier,article,#ENV{id_article}}|oui})
 <script type="text/javascript">/*<!\[CDATA\[*/
 var multifile='[(#CHEMIN{javascript/jquery.multifile.js}|texte_script)]';
-[(#INCLURE{javascript/medias_edit.js}|compacte{js})]
+[(#INCLURE{javascript/medias_edit.js}|minifier{js})]
 /*\]\]>*/</script>
 #FORMULAIRE_JOINDRE_DOCUMENT{new,#ENV{id_article},article,annexe,'',false,false}
 ]
