@@ -55,17 +55,11 @@ br.clear {
 hr.clear {
   visibility: hidden;
 }
-/* clearfix : http://www.positioniseverything.net/easyclearing.html */
+/* clearfix : https://web.archive.org/web/20140214043449/https://css-101.org/articles/clearfix/latest-new-clearfix-so-far.php */
 .clearfix:after {
-  content: "\0020";
-  display: block;
-  height: 0;
+  content: "";
+  display: table;
   clear: both;
-  visibility: hidden;
-  overflow: hidden;
-}
-.clearfix {
-  display: inline-table;
 }
 /* Not visible */
 .offscreen {
