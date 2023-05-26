@@ -1,6 +1,6 @@
 <B_sous_rubriques>
-<form action="[(#VAL{redirect}|generer_url_action)]" method="get">
-	[(#VAL{redirect}|generer_url_action|form_hidden)]
+<form action="[(#VAL{redirection}|generer_url_action)]" method="get">
+	[(#VAL{redirection}|generer_url_action|form_hidden)]
 	<input type="hidden" name="type" value="rubrique">
 	<select name="id" onchange="this.form.submit()" class="select2">
 		<option value="#CONFIG{geol/secteur_medias,1}"[(#ENV{id_rubrique}|=={#CONFIG{geol/secteur_medias,1}}|oui)selected="selected"]><:geol:categories_toutes:></option>
