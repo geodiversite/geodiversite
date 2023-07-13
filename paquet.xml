@@ -1,9 +1,9 @@
 <paquet
 	prefix="geol"
 	categorie="squelette"
-	version="4.1.0"
+	version="4.2.0"
 	etat="stable"
-	compatibilite="[4.0.0;4.1.*]"
+	compatibilite="[4.1.0;4.2.*]"
 	logo="images/logo_site.png"
 	schema="0.2.4"
 >
