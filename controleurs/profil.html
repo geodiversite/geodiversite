@@ -1,32 +1,32 @@
 #CACHE{0}
 <BOUCLE_a(AUTEURS){id_auteur}{tous}>
-<[(#DIV|sinon{ul})] class="editer-groupe">
-	<[(#DIV|sinon{li})] class="editer fieldset">
+<div class="editer-groupe">
+	<div class="editer fieldset">
 		<fieldset style="#ENV{style}">
 			<h3 class="legend"><:geol:legend_editer_profil:></h3>
-			<[(#DIV|sinon{ul})] class="editer-groupe">
-				<[(#DIV|sinon{li})] class="editer_logo">
+			<div class="editer-groupe">
+				<div class="editer_logo">
 					[(#INCLURE{fond=controleurs/logo,id_auteur,env})
 					<!-- input class="crayon-active" name="#ENV{name_logo}" type="hidden" / -->]
-				</[(#DIV|sinon{li})]>
-				<[(#DIV|sinon{li})] class="editer_nom obligatoire">
+				</div>
+				<div class="editer_nom obligatoire">
 					<label for="#ENV{name_nom}"><:geol:profil_nom:></label>
 					<input type="text" name="#ENV{name_nom}" id="#ENV{name_nom}" value="[(#NOM**|entites_html)]" class="text crayon-active" />
-				</[(#DIV|sinon{li})]>
-				<[(#DIV|sinon{li})] class="editer_email obligatoire">
+				</div>
+				<div class="editer_email obligatoire">
 					<label for="#ENV{name_email}"><:geol:profil_mail:></label>
 					<input type="text" name="#ENV{name_email}" id="#ENV{name_email}" value="[(#EMAIL**|entites_html)]" class="text crayon-active" />
-				</[(#DIV|sinon{li})]>
-				<[(#DIV|sinon{li})] class="editer_bio">
+				</div>
+				<div class="editer_bio">
 					<label for="#ENV{name_bio}"><:geol:profil_bio:></label>
 					<textarea name="#ENV{name_bio}" id="#ENV{name_bio}" style="width:100%;[ height:(#ENV{hauteur})px;]">[(#BIO**|entites_html)]</textarea>
-				</[(#DIV|sinon{li})]>
-				<[(#DIV|sinon{li})] class="editer_url_site">
+				</div>
+				<div class="editer_url_site">
 					<label for="#ENV{name_url_site}"><:geol:profil_url:></label>
 					<input type="text" name="#ENV{name_url_site}" id="#ENV{name_url_site}" value="[(#URL_SITE**|entites_html)]" class="text crayon-active" />
-				</[(#DIV|sinon{li})]>
-			</[(#DIV|sinon{ul})]>
+				</div>
+			</div>
 		</fieldset>
-	</[(#DIV|sinon{li})]>
-</[(#DIV|sinon{ul})]>
+	</div>
+</div>
 </BOUCLE_a>

@@ -6,14 +6,14 @@
 		[(#REM) declarer les hidden qui declencheront le service du formulaire 
 		parametre : url d'action ]
 		#ACTION_FORMULAIRE{#ENV{action}}
-		<[(#DIV|sinon{ul})] class="editer-groupe">
+		<div class="editer-groupe">
 			[(#SAISIE{mot,
 				id_mot,
 				label=<:geol:echelle_media:>,
 				id_groupe=#ENV{id_groupe},
 				defaut=#ENV{id_mot}
 			})]
-		</[(#DIV|sinon{ul})]>
+		</div>
 	  [(#REM) ajouter les saisies supplementaires : extra et autre, a cet endroit ]
 	  <!--extra-->
 	  <p class="boutons"><input type="submit" name="save" class="btn submit" value="<:bouton_enregistrer:>" /></p>

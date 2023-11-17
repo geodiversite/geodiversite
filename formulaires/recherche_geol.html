@@ -5,12 +5,12 @@
 	[(#REM) declarer les hidden qui declencheront le service du formulaire parametre : url d'action ]
 	<input type="hidden" value="recherche" name="page">
 	<fieldset>
-		<[(#DIV|sinon{ul})] class="editer-groupe">
-			<[(#DIV|sinon{li})] class="editer recherche">
+		<div class="editer-groupe">
+			<div class="editer recherche">
 				<label for="recherche"><:info_rechercher:></label>
 				<input type="text" class="text" size="10" name="recherche" id="recherche"[ value="(#ENV{recherche})"] />
 				[(#PLUGIN{Fulltext}|oui)<p class="explication"><:fulltext:casse_indifferente:> <:fulltext:accents_pas_pris:>.</p>]
-			</[(#DIV|sinon{li})]>
+			</div>
 			[(#SAISIE{secteur,
 				categories,
 				explication=<:geol:explication_select_multiple:>,
@@ -40,7 +40,7 @@
 				label=<:geol:licence_media:>,
 				cacher_option_intro=oui,
 				datas=#ENV**{licences}})]]
-		</[(#DIV|sinon{ul})]>
+		</div>
 	</fieldset>
 	<p class="boutons">
 		<input type="submit" class="btn submit" value="<:info_rechercher:>" title="<:info_rechercher:>" />	
