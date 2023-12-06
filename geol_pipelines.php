@@ -54,6 +54,7 @@ function geol_recuperer_fond($flux) {
 	if ($flux['args']['fond'] == 'javascript/gis.js') {
 		$flux['data']['texte'] .= "\n\n(function() { L.gisConfig.getInfowindowUrl = '" . url_absolue(generer_url_public('get_infowindow')) . "'; })();";
 		$flux['data']['texte'] .= "\n\n" . spip_file_get_contents(find_in_path('javascript/leaflet.geodiv.js'));
+		$flux['data']['texte'] .= "\n\n" . spip_file_get_contents(find_in_path('javascript/leaflet.photon.js'));
 	}
 	return $flux;
 }

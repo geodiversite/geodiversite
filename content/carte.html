@@ -51,7 +51,17 @@ var resizeMap = function() {
 			// carte filtree
 			infoFilter();
 			]
-			
+
+			// ajouter le geocoder
+			var geocoder = L.control.photon({
+				placeholder: '<:info_rechercher|texte_script:>',
+				noResultLabel: '<:avis_aucun_resultat|texte_script:>',
+				feedbackEmail: null,
+				lang: '#LANG',
+				position: 'topright'
+			}).addTo(map);
+			L.DomUtil.addClass(geocoder.container, 'leaflet-control-layers leaflet-control-layers-expanded leaflet-control');
+
 			// palcer le panel des kmls dans un bloc de control pour ne pas le perdre en fullscreen
 			if(L.DomUtil.get('kml_panel'))
 				map._controlCorners.topright.appendChild(L.DomUtil.get('kml_panel'));
