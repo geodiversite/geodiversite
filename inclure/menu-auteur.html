@@ -15,7 +15,7 @@
 			[(#URL_PAGE{albums,id_auteur=#ID_AUTEUR}|lien_ou_expose{<:collection:titre_collections:>,#SI_PAGE{albums}})]
 		</li>]
 		<li class="item"><span class="sep"> | </span>
-			[(#URL_AUTEUR|parametre_url{view,about}|lien_ou_expose{<:geol:nav_a_propos:>,#SI_PAGE{auteur}|et{#ENV{view}|=={about}|oui}})]
+			[(#URL_AUTEUR|parametre_url{view,about}|lien_ou_expose{<:geol:profil:>,#SI_PAGE{auteur}|et{#ENV{view}|=={about}|oui}})]
 		</li>
 	</ul>
 </div>
