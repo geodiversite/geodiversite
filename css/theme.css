@@ -285,10 +285,10 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 
 .page_carte html,
 .page_carte body { height: 100%; }
-.page_carte .page { overflow: hidden; width: 100%; margin: 0; height: 100%; position: absolute; left: 0; }
+.page_carte .page { overflow: hidden; width: 100% !important; margin: 0 !important; height: 100%; position: absolute; left: 0; }
 .page_carte #container,
 .page_carte #container .content,
-.page_carte #container .content .carte_gis { width: 100%; max-width: none; margin: 0; height: 100%; position: relative; }
+.page_carte #container .content .carte_gis { width: 100%; max-width: none; margin: 0; padding: 0; height: 100%; position: relative; }
 .page_carte .breadcrumb { display: none; }
 .page_carte .footer { position: absolute; bottom: 0; background: #fff; z-index: 1000; }
 .page_carte .footer #bouton { position: absolute; top: -20px; right: 10px; background: transparent url(img/bouton_pied.png) -40px top no-repeat; width: 40px; height: 20px; }
