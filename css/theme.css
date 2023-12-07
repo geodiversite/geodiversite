@@ -30,6 +30,12 @@ body { background: #fff; font-size: 120%; }
 .header .accueil #nom_site_spip { display: flex; align-items: center; margin-bottom: 0; color: #fff; line-height: 1; }
 .header .accueil a,
 .header .accueil a:hover { color: #fff; text-decoration: none; }
+.header .formulaire_recherche.desktop { display: none; }
+@media (min-width: 768px) {
+	.header .formulaire_recherche.desktop { display: block; flex-grow: 1; text-align: right; padding-right: 1em; }
+	.header .formulaire_recherche.desktop input.search { min-width: 0; padding: 0.25em; text-align: left; background: #ddd; transition: all 0.3s ease-out; }
+	.header .formulaire_recherche.desktop input.search:focus { background: #fff; min-width: 300px; }
+}
 @media (max-width: 576px) {
     .header .container { justify-content: space-around; }
     .header .accueil .spip_logo { display: block; margin: 0 auto 0.5em; }
