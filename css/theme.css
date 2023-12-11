@@ -308,6 +308,7 @@ body a.spip-admin-boutons:hover { color: var(--color); background: #fff; }
 .page_carte .leaflet-bottom.leaflet-right { right: 60px; }
 
 .page_carte .photon-input { border: 0; width: 15px; transition: all 0.3s ease-out; }
+.page_carte .photon-input::placeholder { overflow: visible; }
 .page_carte .photon-input:focus { width: 220px; }
 .page_carte ul.photon-autocomplete { position: absolute; margin-top: 4px; padding: 0; text-align: left; background-color: white; z-index: 1000; box-shadow: 0 4px 9px #999999; display: none; }
 .page_carte .photon-autocomplete li { min-height: 40px; line-height: 1em; padding: 5px 10px; overflow: hidden; white-space: nowrap; font-size: 80%; }
