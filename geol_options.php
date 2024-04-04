@@ -53,8 +53,10 @@ if (!defined('_GEOL_PREVISU_LARGEUR')) {
 define('_TAILLE_MAX_GRAVATAR', 200);
 
 // autoriser le prive uniquement pour les admins
-function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
-	return $qui['statut'] == '0minirezo';
+if (!function_exists('autoriser_ecrire')) {
+	function autoriser_ecrire($faire, $type, $id, $qui, $opt) {
+		return $qui['statut'] == '0minirezo';
+	}
 }
 
 // permettre aux rédacteurs de publier dans le secteur des médias
