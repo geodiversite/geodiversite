@@ -103,7 +103,7 @@ L.Map.Geodiv = L.Map.extend({
 			if (item.geometry.coordinates[0]) {
 				var latlng = new L.LatLng(item.geometry.coordinates[1],item.geometry.coordinates[0]);
 				var marker = new L.Marker(latlng);
-				if (item.properties.icon) {
+				if (item.properties?.icon) {
 					marker.setIcon(new L.Icon({
 						iconUrl: item.properties.icon,
 						iconSize: new L.Point(32,32),
