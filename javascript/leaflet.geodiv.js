@@ -121,7 +121,7 @@ L.Map.Geodiv = L.Map.extend({
 		var me = this;
 		$.ajax({
 			url: me.options.getInfowindowUrl,
-			data: { id_article : ids },
+			data: { id_objet : ids },
 			success: function(data){
 				me.infowindow.setContent(data);
 				me.infowindow.setLatLng(latlng);

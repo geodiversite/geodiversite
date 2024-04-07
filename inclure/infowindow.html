@@ -1,10 +1,18 @@
-<BOUCLE_un_article(ARTICLES){id_article}><div class="descriptif_window">
-	<h3>#TITRE</h3>
-	<BOUCLE_imaxe(DOCUMENTS){extension !IN 'kml','kmz'}{id_article}{vu=non}{0,1}>
-	[<a href="[(#URL_ARTICLE|url_absolue)]" class="lien_logo"[ title="(#_un_article:TITRE|attribut_html)"]>
-		<img src="(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{src}|url_absolue)" height="[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{height})]" width="[(#LOGO_DOCUMENT|image_reduire{225}|extraire_attribut{width})]" alt="" />
+<B_articles><div class="descriptif_window[(#ENV{id_objet}|is_array|oui) multi]">
+<ul class="liste-items">
+<BOUCLE_articles(ARTICLES){id_article IN #ENV{id_objet}}{pagination 3}><li class="item">
+	[(#ENV{id_objet}|is_array|non)<h3>#TITRE</h3>]
+	<BOUCLE_img(DOCUMENTS){extension !IN 'kml','kmz'}{id_article}{vu=non}{0,1}>
+	[<a href="[(#URL_ARTICLE|url_absolue)]" class="lien_logo"[ title='(#_articles:TITRE|attribut_html)']>
+		(#ENV{id_objet}|is_array|?{#LOGO_DOCUMENT|image_passe_partout{50,50}|image_recadre{50,50,center},#LOGO_DOCUMENT|image_reduire{225}}|liens_absolus|vider_attribut{class})
 	</a>]
-	</BOUCLE_imaxe>
-	[<div class="auteurs"><:geol:publie_par:> (#LESAUTEURS) </div>]
-	<B_cat1><div class="categories"><:geol:categories:> : <BOUCLE_cat1(RUBRIQUES){parents_indirects}{tout}{', '}><a href="[(#URL_RUBRIQUE|url_absolue)]">#TITRE</a></BOUCLE_cat1></div></B_cat1>
-</div></BOUCLE_un_article>
+	</BOUCLE_img>
+	<div class="desc">
+		[(#ENV{id_objet}|is_array|oui)<h3>#TITRE</h3>]
+		[<div class="auteurs"><:geol:publie_par:> (#LESAUTEURS) </div>]
+		<B_cat1><div class="categories"><:geol:categories:> : <BOUCLE_cat1(RUBRIQUES){parents_indirects}{tout}{', '}><a href="[(#URL_RUBRIQUE|url_absolue)]">#TITRE</a></BOUCLE_cat1></div></B_cat1>
+	</div>
+	</li></BOUCLE_articles>
+</ul>
+[<nav role="navigation" class="pagination">(#PAGINATION{precedent_suivant}|replace{lien_pagination,lien_pagination nohistory})</nav>]
+</div></B_articles>
