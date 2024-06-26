@@ -462,6 +462,10 @@ div.formulaire_spipicious fieldset legend { background: transparent; }
 
 .formulaire_editer_mot_article { width: 50%; margin: 10px 0; }
 
+/* joindre_document (annexes) */
+
+.formulaire_joindre_document :where(.sourceup, #joindre_distant__new) { display: none; }
+
 /* formulaire_forum */
 
 .formulaire_forum .session_qui,
