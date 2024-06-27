@@ -3,9 +3,9 @@
 
 <p class="doc_echelle">
 	<:geol:echelle_media:>[ : (#GET{echelle}|sinon{<:geol:info_vide_f:>}) ]
-	[(#AUTORISER{modifier,article,#ENV{id_article}}|oui)[(#VAL{91}|chr)]<a href="[(#SELF|parametre_url{modifier_echelle,#ENV{modifier_echelle}|?{'',oui}})]" class="ajax">
+	[(#AUTORISER{modifier,article,#ENV{id_article}}|oui)<a href="[(#SELF|parametre_url{modifier_echelle,#ENV{modifier_echelle}|?{'',oui}})]" class="button ajax">
 		[(#ENV{modifier_echelle}|?{<:geol:annuler:>,<:geol:modifier:>})]
-		</a>[(#VAL{93}|chr)]]
+		</a>]
 </p>
 
 [(#ENV{modifier_echelle}|oui)
