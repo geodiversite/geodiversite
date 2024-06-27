@@ -126,3 +126,18 @@ function geol_xmlrpc_server_class($flux) {
 	include_spip('inc/geol_xmlrpc');
 	return $flux;
 }
+
+/**
+ * Insertion dans le pipeline menus_utiles (menus)
+ *
+ * Proposer les menus de la page d'accueil à la création
+ *
+ * @param array $menus
+ * @return array $menus
+ */
+function geol_menus_utiles($menus) {
+	$menus['home_bloc1'] = _T('geol:nav_explorer');
+	$menus['home_bloc2'] = _T('geol:nav_contribuer');
+	$menus['home_bloc3'] = _T('geol:rechercher');
+	return $menus;
+}
