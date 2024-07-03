@@ -110,3 +110,9 @@ function autoriser_rubrique_modifier($faire, $type, $id, $qui, $opt) {
 function autoriser_modererforum($faire, $type, $id, $qui, $opt) {
 	return autoriser_ecrire($faire, $type, $id, $qui, $opt);
 }
+
+// surcharger l'autorisation de selecteur_generique pour l'autocomplete de spipicious
+// puisqu'on bloque l'accès à l'espace privé pour les rédacteurs
+function autoriser_tag_autocomplete_dist($faire, $type, $id, $qui, $opt) {
+	return isset($qui['id_auteur']) and $qui['id_auteur'] > 0;
+}
