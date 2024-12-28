@@ -1,0 +1,23 @@
+name: Lint PHP files
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  phplint:
+    name: Lint (PHP latest)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Ref https://github.com/php-parallel-lint/PHP-Parallel-Lint/issues/133#issuecomment-1367219847
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: latest
+          tools: parallel-lint
+
+      - name: Run lint
+        run: parallel-lint .
