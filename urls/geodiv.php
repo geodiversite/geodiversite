@@ -7,78 +7,75 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 define('URLS_GEODIV_EXEMPLE', 'media12');
 
 /**
- * Generer l'url geodiv
- *
- * http://doc.spip.org/@_generer_url_arbo
- *
- * @param string $type
+ * Generer l'url d'un objet SPIP
  * @param int $id
+ * @param string $objet
  * @param string $args
  * @param string $ancre
  * @return string
  */
-function _generer_url_geodiv($type, $id, $args = '', $ancre = '') {
+function urls_geodiv_generer_url_objet_dist(int $id, string $objet, string $args = '', string $ancre = ''): string {
+	if ($generer_url_externe = charger_fonction_url($objet, 'defaut')) {
+		$url = $generer_url_externe($id, $args, $ancre);
+		// une url === null indique "je ne traite pas cette url, appliquez le calcul standard"
+		// une url vide est une url vide, ne rien faire de plus
+		if (!is_null($url)) {
+			return $url;
+		}
+	}
 
-	if ($type == 'forum') {
+	if ($objet == 'forum') {
 		if ($generer_url_externe = charger_fonction('generer_url_forum', 'urls', true)) {
 			return $generer_url_externe($id, $args, $ancre);
 		}
 		return '';
 	}
 
-	if ($type == 'document') {
+	if ($objet == 'document') {
 		include_spip('inc/documents');
 		return generer_url_document_dist($id, $args, $ancre);
 	}
 
-	if ($type == 'article') {
+	if ($objet == 'article') {
 		return _DIR_RACINE . 'media' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	if ($type == 'rubrique') {
+	if ($objet == 'rubrique') {
 		return _DIR_RACINE . 'cat' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	if ($type == 'mot') {
+	if ($objet == 'mot') {
 		return _DIR_RACINE . 'tag' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	if ($type == 'auteur') {
-		return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	if ($objet == 'auteur') {
+		return _DIR_RACINE . $objet . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	if ($type == 'collection') {
+	if ($objet == 'collection') {
 		return _DIR_RACINE . 'album' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
 
-	return _DIR_RACINE . $type . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
+	return _DIR_RACINE . $objet . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 }
 
 /**
- * API : retourner l'url d'un objet si i est numerique
- * ou decoder cette url si c'est une chaine
- * array([contexte],[type],[url_redirect],[fond]) : url decodee
+ * Decoder une url
+ * retrouve le fond et les parametres d'une URL abregee
+ * le contexte deja existant est fourni dans args sous forme de tableau
  *
- * http://doc.spip.org/@urls_arbo_dist
- *
- * @param string|int $i
+ * @param string $url
  * @param string $entite
- * @param string|array $args
- * @param string $ancre
- * @return array|string
+ * @param array $contexte
+ * @return array([contexte],[type],[url_redirect],[fond]) : url decodee
  */
-function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
+function urls_geodiv_decoder_url_dist(string $url, string $entite, array $contexte = []): array {
 	$contexte = $GLOBALS['contexte'] ?? []; // recuperer aussi les &debut_xx
-
-	if (is_numeric($i)) {
-		return _generer_url_geodiv($entite, $i, $args, $ancre);
-	}
 
 	// traiter les injections du type domaine.org/spip.php/cestnimportequoi/ou/encore/plus/rubrique23
 	if ($GLOBALS['profondeur_url'] > 0 and $entite == 'sommaire') {
 		return [[],'404'];
 	}
-	$url = $i;
 
 	// décoder l'url html, page ou standard
 	$objets = 'article|breve|rubrique|mot|auteur|site|syndic|media|cat|tag|collection|album';
@@ -123,5 +120,5 @@ function urls_geodiv_dist($i, $entite, $args = '', $ancre = '') {
 		return [$contexte, $type, null, $type];
 	}
 	// on ne peut plus rien...
-	return '';
+	return [];
 }
