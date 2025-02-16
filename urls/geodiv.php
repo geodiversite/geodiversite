@@ -24,18 +24,6 @@ function urls_geodiv_generer_url_objet_dist(int $id, string $objet, string $args
 		}
 	}
 
-	if ($objet == 'forum') {
-		if ($generer_url_externe = charger_fonction('generer_url_forum', 'urls', true)) {
-			return $generer_url_externe($id, $args, $ancre);
-		}
-		return '';
-	}
-
-	if ($objet == 'document') {
-		include_spip('inc/documents');
-		return generer_url_document_dist($id, $args, $ancre);
-	}
-
 	if ($objet == 'article') {
 		return _DIR_RACINE . 'media' . $id . ($args ? "?$args" : '') . ($ancre ? "#$ancre" : '');
 	}
