@@ -5,7 +5,7 @@
 	url="https://trad.spip.net"
 	source="https://github.com/geodiversite/geodiversite.git"
 	reference="fr">
-	<langue code="en" url="https://trad.spip.net/tradlang_module/geol?lang_cible=en" total="184" traduits="175" relire="8" modifs="0" nouveaux="1" pourcent="95.11">
+	<langue code="en" url="https://trad.spip.net/tradlang_module/geol?lang_cible=en" total="184" traduits="184" relire="0" modifs="0" nouveaux="0" pourcent="100.00">
 		<traducteur nom="b_b" lien="https://trad.spip.net/auteur/b_b" />
 		<traducteur nom="BaptisteG" lien="https://trad.spip.net/auteur/baptisteg" />
 	</langue>
