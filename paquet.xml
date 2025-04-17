@@ -40,6 +40,7 @@
 	<necessite nom="centre_image" compatibilite="[3.5.0;[" />
 	<necessite nom="facteur" compatibilite="[5.2.0;[" />
 	<necessite nom="notifications" compatibilite="[3.7.0;[" />
+	<necessite nom="compositions" compatibilite="[4.1.0;[" />
 
 	<utilise nom="gravatar" compatibilite="[1.3.0;[" />
 	<utilise nom="spipicious" compatibilite="[0.7.8;[" />
