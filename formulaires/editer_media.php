@@ -201,7 +201,7 @@ function formulaires_editer_media_traiter_dist() {
 	// redirection
 	include_spip('inc/headers');
 	$res['message_ok'] = _T('info_modification_enregistree');
-	$res['redirect'] = generer_url_entite($id_article, 'article');
+	$res['redirect'] = generer_objet_url($id_article, 'article');
 
 	return $res;
 }
