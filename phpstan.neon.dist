@@ -7,4 +7,7 @@ parameters:
 	excludePaths:
 		analyseAndScan:
 			- lang
+			- vendor
+			- rector.php
+			- ecs.php
 	level: 1
