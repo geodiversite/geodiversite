@@ -10,10 +10,14 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Ajout de la feuille de styles calculée de geodiversite
  *
  * @param string $flux
- * @return string $flux
+ * @return string
  */
 function geol_insert_head_css($flux) {
-	$flux .= '<link rel="stylesheet" href="' . produire_fond_statique('css/geol.css', ['ltr' => $GLOBALS['spip_lang_left']]) . '" type="text/css" media="all" />';
+	$flux .= '<link rel="stylesheet" href="' . produire_fond_statique(
+		'css/geol.css',
+		['ltr' => $GLOBALS['spip_lang_left'],
+		]
+	) . '" type="text/css" media="all" />';
 	return $flux;
 }
 
@@ -48,11 +52,13 @@ function geol_styliser($flux) {
  * Ajouter le script leaflet.geodiv.js au squelette du script de GIS
  *
  * @param array $flux
- * @return array $flux
+ * @return array
  */
 function geol_recuperer_fond($flux) {
 	if ($flux['args']['fond'] == 'javascript/gis.js') {
-		$flux['data']['texte'] .= "\n\n(function() { L.gisConfig.getInfowindowUrl = '" . url_absolue(generer_url_public('get_infowindow')) . "'; })();";
+		$flux['data']['texte'] .= "\n\n(function() { L.gisConfig.getInfowindowUrl = '" . url_absolue(
+			generer_url_public('get_infowindow')
+		) . "'; })();";
 		$flux['data']['texte'] .= "\n\n" . spip_file_get_contents(find_in_path('javascript/leaflet.geodiv.js'));
 		$flux['data']['texte'] .= "\n\n" . spip_file_get_contents(find_in_path('javascript/leaflet.photon.js'));
 	}
@@ -66,13 +72,18 @@ function geol_recuperer_fond($flux) {
  * Surcharge du formulaire d'inscription pour ne pas afficher l'explication
  *
  * @param array $flux
- * @return array $flux
+ * @return array
  */
 function geol_formulaire_charger($flux) {
 	// sujet perso pour formulaire_ecrire_auteur depuis une page article (erreur de localisation)
 	if ($flux['args']['form'] == 'ecrire_auteur' and $flux['args']['args'][1] != '') {
-		$flux['data']['sujet_message_auteur'] .= supprimer_tags(extraire_multi($GLOBALS['meta']['nom_site'])) . ' : ' . _T('geol:sujet_erreur_localisation');
-		$flux['data']['texte_message_auteur'] .= _T('geol:depuis_page') . ' : ' . generer_objet_url_absolue($flux['args']['args'][1], 'article') . "\n\nMessage :\n\n";
+		$flux['data']['sujet_message_auteur'] .= supprimer_tags(
+			extraire_multi($GLOBALS['meta']['nom_site'])
+		) . ' : ' . _T('geol:sujet_erreur_localisation');
+		$flux['data']['texte_message_auteur'] .= _T('geol:depuis_page') . ' : ' . generer_objet_url_absolue(
+			$flux['args']['args'][1],
+			'article'
+		) . "\n\nMessage :\n\n";
 	}
 	// pas d'explicaltion sur le form d'inscription
 	if ($flux['args']['form'] == 'inscription' and $flux['args']['args'][0] == '1comite') {
@@ -92,7 +103,7 @@ function geol_formulaire_charger($flux) {
  * Forcer le critère {tout} sur les boucles rubriques
  *
  * @param array $boucle
- * @return array $boucle
+ * @return array
  */
 function geol_pre_boucle($boucle) {
 	if ($boucle->type_requete == 'rubriques' and !isset($boucle->modificateur['criteres']['statut'])) {
@@ -108,7 +119,7 @@ function geol_pre_boucle($boucle) {
  * @param array $flux : un array des methodes déjà présentes, fonctionnant sous la forme :
  * -* clé = nom de la méthode;
  * -* valeur = le nom de la fonction à appeler;
- * @return array $flux : l'array complété avec nos nouvelles méthodes
+ * @return array : l'array complété avec nos nouvelles méthodes
  */
 function geol_xmlrpc_methodes($flux) {
 	$flux['geodiv.liste_medias'] = 'geodiv_liste_medias';
@@ -133,7 +144,7 @@ function geol_xmlrpc_server_class($flux) {
  * Proposer les menus de la page d'accueil à la création
  *
  * @param array $menus
- * @return array $menus
+ * @return array
  */
 function geol_menus_utiles($menus) {
 	$menus['home_bloc1'] = _T('geol:nav_explorer');

@@ -8,15 +8,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 $GLOBALS['meta']['version_html_max'] = 'html5';
 
 if (!isset($GLOBALS['z_blocs'])) {
-	$GLOBALS['z_blocs'] = [
-		'content',
-		'extra',
-		'head',
-		'head_js',
-		'header',
-		'footer',
-		'breadcrumb'
-	];
+	$GLOBALS['z_blocs'] = ['content', 'extra', 'head', 'head_js', 'header', 'footer', 'breadcrumb'];
 }
 
 // urls prorpes en minuscules
@@ -24,7 +16,7 @@ define('_url_minuscules', 1);
 
 // extensions autorisées à l'upload
 if (!defined('_GEOL_FICHIERS_IMAGES')) {
-	define('_GEOL_FICHIERS_IMAGES', ['gif', 'jpg' , 'png']);
+	define('_GEOL_FICHIERS_IMAGES', ['gif', 'jpg', 'png']);
 }
 if (!defined('_GEOL_FICHIERS_AUDIOS')) {
 	define('_GEOL_FICHIERS_AUDIOS', ['mp3']);
@@ -36,7 +28,7 @@ if (!defined('_GEOL_FICHIERS_TEXTES')) {
 	define('_GEOL_FICHIERS_TEXTES', ['kml']);
 }
 
-define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(fn($extension) => '.' . $extension, array_merge(
+define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(fn ($extension) => '.' . $extension, array_merge(
 	_GEOL_FICHIERS_IMAGES,
 	_GEOL_FICHIERS_AUDIOS,
 	_GEOL_FICHIERS_VIDEOS,
@@ -69,17 +61,16 @@ function autoriser_rubrique_publierdans($faire, $type, $id, $qui, $opt) {
 	) {
 		// surcharge geodiv
 		return true;
-	} else {
-		return false;
 	}
+	return false;
+
 }
 
 // permettre aux auteurs de modifier leurs articles, mêmes publiés
 function autoriser_article_modifier($faire, $type, $id, $qui, $opt) {
 	$r = sql_fetsel('id_rubrique,statut', 'spip_articles', 'id_article=' . sql_quote($id));
 
-	return
-		$r
+	return $r
 		and in_array($qui['statut'], ['0minirezo']) or
 		(
 			autoriser('publierdans', 'rubrique', $r['id_rubrique'], $qui, $opt)
@@ -96,8 +87,7 @@ function autoriser_article_modifier($faire, $type, $id, $qui, $opt) {
 // surcharger autoriser_rubrique_modifier_dist pour y reproduire autoriser_rubrique_publierdans_dist
 // puisque diogene surcharge autoriser_rubrique_publierdans et permet donc aux rédacteurs de modifier les rubriques
 function autoriser_rubrique_modifier($faire, $type, $id, $qui, $opt) {
-	return
-		($qui['statut'] == '0minirezo')
+	return ($qui['statut'] == '0minirezo')
 		and (
 			!$qui['restreint'] or !$id
 			or in_array($id, $qui['restreint'])

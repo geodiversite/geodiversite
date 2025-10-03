@@ -11,7 +11,7 @@ function formulaires_editer_media_charger_dist() {
 	$valeurs = [
 		'editable' => true,
 		'_bigup_rechercher_fichiers' => true,
-		'_etapes' => 2
+		'_etapes' => 2,
 	];
 
 	$id_rubrique = lire_config('geol/secteur_medias', 1);
@@ -20,7 +20,9 @@ function formulaires_editer_media_charger_dist() {
 	$id_article = sql_getfetsel(
 		'id_article',
 		"spip_articles AS article LEFT JOIN spip_auteurs_liens AS lien ON article.id_article=lien.id_objet AND lien.objet='article'",
-		"article.statut='prepa' AND lien.id_auteur=" . intval($GLOBALS['visiteur_session']['id_auteur']) . " AND article.id_secteur=$id_rubrique"
+		"article.statut='prepa' AND lien.id_auteur=" . intval(
+			$GLOBALS['visiteur_session']['id_auteur']
+		) . " AND article.id_secteur=$id_rubrique"
 	);
 
 	if (!intval($id_article) and (autoriser('publierdans', 'rubrique', $id_rubrique) or autoriser('configurer'))) {
@@ -145,9 +147,7 @@ function formulaires_editer_media_verifier_etape_dist($etape) {
 			// supprimer le fichier temporaire du cache de bigup
 			// bof, on doit pouvoir faire simple ?
 			include_spip('inc/Bigup');
-			$bigup = new \Spip\Bigup\Bigup(
-				\Spip\Bigup\Identifier::depuisRequest()
-			);
+			$bigup = new \Spip\Bigup\Bigup(\Spip\Bigup\Identifier::depuisRequest());
 			$bigup->supprimer_fichiers();
 		}
 		if (test_plugin_actif('cextras')) {

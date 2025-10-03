@@ -10,7 +10,7 @@ function formulaires_recherche_geol_charger_dist() {
 
 	$valeurs = [
 		'action' => generer_url_public('recherche'),
-		];
+	];
 
 	$valeurs['recherche'] = _request('recherche');
 
