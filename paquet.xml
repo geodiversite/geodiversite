@@ -20,8 +20,6 @@
 	<pipeline nom="recuperer_fond" inclure="geol_pipelines.php" />
 	<pipeline nom="formulaire_charger" inclure="geol_pipelines.php" />
 	<pipeline nom="pre_boucle" inclure="geol_pipelines.php" />
-	<pipeline nom="xmlrpc_methodes" inclure="geol_pipelines.php" />
-	<pipeline nom="xmlrpc_server_class" inclure="geol_pipelines.php" />
 	<pipeline nom="menus_utiles" inclure="geol_pipelines.php" />
 
 	<necessite nom="bigup" compatibilite="[1.0.10;[" />

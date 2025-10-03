@@ -113,32 +113,6 @@ function geol_pre_boucle($boucle) {
 }
 
 /**
- * Insertion dans le pipeline xmlrpc_methodes (xmlrpc)
- * Ajout de méthodes xml-rpc spécifiques à Geodiversite
- *
- * @param array $flux : un array des methodes déjà présentes, fonctionnant sous la forme :
- * -* clé = nom de la méthode;
- * -* valeur = le nom de la fonction à appeler;
- * @return array : l'array complété avec nos nouvelles méthodes
- */
-function geol_xmlrpc_methodes($flux) {
-	$flux['geodiv.liste_medias'] = 'geodiv_liste_medias';
-	$flux['geodiv.lire_media'] = 'geodiv_lire_media';
-	$flux['geodiv.creer_media'] = 'geodiv_creer_media';
-	$flux['geodiv.update_media'] = 'geodiv_update_media';
-	return $flux;
-}
-
-/**
- * Insertion dans le pipeline xmlrpc_server_class (xmlrpc)
- * Ajout de fonctions spécifiques utilisées par le serveur xml-rpc
- */
-function geol_xmlrpc_server_class($flux) {
-	include_spip('inc/geol_xmlrpc');
-	return $flux;
-}
-
-/**
  * Insertion dans le pipeline menus_utiles (menus)
  *
  * Proposer les menus de la page d'accueil à la création
