@@ -45,7 +45,7 @@ function geodiv_liste_medias($args) {
 		} else {
 			$where[] = $table_objet . '.statut="publie"';
 		}
-	}else {
+	} else {
 		$where[] = $table_objet . '.statut="publie"';
 	}
 
@@ -62,11 +62,11 @@ function geodiv_liste_medias($args) {
 		if (!is_numeric($lon) or !is_numeric($lat)) {
 			$erreur = _T('gis:erreur_xmlrpc_lat_lon');
 			return new IXR_Error(-32601, attribut_html($erreur));
-		}else {
-			$what[] = "(6371 * acos( cos( radians(\"$lat\") ) * cos( radians( gis.lat ) ) * cos( radians( gis.lon ) - radians(\"$lon\") ) + sin( radians(\"$lat\") ) * sin( radians( gis.lat ) ) ) ) AS distance";
-			$from .= ' LEFT JOIN spip_gis_liens as lien ON ' . $table_objet . '.id_article=lien.id_objet AND lien.objet="article" LEFT JOIN spip_gis as gis ON gis.id_gis=lien.id_gis';
-			$where[] = 'gis.id_gis > 0';
 		}
+		$what[] = "(6371 * acos( cos( radians(\"$lat\") ) * cos( radians( gis.lat ) ) * cos( radians( gis.lon ) - radians(\"$lon\") ) + sin( radians(\"$lat\") ) * sin( radians( gis.lat ) ) ) ) AS distance";
+		$from .= ' LEFT JOIN spip_gis_liens as lien ON ' . $table_objet . '.id_article=lien.id_objet AND lien.objet="article" LEFT JOIN spip_gis as gis ON gis.id_gis=lien.id_gis';
+		$where[] = 'gis.id_gis > 0';
+
 	}
 
 	/**
@@ -123,14 +123,18 @@ function geodiv_lire_media($args) {
 
 	$config = lire_config('geol', []);
 	$secteur_medias = (intval($config['secteur_medias']) > 0) ? $config['secteur_medias'] : 1;
-	$args_media = array_merge($args, ['objet' => 'article','id_objet' => $args['id_article']]);
+	$args_media = array_merge($args, ['objet' => 'article', 'id_objet' => $args['id_article']]);
 	$res = $spip_xmlrpc_serveur->read($args_media);
 
 	if (!$res) {
 		return $spip_xmlrpc_serveur->error;
 	}
 
-	$id_secteur = $res['result'][0]['id_secteur'] ?: sql_getfetsel('id_secteur', 'spip_articles', 'id_article=' . intval($args['id_article']));
+	$id_secteur = $res['result'][0]['id_secteur'] ?: sql_getfetsel(
+		'id_secteur',
+		'spip_articles',
+		'id_article=' . intval($args['id_article'])
+	);
 	/**
 	 * Sécurité : L'article demandé n'est pas un média
 	 */
@@ -188,8 +192,18 @@ function geodiv_lire_media($args) {
 	/**
 	 * On commence par le document principal
 	 */
-	if ((count($champs_demandes) == 0) || in_array('document', $champs_demandes) || in_array('vignette', $champs_demandes)) {
-		$document = sql_fetsel('*', 'spip_documents as documents LEFT JOIN spip_documents_liens AS lien ON documents.id_document=lien.id_document', 'lien.objet=' . sql_quote('article') . ' AND lien.id_objet=' . intval($args['id_article']), [], [], 1);
+	if ((count($champs_demandes) == 0) || in_array('document', $champs_demandes) || in_array(
+		'vignette',
+		$champs_demandes
+	)) {
+		$document = sql_fetsel(
+			'*',
+			'spip_documents as documents LEFT JOIN spip_documents_liens AS lien ON documents.id_document=lien.id_document',
+			'lien.objet=' . sql_quote('article') . ' AND lien.id_objet=' . intval($args['id_article']),
+			[],
+			[],
+			1
+		);
 		if (is_array($document)) {
 			include_spip('inc/documents');
 			include_spip('inc/filtres_images_mini');
@@ -198,9 +212,11 @@ function geodiv_lire_media($args) {
 			if ((count($champs_demandes) == 0) || in_array('document', $champs_demandes)) {
 				$largeur_document = $args['document_largeur'];
 				$hauteur_document = $args['document_hauteur'];
-				if (in_array($document['extension'], ['gif','png','jpg']) && ($largeur_document || $hauteur_document)) {
-					$res['result'][0]['document'] = url_absolue(extraire_attribut(image_reduire(get_spip_doc($document['fichier']), $largeur_document, $hauteur_document), 'src'));
-				}else {
+				if (in_array($document['extension'], ['gif', 'png', 'jpg']) && ($largeur_document || $hauteur_document)) {
+					$res['result'][0]['document'] = url_absolue(
+						extraire_attribut(image_reduire(get_spip_doc($document['fichier']), $largeur_document, $hauteur_document), 'src')
+					);
+				} else {
 					$res['result'][0]['document'] = url_absolue(get_spip_doc($document['fichier']));
 				}
 				$res['result'][0]['media'] = $document['media'];
@@ -212,9 +228,17 @@ function geodiv_lire_media($args) {
 				$hauteur_vignette = $args['vignette_hauteur'] ?: 100;
 				if ($format_vignette == 'carre') {
 					$vignette = extraire_attribut(quete_logo_document($document, '', '', '', '', '', $connect = null), 'src');
-					$res['result'][0]['vignette'] = url_absolue(extraire_attribut(image_recadre(image_passe_partout($vignette, $largeur_vignette, $hauteur_vignette), $largeur_vignette, $hauteur_vignette), 'src'));
-				}else {
-					$vignette = liens_absolus(quete_logo_document($document, '', '', '', $largeur_vignette, $hauteur_vignette, $connect = null));
+					$res['result'][0]['vignette'] = url_absolue(
+						extraire_attribut(image_recadre(
+							image_passe_partout($vignette, $largeur_vignette, $hauteur_vignette),
+							$largeur_vignette,
+							$hauteur_vignette
+						), 'src')
+					);
+				} else {
+					$vignette = liens_absolus(
+						quete_logo_document($document, '', '', '', $largeur_vignette, $hauteur_vignette, $connect = null)
+					);
 					$res['result'][0]['vignette'] = extraire_attribut($vignette, 'src');
 				}
 			}
@@ -226,7 +250,11 @@ function geodiv_lire_media($args) {
 	 * On met juste leur id_auteur + nom, si besoin de plus une autre requête sur l'auteur est à effectuer
 	 */
 	if ((count($champs_demandes) == 0) || in_array('auteurs', $champs_demandes)) {
-		$auteurs = sql_select('auteurs.nom, auteurs.id_auteur', 'spip_auteurs AS auteurs INNER JOIN spip_auteurs_liens AS L1 ON L1.id_auteur = auteurs.id_auteur INNER JOIN spip_articles AS L2 ON L2.id_article = L1.id_objet', "L1.objet='article' AND auteurs.statut != '5poubelle' AND L2.id_article = " . intval($res['result'][0]['id_article']));
+		$auteurs = sql_select(
+			'auteurs.nom, auteurs.id_auteur',
+			'spip_auteurs AS auteurs INNER JOIN spip_auteurs_liens AS L1 ON L1.id_auteur = auteurs.id_auteur INNER JOIN spip_articles AS L2 ON L2.id_article = L1.id_objet',
+			"L1.objet='article' AND auteurs.statut != '5poubelle' AND L2.id_article = " . intval($res['result'][0]['id_article'])
+		);
 		while ($auteur = sql_fetch($auteurs)) {
 			$res['result'][0]['auteurs'][] = $auteur;
 		}
@@ -237,7 +265,11 @@ function geodiv_lire_media($args) {
 	 */
 	if (defined('_DIR_PLUGIN_GIS') && (count($champs_demandes) == 0) || in_array('gis', $champs_demandes)) {
 		include_spip('gis_xmlrpc', 'inc');
-		$tous_gis = sql_select('gis.id_gis', 'spip_gis AS `gis` INNER JOIN spip_gis_liens AS L1 ON L1.id_gis = gis.id_gis', 'L1.id_objet = ' . intval($args['id_article']) . ' AND (L1.objet = ' . sql_quote('article') . ')');
+		$tous_gis = sql_select(
+			'gis.id_gis',
+			'spip_gis AS `gis` INNER JOIN spip_gis_liens AS L1 ON L1.id_gis = gis.id_gis',
+			'L1.id_objet = ' . intval($args['id_article']) . ' AND (L1.objet = ' . sql_quote('article') . ')'
+		);
 		while ($gis = sql_fetch($tous_gis)) {
 			$args['id_gis'] = $gis['id_gis'];
 			$res['result'][0]['gis'][] = spip_lire_gis($args);
@@ -249,9 +281,17 @@ function geodiv_lire_media($args) {
 	 * On met juste leur id_mot + titr, si besoin de plus une autre requête sur le mot est à effectuer
 	 */
 	if ((count($champs_demandes) == 0) || in_array('tags', $champs_demandes)) {
-		$tags_group = (intval($config['groupe_tags']) > 0) ? intval($config['groupe_tags']) : intval(lire_config('spipicious/groupe_mot'));
+		$tags_group = (intval($config['groupe_tags']) > 0) ? intval($config['groupe_tags']) : intval(
+			lire_config('spipicious/groupe_mot')
+		);
 		if ($tags_group > 0) {
-			$tous_tags = sql_select('mots.id_mot, mots.titre', 'spip_mots AS `mots` INNER JOIN spip_mots_liens AS L1 ON ( L1.id_mot = mots.id_mot )', 'L1.id_objet = ' . intval($args['id_article']) . ' AND (L1.objet = "article") AND (mots.id_groupe = ' . $tags_group . ')');
+			$tous_tags = sql_select(
+				'mots.id_mot, mots.titre',
+				'spip_mots AS `mots` INNER JOIN spip_mots_liens AS L1 ON ( L1.id_mot = mots.id_mot )',
+				'L1.id_objet = ' . intval(
+					$args['id_article']
+				) . ' AND (L1.objet = "article") AND (mots.id_groupe = ' . $tags_group . ')'
+			);
 			while ($tag = sql_fetch($tous_tags)) {
 				$res['result'][0]['tags'][] = $tag;
 			}
@@ -265,7 +305,13 @@ function geodiv_lire_media($args) {
 	if ((count($champs_demandes) == 0) || in_array('echelle', $champs_demandes)) {
 		$echelle_group = (intval($config['groupe_echelle']) > 0) ? intval($config['groupe_echelle']) : 0;
 		if ($echelle_group > 0) {
-			$echelle = sql_fetsel('mots.id_mot, mots.titre', 'spip_mots AS `mots` INNER JOIN spip_mots_liens AS L1 ON ( L1.id_mot = mots.id_mot )', 'L1.id_objet = ' . intval($args['id_article']) . ' AND (L1.objet = "article") AND (mots.id_groupe = ' . $echelle_group . ')');
+			$echelle = sql_fetsel(
+				'mots.id_mot, mots.titre',
+				'spip_mots AS `mots` INNER JOIN spip_mots_liens AS L1 ON ( L1.id_mot = mots.id_mot )',
+				'L1.id_objet = ' . intval(
+					$args['id_article']
+				) . ' AND (L1.objet = "article") AND (mots.id_groupe = ' . $echelle_group . ')'
+			);
 			if (is_array($echelle)) {
 				$res['result'][0]['echelle'][] = $echelle;
 			}
@@ -285,7 +331,13 @@ function geodiv_lire_media($args) {
 	 * Si besoin de plus une autre requête sur le forum est à effectuer
 	 */
 	if ((count($champs_demandes) == 0) || in_array('forums', $champs_demandes)) {
-		$forums = sql_select('id_forum, id_thread,titre,auteur,id_auteur', 'spip_forum', 'objet=' . sql_quote('article') . ' AND id_objet = ' . intval($args['id_article']) . ' AND (statut = ' . sql_quote('publie') . ')');
+		$forums = sql_select(
+			'id_forum, id_thread,titre,auteur,id_auteur',
+			'spip_forum',
+			'objet=' . sql_quote('article') . ' AND id_objet = ' . intval($args['id_article']) . ' AND (statut = ' . sql_quote(
+				'publie'
+			) . ')'
+		);
 		while ($forum = sql_fetch($forums)) {
 			$res['result'][0]['forums'][] = $forum;
 		}
@@ -336,22 +388,20 @@ function geodiv_creer_media($args) {
 		$erreur = _T('geol:erreur_fichier_inconnu');
 		spip_log('on plante, pas assez d infos', 'xmlrpc');
 		return new IXR_Error(-32601, attribut_html($erreur));
-	}else {
-		$tmp_name = _DIR_VAR . $args['document']['name'];
-		spip_log(strlen($args['document']['bits']), 'xmlrpc');
-		if ($fichier_64 = base64_decode($args['document']['bits'])) {
-			spip_log('On a un fichieren base_64', 'xmlrpc');
-		}
+	}
+	$tmp_name = _DIR_VAR . $args['document']['name'];
+	spip_log(strlen($args['document']['bits']), 'xmlrpc');
+	if ($fichier_64 = base64_decode($args['document']['bits'])) {
+		spip_log('On a un fichieren base_64', 'xmlrpc');
 	}
 
 	/**
 	 * On enregistre le document temporaire sur le serveur dans local/
-	 *
 	 */
 	if ($f = fopen($tmp_name, 'w+')) {
 		fwrite($f, $fichier_64 ?: $args['document']['bits']);
 		fclose($f);
-	}else {
+	} else {
 		$erreur = _T('geol:erreur_fichier_inconnu');
 		spip_log($erreur, 'xmlrpc');
 		return new IXR_Error(-32601, attribut_html($erreur));
@@ -360,16 +410,16 @@ function geodiv_creer_media($args) {
 	$args['document']['tmp_name'] = $tmp_name;
 	unset($args['document']['bits']);
 
-	$args_media = ['objet' => 'media','id_objet' => '','set' => $args];
+	$args_media = ['objet' => 'media', 'id_objet' => '', 'set' => $args];
 	$media = $spip_xmlrpc_serveur->create($args_media);
 	if (!$media) {
 		return $spip_xmlrpc_serveur->error;
 	}
-	else {
-		$args_media['id_article'] = $media['result']['id'];
-		$media_struct = geodiv_lire_media($args_media);
-		return $media_struct;
-	}
+
+	$args_media['id_article'] = $media['result']['id'];
+	$media_struct = geodiv_lire_media($args_media);
+	return $media_struct;
+
 }
 
 /**
@@ -392,16 +442,16 @@ function geodiv_update_media($args) {
 	$args_update_article = [
 		'objet' => 'article',
 		'id_objet' => $id_article,
-		'set' => $args
+		'set' => $args,
 	];
 
 	$media = $spip_xmlrpc_serveur->update($args_update_article);
 	if (!$media) {
 		return $spip_xmlrpc_serveur->error;
 	}
-	else {
-		$args_media['id_article'] = $media['result']['id'];
-		$media_struct = geodiv_lire_media($args_media);
-		return $media_struct;
-	}
+
+	$args_media['id_article'] = $media['result']['id'];
+	$media_struct = geodiv_lire_media($args_media);
+	return $media_struct;
+
 }

@@ -9,21 +9,11 @@ include_spip('inc/meta');
 function geol_upgrade($nom_meta_base_version, $version_cible) {
 
 	$maj = [];
-	$maj['create'] = [
-		['geol_installation'],
-	];
-	$maj['0.2.1'] = [
-		['geol_upgrade_021'],
-	];
-	$maj['0.2.2'] = [
-		['geol_upgrade_022'],
-	];
-	$maj['0.2.3'] = [
-		['geol_upgrade_023'],
-	];
-	$maj['0.2.4'] = [
-		['geol_upgrade_024'],
-	];
+	$maj['create'] = [['geol_installation']];
+	$maj['0.2.1'] = [['geol_upgrade_021']];
+	$maj['0.2.2'] = [['geol_upgrade_022']];
+	$maj['0.2.3'] = [['geol_upgrade_023']];
+	$maj['0.2.4'] = [['geol_upgrade_024']];
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);
@@ -50,7 +40,7 @@ function geol_installation() {
 	// activer les docs sur les articles
 	is_array($documents_objets = explode(',', lire_config('documents_objets'))) || $documents_objets = [];
 	if (!in_array('spip_articles', $documents_objets)) {
-		ecrire_config('documents_objets', implode(',', ['spip_articles','']));
+		ecrire_config('documents_objets', implode(',', ['spip_articles', '']));
 	}
 
 	// pas de titre, lien et barre typo dans les forums
@@ -66,7 +56,7 @@ function geol_installation() {
 
 	// configuration de GIS : activer le geocoder + geolocalisation sur les articles
 	ecrire_config('gis/geocoder', 'on');
-	ecrire_config('gis/gis_objets', ['spip_articles','spip_documents']);
+	ecrire_config('gis/gis_objets', ['spip_articles', 'spip_documents']);
 
 	// configuration de socialtags
 	ecrire_config('socialtags/jsselector', '#socialtags');
@@ -101,14 +91,14 @@ function geol_installation() {
 			'110. 1 cm',
 			'120. 5 mm',
 			'130. 1 mm',
-			'140. 0,1 mm'
+			'140. 0,1 mm',
 		];
 
 		foreach ($mots_echelle as $echelle) {
-		  sql_insertq('spip_mots', ['titre' => $echelle, 'id_groupe' => $id_groupe, 'type' => 'echelle']);
-		  if (sql_error() != '') {
-			$Terreurs[] = (_T('erreur_creation_mot_cle')) . $echelle . ': ' . sql_error();
-		  }
+			sql_insertq('spip_mots', ['titre' => $echelle, 'id_groupe' => $id_groupe, 'type' => 'echelle']);
+			if (sql_error() != '') {
+				$Terreurs[] = (_T('erreur_creation_mot_cle')) . $echelle . ': ' . sql_error();
+			}
 		}
 	}
 

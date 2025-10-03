@@ -56,7 +56,10 @@ function inc_vignette($ext, $media = '', $loop = true) {
 
 	// chercher dans les vignettes personnalisées de geodiv
 	// dans l'espace public & pour les fichiers qui proposent une vignette perso
-	if (!test_espace_prive() and in_array($ext, array_merge(_GEOL_FICHIERS_AUDIOS, _GEOL_FICHIERS_VIDEOS, _GEOL_FICHIERS_TEXTES))) {
+	if (!test_espace_prive() and in_array(
+		$ext,
+		array_merge(_GEOL_FICHIERS_AUDIOS, _GEOL_FICHIERS_VIDEOS, _GEOL_FICHIERS_TEXTES)
+	)) {
 		return find_in_path('images/vignettes/' . $ext . '.png');
 	}
 	// Chercher la vignette correspondant a ce type de document
