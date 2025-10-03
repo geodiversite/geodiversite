@@ -72,7 +72,7 @@ function geol_formulaire_charger($flux) {
 	// sujet perso pour formulaire_ecrire_auteur depuis une page article (erreur de localisation)
 	if ($flux['args']['form'] == 'ecrire_auteur' and $flux['args']['args'][1] != '') {
 		$flux['data']['sujet_message_auteur'] .= supprimer_tags(extraire_multi($GLOBALS['meta']['nom_site'])) . ' : ' . _T('geol:sujet_erreur_localisation');
-		$flux['data']['texte_message_auteur'] .= _T('geol:depuis_page') . ' : ' . generer_url_entite_absolue($flux['args']['args'][1], 'article') . "\n\nMessage :\n\n";
+		$flux['data']['texte_message_auteur'] .= _T('geol:depuis_page') . ' : ' . generer_objet_url_absolue($flux['args']['args'][1], 'article') . "\n\nMessage :\n\n";
 	}
 	// pas d'explicaltion sur le form d'inscription
 	if ($flux['args']['form'] == 'inscription' and $flux['args']['args'][0] == '1comite') {

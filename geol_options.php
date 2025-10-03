@@ -36,9 +36,7 @@ if (!defined('_GEOL_FICHIERS_TEXTES')) {
 	define('_GEOL_FICHIERS_TEXTES', ['kml']);
 }
 
-define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(function ($extension) {
-		return '.' . $extension;
-}, array_merge(
+define('_GEOL_UPLOAD_EXTENSIONS', implode(',', array_map(fn($extension) => '.' . $extension, array_merge(
 	_GEOL_FICHIERS_IMAGES,
 	_GEOL_FICHIERS_AUDIOS,
 	_GEOL_FICHIERS_VIDEOS,
@@ -82,7 +80,7 @@ function autoriser_article_modifier($faire, $type, $id, $qui, $opt) {
 
 	return
 		$r
-		and in_array($qui['statut'], array('0minirezo')) or
+		and in_array($qui['statut'], ['0minirezo']) or
 		(
 			autoriser('publierdans', 'rubrique', $r['id_rubrique'], $qui, $opt)
 			and auteurs_objet('article', $id, 'id_auteur=' . $qui['id_auteur']) // surcharge geodiv
