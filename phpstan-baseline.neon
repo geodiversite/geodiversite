@@ -1,506 +1,133 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Call to static method depuisRequest\\(\\) on an unknown class Spip\\\\Bigup\\\\Identifier\\.$#"
+			message: '#^Call to static method depuisRequest\(\) on an unknown class Spip\\Bigup\\Identifier\.$#'
+			identifier: class.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function _T not found\\.$#"
-			count: 4
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function _request not found\\.$#"
-			count: 10
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function autoriser not found\\.$#"
-			count: 3
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function cextras_obtenir_saisies_champs_extras not found\\.$#"
+			message: '#^Function cextras_obtenir_saisies_champs_extras not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function champs_extras_autorisation not found\\.$#"
+			message: '#^Function champs_extras_autorisation not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function champs_extras_objet not found\\.$#"
+			message: '#^Function champs_extras_objet not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function champs_extras_saisies_lister_avec_sql not found\\.$#"
+			message: '#^Function champs_extras_saisies_lister_avec_sql not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function charger_fonction not found\\.$#"
+			message: '#^Function gis_supprimer not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function generer_url_entite not found\\.$#"
+			message: '#^Function saisies_lister_champs not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function gis_supprimer not found\\.$#"
+			message: '#^Function saisies_verifier not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 15
+			message: '#^Function supprimer_lien_document not found\.$#'
+			identifier: function.notFound
+			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function lire_config not found\\.$#"
+			message: '#^Function test_plugin_actif not found\.$#'
+			identifier: function.notFound
 			count: 2
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function objet_associer not found\\.$#"
+			message: '#^Instantiated class Spip\\Bigup\\Bigup not found\.$#'
+			identifier: class.notFound
 			count: 1
 			path: formulaires/editer_media.php
 
 		-
-			message: "#^Function objet_dissocier not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function objet_inserer not found\\.$#"
-			count: 2
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function objet_instituer not found\\.$#"
-			count: 2
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function objet_modifier not found\\.$#"
-			count: 2
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function saisies_lister_champs not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function saisies_verifier not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function set_request not found\\.$#"
-			count: 6
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function sql_fetsel not found\\.$#"
-			count: 2
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function sql_getfetsel not found\\.$#"
-			count: 5
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function suivre_invalideur not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function supprimer_lien_document not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function table_objet_sql not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function test_plugin_actif not found\\.$#"
-			count: 2
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Instantiated class Spip\\\\Bigup\\\\Bigup not found\\.$#"
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
-			message: "#^Function _request not found\\.$#"
-			count: 1
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function autoriser not found\\.$#"
-			count: 1
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 4
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function objet_associer not found\\.$#"
-			count: 1
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function objet_dissocier not found\\.$#"
-			count: 2
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function redirige_formulaire not found\\.$#"
-			count: 1
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function sql_getfetsel not found\\.$#"
-			count: 2
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function suivre_invalideur not found\\.$#"
-			count: 1
-			path: formulaires/editer_mot_article.php
-
-		-
-			message: "#^Function _request not found\\.$#"
-			count: 5
-			path: formulaires/recherche_geol.php
-
-		-
-			message: "#^Function generer_url_public not found\\.$#"
-			count: 1
-			path: formulaires/recherche_geol.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 1
-			path: formulaires/recherche_geol.php
-
-		-
-			message: "#^Function _T not found\\.$#"
-			count: 2
-			path: geol_administrations.php
-
-		-
-			message: "#^Function chercher_filtre not found\\.$#"
+			message: '#^Function insert_menu not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: geol_administrations.php
 
 		-
-			message: "#^Function ecrire_config not found\\.$#"
-			count: 16
-			path: geol_administrations.php
-
-		-
-			message: "#^Function effacer_meta not found\\.$#"
+			message: '#^Function menu_set not found\.$#'
+			identifier: function.notFound
 			count: 1
 			path: geol_administrations.php
 
 		-
-			message: "#^Function include_spip not found\\.$#"
+			message: '#^Function sql_error not found\.$#'
+			identifier: function.notFound
 			count: 4
 			path: geol_administrations.php
 
 		-
-			message: "#^Function insert_menu not found\\.$#"
+			message: '#^Function couleur_html_to_hex not found\.$#'
+			identifier: function.notFound
 			count: 1
-			path: geol_administrations.php
+			path: geol_fonctions.php
 
 		-
-			message: "#^Function lire_config not found\\.$#"
-			count: 7
-			path: geol_administrations.php
-
-		-
-			message: "#^Function maj_plugin not found\\.$#"
-			count: 1
-			path: geol_administrations.php
-
-		-
-			message: "#^Function menu_set not found\\.$#"
-			count: 1
-			path: geol_administrations.php
-
-		-
-			message: "#^Function sql_countsel not found\\.$#"
-			count: 1
-			path: geol_administrations.php
-
-		-
-			message: "#^Function sql_error not found\\.$#"
-			count: 4
-			path: geol_administrations.php
-
-		-
-			message: "#^Function sql_getfetsel not found\\.$#"
-			count: 1
-			path: geol_administrations.php
-
-		-
-			message: "#^Function sql_insertq not found\\.$#"
+			message: '#^Function auteurs_objet not found\.$#'
+			identifier: function.notFound
 			count: 2
-			path: geol_administrations.php
-
-		-
-			message: "#^Function sql_quote not found\\.$#"
-			count: 1
-			path: geol_administrations.php
-
-		-
-			message: "#^Function charger_fonction not found\\.$#"
-			count: 1
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function couleur_html_to_hex not found\\.$#"
-			count: 1
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function find_in_path not found\\.$#"
-			count: 2
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 1
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function spip_getimagesize not found\\.$#"
-			count: 1
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function test_espace_prive not found\\.$#"
-			count: 1
-			path: geol_fonctions.php
-
-		-
-			message: "#^Function lire_config not found\\.$#"
-			count: 1
 			path: geol_options.php
 
 		-
-			message: "#^Function sql_getfetsel not found\\.$#"
+			message: '#^Function image_passe_partout not found\.$#'
+			identifier: function.notFound
 			count: 1
-			path: geol_options.php
+			path: inc/geol_xmlrpc.php
 
 		-
-			message: "#^Function _T not found\\.$#"
+			message: '#^Function image_recadre not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/geol_xmlrpc.php
+
+		-
+			message: '#^Function quete_logo not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: inc/geol_xmlrpc.php
+
+		-
+			message: '#^Function quete_logo_document not found\.$#'
+			identifier: function.notFound
 			count: 2
-			path: geol_pipelines.php
+			path: inc/geol_xmlrpc.php
 
 		-
-			message: "#^Function extraire_multi not found\\.$#"
+			message: '#^Function spip_lire_gis not found\.$#'
+			identifier: function.notFound
 			count: 1
-			path: geol_pipelines.php
+			path: inc/geol_xmlrpc.php
 
 		-
-			message: "#^Function find_in_path not found\\.$#"
-			count: 2
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function generer_url_entite_absolue not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function generer_url_public not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function lire_config not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function produire_fond_statique not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function spip_file_get_contents not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function supprimer_tags not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function test_espace_prive not found\\.$#"
-			count: 2
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function url_absolue not found\\.$#"
-			count: 1
-			path: geol_pipelines.php
-
-		-
-			message: "#^Function _T not found\\.$#"
+			message: '#^Instantiated class IXR_Error not found\.$#'
+			identifier: class.notFound
 			count: 7
 			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function attribut_html not found\\.$#"
-			count: 7
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function autoriser not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function charger_fonction not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function extraire_attribut not found\\.$#"
-			count: 4
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function get_spip_doc not found\\.$#"
-			count: 2
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function image_passe_partout not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function image_recadre not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function image_reduire not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 4
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function liens_absolus not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function lire_config not found\\.$#"
-			count: 3
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function quete_logo not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function quete_logo_document not found\\.$#"
-			count: 2
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function spip_lire_gis not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function spip_log not found\\.$#"
-			count: 4
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function sql_fetch not found\\.$#"
-			count: 5
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function sql_fetsel not found\\.$#"
-			count: 2
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function sql_getfetsel not found\\.$#"
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function sql_quote not found\\.$#"
-			count: 4
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function sql_select not found\\.$#"
-			count: 5
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function url_absolue not found\\.$#"
-			count: 4
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Instantiated class IXR_Error not found\\.$#"
-			count: 7
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: "#^Function charger_fonction not found\\.$#"
-			count: 1
-			path: urls/geodiv.php
-
-		-
-			message: "#^Function generer_url_document_dist not found\\.$#"
-			count: 1
-			path: urls/geodiv.php
-
-		-
-			message: "#^Function id_table_objet not found\\.$#"
-			count: 1
-			path: urls/geodiv.php
-
-		-
-			message: "#^Function include_spip not found\\.$#"
-			count: 1
-			path: urls/geodiv.php
-
-		-
-			message: "#^Function table_objet not found\\.$#"
-			count: 1
-			path: urls/geodiv.php

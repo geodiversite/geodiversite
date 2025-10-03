@@ -16,6 +16,27 @@
             "url": "https://get.spip.net/composer"
         }
     },
+    "autoload-dev": {
+        "files": [
+            "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+            "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+            "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+            "vendor/spip-league/sdk/src/Stub/functions_config.php",
+            "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+            "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+            "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+            "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+            "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+            "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+            "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+            "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+            "vendor/spip-league/sdk/src/Stub/functions_path.php",
+            "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+            "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+            "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+            "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+        ]
+    },
     "scripts": {
         "analyse": "vendor/bin/phpstan --memory-limit=-1",
         "check-cs": "vendor/bin/ecs check --ansi",
