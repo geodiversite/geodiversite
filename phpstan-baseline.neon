@@ -95,39 +95,3 @@ parameters:
 			identifier: function.notFound
 			count: 2
 			path: geol_options.php
-
-		-
-			message: '#^Function image_passe_partout not found\.$#'
-			identifier: function.notFound
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: '#^Function image_recadre not found\.$#'
-			identifier: function.notFound
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: '#^Function quete_logo not found\.$#'
-			identifier: function.notFound
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: '#^Function quete_logo_document not found\.$#'
-			identifier: function.notFound
-			count: 2
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: '#^Function spip_lire_gis not found\.$#'
-			identifier: function.notFound
-			count: 1
-			path: inc/geol_xmlrpc.php
-
-		-
-			message: '#^Instantiated class IXR_Error not found\.$#'
-			identifier: class.notFound
-			count: 7
-			path: inc/geol_xmlrpc.php
