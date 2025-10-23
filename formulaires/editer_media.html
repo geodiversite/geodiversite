@@ -48,6 +48,18 @@
 			label=<:gis:zoom:>,
 			size=2,
 			maxlength=2})]
+
+		[(#CONFIG{gis/adresse}|=={on}|?{#SET{input_type,input},#SET{input_type,hidden}})]
+		[(#SAISIE{#GET{input_type},adresse,
+			label=<:gis:label_adress:>})]
+		[(#SAISIE{#GET{input_type},code_postal,
+			label=<:gis:label_code_postal:>})]
+		[(#SAISIE{#GET{input_type},ville,
+			label=<:gis:label_ville:>})]
+		[(#SAISIE{#GET{input_type},region,
+			label=<:gis:label_region:>})]
+		[(#SAISIE{#GET{input_type},pays,
+			label=<:gis:label_pays:>})]
 		]
 
 		[(#PLUGIN{licence}|oui)

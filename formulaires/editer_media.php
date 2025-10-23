@@ -57,6 +57,11 @@ function formulaires_editer_media_charger_dist() {
 			$valeurs['lat'] = $gis['lat'];
 			$valeurs['lon'] = $gis['lon'];
 			$valeurs['zoom'] = $gis['zoom'];
+			$valeurs['adresse'] = $gis['adresse'];
+			$valeurs['code_postal'] = $gis['code_postal'];
+			$valeurs['ville'] = $gis['ville'];
+			$valeurs['region'] = $gis['region'];
+			$valeurs['pays'] = $gis['pays'];
 		}
 		// récupérer l'éventuel document lié à l'article en cours => étape 2
 		$id_document = sql_getfetsel(
@@ -190,6 +195,11 @@ function formulaires_editer_media_traiter_dist() {
 			'lat' => _request('lat'),
 			'lon' => _request('lon'),
 			'zoom' => _request('zoom'),
+			'adresse' => _request('adresse'),
+			'code_postal' => _request('code_postal'),
+			'ville' => _request('ville'),
+			'region' => _request('region'),
+			'pays' => _request('pays'),
 			'titre' => _request('titre'),
 			'objet' => 'article',
 			'id_objet' => $id_article]);
