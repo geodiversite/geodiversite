@@ -7,7 +7,6 @@ Géodiversité, ou geodiv pour les intimes, est un squelette pour SPIP qui perme
 
 - https://www.geodiversite.net/
 - https://www.lestaxinomes.org/
-- https://peluche.umontpellier.fr/
 - https://trektic.org/
 - https://cornes.debru.me/
 - https://www.portal.zoo.bio.br/
