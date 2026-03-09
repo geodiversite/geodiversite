@@ -37,3 +37,13 @@
 	background-color: var(--color);
 	color: #fff;
 }
+
+.button.inverted {
+	background-color: var(--color);
+	color: #fff;
+}
+
+.button.inverted:hover {
+	background-color: transparent;
+	color: var(--color);
+}
