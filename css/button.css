@@ -38,12 +38,12 @@
 	color: #fff;
 }
 
-.button.inverted {
+.button.invert {
 	background-color: var(--color);
 	color: #fff;
 }
 
-.button.inverted:hover {
+.button.invert:hover {
 	background-color: transparent;
 	color: var(--color);
 }
