@@ -102,8 +102,8 @@ function geol_formulaire_charger($flux) {
  *
  * Forcer le critère {tout} sur les boucles rubriques
  *
- * @param array $boucle
- * @return array
+ * @param object $boucle
+ * @return object
  */
 function geol_pre_boucle($boucle) {
 	if ($boucle->type_requete == 'rubriques' and !isset($boucle->modificateur['criteres']['statut'])) {
