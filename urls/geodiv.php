@@ -47,7 +47,8 @@ function urls_geodiv_generer_url_objet_dist(int $id, string $objet, string $args
  * retrouve le fond et les parametres d'une URL abregee
  * le contexte deja existant est fourni dans args sous forme de tableau
  *
- * @return array([contexte],[type],[url_redirect],[fond]) : url decodee
+ * @return array
+ *   [$contexte_decode, $type, $url_redirect, $fond]
  */
 function urls_geodiv_decoder_url_dist(string $url, string $entite, array $contexte = []): array {
 	$contexte = $GLOBALS['contexte'] ?? []; // recuperer aussi les &debut_xx
