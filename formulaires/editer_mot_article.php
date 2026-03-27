@@ -65,8 +65,7 @@ function formulaires_editer_mot_article_traiter_dist($id_article = 'new', $id_gr
 	suivre_invalideur("id='id_article/$id_article'");
 
 	if ($retour) {
-		include_spip('inc/headers');
-		$message .= redirige_formulaire($retour);
+		$message['redirect'] = $retour;
 	}
 
 	return $message;
