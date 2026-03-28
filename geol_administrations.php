@@ -38,8 +38,7 @@ function geol_installation() {
 	}
 
 	// activer les docs sur les articles
-	is_array($documents_objets = explode(',', lire_config('documents_objets'))) || $documents_objets = [];
-	if (!in_array('spip_articles', $documents_objets)) {
+	if (!in_array('spip_articles', explode(',', lire_config('documents_objets')))) {
 		ecrire_config('documents_objets', implode(',', ['spip_articles', '']));
 	}
 
