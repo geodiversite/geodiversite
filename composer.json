@@ -8,7 +8,7 @@
         "rector/rector": "^2.1",
         "spip-league/easy-coding-standard": "^1.1",
         "spip-league/rector": "dev-main",
-        "spip-league/sdk": "dev-main"
+        "spip-league/sdk": "^1.0"
     },
     "repositories": {
         "spip": {
