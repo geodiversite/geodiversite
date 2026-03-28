@@ -10,4 +10,4 @@ parameters:
 			- vendor
 			- rector.php
 			- ecs.php
-	level: 1
+	level: 5
