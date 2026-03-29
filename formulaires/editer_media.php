@@ -1,5 +1,7 @@
 <?php
 
+use Spip\Bigup\Bigup;
+
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -151,7 +153,6 @@ function formulaires_editer_media_verifier_etape_dist($etape) {
 			set_request('aller_a_etape', 1);
 			// supprimer le fichier temporaire du cache de bigup
 			// bof, on doit pouvoir faire simple ?
-			include_spip('inc/Bigup');
 			$bigup = new \Spip\Bigup\Bigup(\Spip\Bigup\Identifier::depuisRequest());
 			$bigup->supprimer_fichiers();
 		}

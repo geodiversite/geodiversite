@@ -3,6 +3,9 @@
     "description": "Un squelette pour SPIP qui permet de mettre en place une galerie de médias géoréférencés",
     "license": "GPL-3.0-or-later",
     "type": "spip-plugin",
+    "require": {
+        "spip/bigup": "^3.3"
+    },
     "require-dev": {
         "phpstan/phpstan": "^2.1",
         "rector/rector": "^2.1",
