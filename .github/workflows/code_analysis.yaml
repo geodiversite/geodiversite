@@ -1,0 +1,47 @@
+name: Code Analysis
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+jobs:
+  code_analysis:
+    strategy:
+      fail-fast: false
+      matrix:
+        actions:
+          -
+            name: PHP lint
+            run: parallel-lint .
+
+          -
+            name: 'PHPStan'
+            run: composer analyse --ansi
+
+          -
+            name: 'Composer Validate'
+            run: composer validate --ansi
+
+          -
+            name: 'Rector'
+            run: composer rector-dry-run
+
+          -
+            name: 'Coding Standard'
+            run: composer fix-cs
+
+    name: ${{ matrix.actions.name }}
+    runs-on: ubuntu-latest
+
+    steps:
+      -   uses: actions/checkout@v3
+      # see https://github.com/shivammathur/setup-php & https://github.com/php-parallel-lint/PHP-Parallel-Lint/issues/133#issuecomment-1367219847
+      -   uses: shivammathur/setup-php@v2
+          with:
+            php-version: latest
+            tools: parallel-lint
+
+      # composer install cache - https://github.com/ramsey/composer-install
+      -   uses: "ramsey/composer-install@v2"
+
+      -   run: ${{ matrix.actions.run }}
