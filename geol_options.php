@@ -16,7 +16,7 @@ define('_url_minuscules', 1);
 
 // extensions autorisées à l'upload
 if (!defined('_GEOL_FICHIERS_IMAGES')) {
-	define('_GEOL_FICHIERS_IMAGES', ['gif', 'jpg', 'png']);
+	define('_GEOL_FICHIERS_IMAGES', ['gif', 'jpg', 'jpeg', 'png']);
 }
 if (!defined('_GEOL_FICHIERS_AUDIOS')) {
 	define('_GEOL_FICHIERS_AUDIOS', ['mp3']);
