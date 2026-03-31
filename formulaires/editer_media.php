@@ -1,6 +1,7 @@
 <?php
 
 use Spip\Bigup\Bigup;
+use Spip\Bigup\Identifier;
 
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -153,7 +154,7 @@ function formulaires_editer_media_verifier_etape_dist($etape) {
 			set_request('aller_a_etape', 1);
 			// supprimer le fichier temporaire du cache de bigup
 			// bof, on doit pouvoir faire simple ?
-			$bigup = new \Spip\Bigup\Bigup(\Spip\Bigup\Identifier::depuisRequest());
+			$bigup = new Bigup(Identifier::depuisRequest());
 			$bigup->supprimer_fichiers();
 		}
 		if (test_plugin_actif('cextras')) {
