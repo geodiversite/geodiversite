@@ -1,12 +1,6 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Call to method supprimer_fichiers\(\) on an unknown class Spip\\Bigup\\Bigup\.$#'
-			identifier: class.notFound
-			count: 1
-			path: formulaires/editer_media.php
-
-		-
 			message: '#^Call to static method depuisRequest\(\) on an unknown class Spip\\Bigup\\Identifier\.$#'
 			identifier: class.notFound
 			count: 1
