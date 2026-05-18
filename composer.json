@@ -42,6 +42,7 @@
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan --memory-limit=-1",
+        "baseline": "vendor/bin/phpstan --memory-limit=-1 --generate-baseline=phpstan-baseline.neon",
         "check-cs": "vendor/bin/ecs check --ansi",
         "fix-cs": "vendor/bin/ecs check --fix --ansi",
         "rector": "vendor/bin/rector process --ansi",
