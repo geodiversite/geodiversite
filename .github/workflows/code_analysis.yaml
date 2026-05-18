@@ -34,7 +34,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      -   uses: actions/checkout@v3
+      -   uses: actions/checkout@v6
       # see https://github.com/shivammathur/setup-php & https://github.com/php-parallel-lint/PHP-Parallel-Lint/issues/133#issuecomment-1367219847
       -   uses: shivammathur/setup-php@v2
           with:
