@@ -1,6 +1,18 @@
 parameters:
 	ignoreErrors:
 		-
+			message: '#^Call to method supprimer_fichiers\(\) on an unknown class Spip\\Bigup\\Bigup\.$#'
+			identifier: class.notFound
+			count: 1
+			path: formulaires/editer_media.php
+
+		-
+			message: '#^Call to static method depuisRequest\(\) on an unknown class Spip\\Bigup\\Identifier\.$#'
+			identifier: class.notFound
+			count: 1
+			path: formulaires/editer_media.php
+
+		-
 			message: '#^Function cextras_obtenir_saisies_champs_extras not found\.$#'
 			identifier: function.notFound
 			count: 1
@@ -52,6 +64,12 @@ parameters:
 			message: '#^Function test_plugin_actif not found\.$#'
 			identifier: function.notFound
 			count: 2
+			path: formulaires/editer_media.php
+
+		-
+			message: '#^Instantiated class Spip\\Bigup\\Bigup not found\.$#'
+			identifier: class.notFound
+			count: 1
 			path: formulaires/editer_media.php
 
 		-
