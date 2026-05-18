@@ -47,4 +47,6 @@
 
 	<menu nom="configurer_geol" titre="geol:cfg_titre_geol" parent="menu_squelette" icone="images/geol-16.png" />
 
+	<script source="javascript/geol.js" type="public" />
+
 </paquet>

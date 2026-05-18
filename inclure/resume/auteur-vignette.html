@@ -1,5 +1,5 @@
 <BOUCLE_auteur_vignette(AUTEURS){id_auteur}{tout}>
-[(#PLUGIN{gravatar}|oui)[<a href="#URL_AUTEUR">(#MODELE{gravatar,id_auteur,largeur=100})</a>]]
+[(#PLUGIN{gravatar}|oui)[<a href="#URL_AUTEUR">(#MODELE{gravatar,id_auteur,largeur=100}|inserer_attribut{loading,lazy})</a>]]
 <BOUCLE_merci_bonux(CONDITION){si #ENV{info_desc}|!={non}}>
 <div class="info_media vcard"><a href="#URL_AUTEUR">
 	[<h3 class="titre fn">(#NOM)</h3>]
