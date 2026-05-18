@@ -42,6 +42,6 @@ jobs:
             tools: parallel-lint
 
       # composer install cache - https://github.com/ramsey/composer-install
-      -   uses: "ramsey/composer-install@v2"
+      -   uses: "ramsey/composer-install@v4"
 
       -   run: ${{ matrix.actions.run }}
