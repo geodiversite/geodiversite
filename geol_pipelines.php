@@ -89,11 +89,6 @@ function geol_formulaire_charger($flux) {
 	if ($flux['args']['form'] == 'inscription' and $flux['args']['args'][0] == '1comite') {
 		$flux['data']['_commentaire'] = '';
 	}
-	// limiter le form de polyhierarchie sur la branche des categories (dans le public)
-	// cf http://zone.spip.org/trac/spip-zone/changeset/41280
-	if ($flux['args']['form'] == 'editer_polyhierarchie' and !test_espace_prive()) {
-		$flux['data']['limite_branche'] = lire_config('geol/secteur_categories', 2);
-	}
 	return $flux;
 }
 
