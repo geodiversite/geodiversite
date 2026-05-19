@@ -89,6 +89,11 @@ function geol_formulaire_charger($flux) {
 	if ($flux['args']['form'] == 'inscription' and $flux['args']['args'][0] == '1comite') {
 		$flux['data']['_commentaire'] = '';
 	}
+	// renseigner l'id_parent dans le public pour ne pas doublonner la rubrique medias
+	// lors de la modification des categories
+	if ($flux['args']['form'] == 'editer_polyhierarchie' and !test_espace_prive()) {
+		$flux['data']['id_parent'] = lire_config('geol/secteur_medias', 1);
+	}
 	return $flux;
 }
 
