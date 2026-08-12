@@ -7,11 +7,9 @@
         "spip/bigup": "^3.3"
     },
     "require-dev": {
-        "phpstan/phpstan": "^2.1",
-        "rector/rector": "^2.1",
-        "spip-league/easy-coding-standard": "^1.1",
-        "spip-league/rector": "dev-main",
-        "spip-league/sdk": "^1.0"
+        "spip-league/kernel": "^1.x-dev",
+        "spip-league/qa-tools": "^1.0",
+        "spip-league/sdk": "^1.1"
     },
     "repositories": {
         "spip": {
@@ -39,6 +37,11 @@
             "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
             "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
         ]
+    },
+    "config": {
+        "platform": {
+            "php": "7.4.33"
+        }
     },
     "scripts": {
         "analyse": "vendor/bin/phpstan --memory-limit=-1",
