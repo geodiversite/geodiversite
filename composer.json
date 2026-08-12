@@ -4,6 +4,7 @@
     "license": "GPL-3.0-or-later",
     "type": "spip-plugin",
     "require": {
+        "php": "^7.4 || ^8.0",
         "spip/bigup": "^3.3"
     },
     "require-dev": {
