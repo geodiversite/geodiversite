@@ -1,6 +1,5 @@
 <paquet
 	prefix="geol"
-	categorie="squelette"
 	version="4.2.5"
 	etat="stable"
 	compatibilite="[4.1.0;4.*]"
