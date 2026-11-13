@@ -7,9 +7,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 // Activer HTML5 depuis le squelette
 $GLOBALS['meta']['version_html_max'] = 'html5';
 
-if (!isset($GLOBALS['z_blocs'])) {
-	$GLOBALS['z_blocs'] = ['content', 'extra', 'head', 'head_js', 'header', 'footer', 'breadcrumb'];
-}
+$GLOBALS['z_blocs'] ??= ['content', 'extra', 'head', 'head_js', 'header', 'footer', 'breadcrumb'];
 
 // urls prorpes en minuscules
 define('_url_minuscules', 1);
