@@ -20,7 +20,7 @@
 		</content:encoded>
 		[<georss:point>#LAT #LON</georss:point>
 		<geo:lat>#LAT</geo:lat>
-		<geo:long>#LON</geo:long>(#ENV{georss}|oui)]<BOUCLE_documents(DOCUMENTS){id_article}{vu=non}{0,1}>
+		<geo:long>#LON</geo:long>(#ENV{georss}|oui)]<BOUCLE_documents(DOCUMENTS){id_article}{media!=image}>
 		[<enclosure url="(#URL_DOCUMENT|url_absolue|unique)"[ length="(#TAILLE)"][ type="(#MIME_TYPE)"] />]</BOUCLE_documents><BOUCLE_tags(MOTS){id_article}>
 		[<dc:subject>(#TITRE|texte_backend)</dc:subject>]</BOUCLE_tags>
 	</item>
