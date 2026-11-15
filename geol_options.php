@@ -52,7 +52,8 @@ function autoriser_rubrique_publierdans($faire, $type, $id, $qui, $opt) {
 	if (($qui['statut'] == '0minirezo') and (!$qui['restreint'] or !$id or in_array($id, $qui['restreint']))) {
 		// cas par défaut de SPIP
 		return true;
-	} elseif (
+	}
+	if (
 		$id_secteur = sql_getfetsel('id_secteur', 'spip_rubriques', 'id_rubrique=' . intval($id))
 		and $id_secteur == lire_config('geol/secteur_medias', 1)
 		and in_array($qui['statut'], ['0minirezo', '1comite'])

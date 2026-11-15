@@ -6,8 +6,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 
 /**
  * Script pour rediriger vers l'url publique d'un objet
- *
- **/
+ */
 function action_redirection_dist() {
 	$type = _request('type');
 	$id = intval(_request('id'));
