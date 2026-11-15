@@ -101,3 +101,9 @@ parameters:
 			identifier: function.notFound
 			count: 2
 			path: geol_options.php
+
+		-
+			message: '#^Function nospam_analyser_spams not found\.$#'
+			identifier: function.notFound
+			count: 1
+			path: geol_pipelines.php

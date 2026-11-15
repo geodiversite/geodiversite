@@ -18,6 +18,7 @@
 	<pipeline nom="styliser" inclure="geol_pipelines.php" />
 	<pipeline nom="recuperer_fond" inclure="geol_pipelines.php" />
 	<pipeline nom="formulaire_charger" inclure="geol_pipelines.php" />
+	<pipeline nom="formulaire_verifier" inclure="geol_pipelines.php" />
 	<pipeline nom="pre_boucle" inclure="geol_pipelines.php" />
 	<pipeline nom="menus_utiles" inclure="geol_pipelines.php" />
 

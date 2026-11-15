@@ -98,6 +98,27 @@ function geol_formulaire_charger($flux) {
 }
 
 /**
+ * Bloquer les spams depuis le form d'inscription
+ *
+ * @param array $flux
+ * @return array
+ */
+function geol_formulaire_verifier($flux) {
+	if ($flux['args']['form'] == 'inscription') {
+		$nom = _request('nom_inscription');
+		if (include_spip('inc/nospam')) {
+			// on analyse le nom
+			$infos_nom = nospam_analyser_spams($nom);
+			if ($infos_nom['nombre_liens'] > 0) {
+				// si on détecte un lien, on demande à le retirer
+				$flux['data']['nom_inscription'] = 'Votre nom comporte un lien vers un site web, merci de le retirer.';
+			}
+		}
+	}
+	return $flux;
+}
+
+/**
  * Insertion dans le pipeline pre_boucle (SPIP)
  *
  * Forcer le critère {tout} sur les boucles rubriques
